@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Expiry</title>
+	<link rel="stylesheet" href="homepage.css">
+	<link rel="stylesheet" href="expiry.css">
+</head>
+<body>
+	<!-- Background image -->
+    <div id="body">
+		<div class="exp left">
+			<!-- Expiry Info -->
+			<div id="expcon">
+				<div class="exptab left">
+					<button class="exptabtxt">Item Name</button>
+				</div>
+				<div class="exptab left">	
+					<button class="exptabtxt">Expiry Date</button>
+				</div>
+				<div class="exptab left">
+					<button class="exptabtxt">Days Till Expiry</button>
+				</div>
+				<div class="left" id="exptab">
+					<button class="exptabtxt">Remove</button>
+				</div>
+				<div id="expiry_info_container"></div>
+			</div>
+			<!-- End Expiry Info -->
+
+			<!-- Expiry Input -->
+			<div class="left qmarg" id="img">
+					<input id="file" name="file" type="file" accept="image/*" style="position:absolute;left:-10000px;top:-10000px;"/>
+					<button id="imgbtn" onclick="$('#file').click();">Choose Image</button>
+				</div>
+			<form onsubmit="newExpiry()">
+				<div class="left qmarg" id="input_name_container">
+					<p class="qmarg">Item Name</p>
+					<input type="text" placeholder="Input item name here..." required/>
+				</div>
+				<div id="input_date_container">
+					<p class="qmarg">Expiration Date</p>
+					<input type="date" required />
+				</div>
+				<div id="input_notify_container">
+					<p class="left qmarg">Notify me</p>
+					<input class="left qmarg" type="number" min=1 max=3 value="3" />
+					<p class="left qmarg">Days Before Item Expires</p>
+				</div>
+				<input type="submit" value="Add Item" />
+			</form>
+			<!-- End Expiry Input -->
+		</div>
+		<!-- Expiry Recomended -->
+		<div class="exp left">
+			<div id="search">
+				<p class="left">Search Item:</p>
+				<input type="text" placeholder="Search item here..." />
+			</div>
+			<p id="Recent_title">Recent:</p>
+			<div id="Recent"></div>
+			<p>Recomended:</p>
+			<div id="Recomended"></div>
+		</div>
+		<!-- End Expiry Recomended -->
+	</div>
+	<!-- End Background image -->
+	
+    <!-- Header -->
+    <div id="container">
+        <nav>
+            <input type="checkbox" id="nav" class="hidden">
+            <label for="nav" class="nav-btn">
+                <i></i>
+                <i></i>
+                <i></i>
+            </label>
+            <div class="logo">
+                <a href="#">
+                	<img src="icon3.png" alt="logo" height="60px" bottom="10px"/>
+                	<div id="logotext">NoFoodWastage</div>
+                </a>
+            </div>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Expiry</a></li>
+                    <li><a href="#">Donation</a></li>
+                    <li><a href="#">Info</a></li>
+                    <div id="marge"></div>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- End Header -->
+	
+	<!-- Footer -->
+	<div class="ui  vertical footer segment">
+		<div class="ui container foot">
+			<div class="ui stackable  divided equal height stackable grid">
+				<div class="three wide column">
+        			<h4 class="ui  header">About</h4>
+        			<div class="ui  link list">
+          				<a href="#" class="item">Contact us</a>
+          				<a href="#" class="item">Mission</a>
+        				<a href="#" class="item">History</a>
+        			</div>
+      			</div>
+      			<div class="three wide column">
+        			<h4 class="ui  header">Services</h4>
+        			<div class="ui  link list">
+						<a href="#" class="item">Placeholder</a>
+						<a href="#" class="item">Placeholder</a>
+						<a href="#" class="item">Placeholder</a>
+        			</div>
+      			</div>
+    			<div class="seven wide column">
+        			<h4 class="ui  header">Trademark</h4>
+        			<p>BCIT COMP 2930 Project Team.</p>
+      			</div>
+    		</div>
+  		</div>
+	</div>
+    <!-- End Footer -->
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="expiry.js"></script>
+</html>

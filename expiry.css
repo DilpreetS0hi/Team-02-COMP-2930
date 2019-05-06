@@ -1,0 +1,63 @@
+/* Universals */
+.left{
+    float: left;
+}
+button{
+    background-color: rgba(000, 000, 000, 0);
+    color: black;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+/* Expiry Info */
+.exp{
+    margin-left: 1%;
+    width: 48%;
+}
+#expcon{
+    background-color: white;
+    height: 400px;
+}
+.exptab{
+    border-style: outset;
+    width: 29%;
+}
+#exptab{
+    border-style: outset;
+    width: 13%;
+}
+.exptabtxt{
+    padding: 2px 2px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+}
+/* Expiry Input */
+#img{
+    background: url(icon3.png);
+    background-position: center;
+    background-size: cover;
+    width: 120px;
+    border: 50px;
+    border-color: white;
+    float:left;
+    
+}
+#imgbtn{
+    width: 100%;
+    margin-top: 60px;
+    background-color: white;
+    background-position: bottom;
+    background-size: cover;
+    padding: 2px 2px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.qmarg{
+    margin: 2px;
+}
+/* Expiry Recomended */
+#Recent_title{
+    display: none;
+}
