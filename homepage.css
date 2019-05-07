@@ -25,7 +25,18 @@ body {
       background-position: center;
       background-size: cover;
 }
-
+#filler{
+    height: 200vf;
+}
+#filler-para{
+    height: 10%;
+}
+form{
+    background: rgb(255,255,255,0.65);
+}
+.firebaseui-container{
+    background: rgb(50, 205, 50, 0.65) !important;
+}
 #container{
     background-color: rgb(107,142,35,0.8);
     width: 100%;
@@ -340,4 +351,12 @@ nav ul li a {
 	line-height: 35px;
 	margin-right: 3px;
 	margin-bottom: 5px;
+}
+#firebaseui-auth-container{
+    margin-left: 50% !important;
+    margin-top: 2% !important;
+    
+}
+.firebaseui-tos{
+    color: #000000 !important;
 }
