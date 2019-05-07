@@ -2,6 +2,9 @@
 .left{
     float: left;
 }
+.qmarg{
+    margin: 2px;
+}
 button{
     background-color: rgba(000, 000, 000, 0);
     color: black;
@@ -9,22 +12,40 @@ button{
     text-decoration: none;
     display: inline-block;
 }
-/* Expiry Info */
-.exp{
-    margin-left: 1%;
-    width: 48%;
+input{
+    padding: 0px;
 }
+.inheight{
+    height: 20px;
+}
+.inform{
+    margin-top: 20px;
+    height: 40px;
+}
+/* backround */
+#expage{
+    margin-top: 80px;
+    height: 100vh;
+    background-color: red; /* for testing purposes */
+}
+/* Expiry Info */
 #expcon{
+    margin-top: 10px;
+    /* display: none; */
     background-color: white;
     height: 400px;
 }
-.exptab{
+.bord{
     border-style: outset;
-    width: 29%;
 }
 #exptab{
-    border-style: outset;
-    width: 13%;
+    width: 62px;
+}
+.exptab{
+    width: 150px;
+}
+#exptabu{
+    width: 48px;
 }
 .exptabtxt{
     padding: 2px 2px;
@@ -54,9 +75,9 @@ button{
     font-size: 25px;
     font-weight: bold;
 }
-.qmarg{
-    margin: 2px;
-}
+/* #input_date_container{
+    margin-top: 2px;
+} */
 /* Expiry Recomended */
 #Recent_title{
     display: none;

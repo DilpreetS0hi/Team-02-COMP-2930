@@ -10,23 +10,26 @@
 </head>
 <body>
 	<!-- Background image -->
-    <div id="body">
-		<div class="exp left">
+    <div id="expage">
+		<div class="qmarg left">
 			<!-- Expiry Info -->
 			<div id="expcon">
-				<div class="exptab left">
+				<div class="left bord" id="exptab">
+					<button class="exptabtxt">Item Image</button>
+				</div>
+				<div class="left bord exptab">
 					<button class="exptabtxt">Item Name</button>
 				</div>
-				<div class="exptab left">	
+				<div class="left bord exptab">	
 					<button class="exptabtxt">Expiry Date</button>
 				</div>
-				<div class="exptab left">
+				<div class="left bord exptab">
 					<button class="exptabtxt">Days Till Expiry</button>
 				</div>
-				<div class="left" id="exptab">
+				<div class="left bord" id="exptabu">
 					<button class="exptabtxt">Remove</button>
 				</div>
-				<div id="expiry_info_container"></div>
+				<div id="expitems"></div>
 			</div>
 			<!-- End Expiry Info -->
 
@@ -35,29 +38,31 @@
 					<input id="file" name="file" type="file" accept="image/*" style="position:absolute;left:-10000px;top:-10000px;"/>
 					<button id="imgbtn" onclick="$('#file').click();">Choose Image</button>
 				</div>
-			<form onsubmit="newExpiry()">
-				<div class="left qmarg" id="input_name_container">
-					<p class="qmarg">Item Name</p>
-					<input type="text" placeholder="Input item name here..." required/>
-				</div>
-				<div id="input_date_container">
-					<p class="qmarg">Expiration Date</p>
-					<input type="date" required />
-				</div>
-				<div id="input_notify_container">
-					<p class="left qmarg">Notify me</p>
-					<input class="left qmarg" type="number" min=1 max=3 value="3" />
-					<p class="left qmarg">Days Before Item Expires</p>
+			<form action="#" onsubmit="newExpiry();return false">
+				<div class="left">
+					<div class="left qmarg inform">
+						<p class="qmarg">Item Name</p>
+						<input class="inheight" id="itemName" type="text" placeholder="Input item name here..." required/>
+					</div>
+					<div class="left qmarg inform">
+						<p class="qmarg">Expiration Date</p>
+						<input class="inheight" id="expirationDate" type="date" required />
+					</div>
+					<div id="input_notify_container">
+						<p class="left qmarg">Notify me</p>
+						<input class="left qmarg" id="notifyMe" type="number" min=1 max=3 value="3" />
+						<p class="left qmarg">Days Before Item Expires</p>
+					</div>
 				</div>
 				<input type="submit" value="Add Item" />
 			</form>
 			<!-- End Expiry Input -->
 		</div>
 		<!-- Expiry Recomended -->
-		<div class="exp left">
+		<div class="qmarg left">
 			<div id="search">
 				<p class="left">Search Item:</p>
-				<input type="text" placeholder="Search item here..." />
+				<input class="inheight" type="text" placeholder="Search item here..." />
 			</div>
 			<p id="Recent_title">Recent:</p>
 			<div id="Recent"></div>
