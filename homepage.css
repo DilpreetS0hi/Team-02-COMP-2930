@@ -11,6 +11,7 @@ html {
 body {
     margin: 0;
 }
+/*
 #body {
     left: 0px;
       margin: 0;
@@ -18,6 +19,7 @@ body {
       padding: 0;
       width: 100%;
       height: 100vh;
+    z-index: -1;
       font-family: Poppins;
       font-weight: 400;
       background: url(background-img.jpg);
@@ -25,6 +27,38 @@ body {
       background-position: center;
       background-size: cover;
 }
+*/
+
+
+.slideshow-container {
+    z-index: -1;
+    margin-top: 80px;
+      padding: 0;
+      width: 100%;
+      height: 100vh;
+    background-position: center;
+      background-size: cover;
+  position: absolute;
+  margin: auto;
+}
+.mySlides {display: none;}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
 #filler{
     height: 200vf;
 }
@@ -242,8 +276,10 @@ nav ul li a {
       display: none;
 }
  .footer-distributed{
+     bottom: 0px;
+     position: fixed;
 	background: rgb(107,142,35); /* Fallback color */
-         background: rgba(107,142,35, 0.8);
+/*         background: rgba(107,142,35, 0.8);*/
 	box-shadow: 0 1px 1px 0 rgba(107,142,35, 0.8);
 	box-sizing: border-box;
 	width: 100%;
