@@ -1,9 +1,12 @@
-let expitems = document.getElementById("expitems");
-function newExpiry(){ // test run - not final
-    let itemName = document.getElementById("itemName"),
-        expirationDate = document.getElementById("expirationDate"),
-        notifyMe = document.getElementById("notifyMe"),
-        nimg = document.createElement("img"),
+
+let items = [];
+    itemName = document.getElementById("itemName"),
+    expirationDate = document.getElementById("expirationDate"),
+    notifyMe = document.getElementById("notifyMe"),
+    expitems = document.getElementById("expitems");
+
+function addItem(i, n, d){ // test run - not final
+    let nimg = document.createElement("img"),
         np = document.createElement("p"),
         np2 = document.createElement("p"),
         np3 = document.createElement("p"),
@@ -15,22 +18,39 @@ function newExpiry(){ // test run - not final
     expitems.appendChild(np3);
     expitems.appendChild(nbutton);
     
-    nimg.className = "left";
+    nimg.className = "left expitems";
     nimg.id = "exptab"
-    nimg.src = "icon3.png";
+    nimg.src = i;
 
-    np.className = "left exptab";
-    np.innerHTML = itemName.value;
+    np.className = "left exptab expitems";
+    np.innerHTML = n;
 
-    np2.className = "left exptab";
-    np2.innerHTML = expirationDate.value; 
+    np2.className = "left exptab expitems";
+    np2.innerHTML = d; 
     
-    np3.className = "left exptab";
-    np3.innerHTML = notifyMe.value;
+    np3.className = "left exptab expitems";
+    np3.innerHTML = new Date(new Date(d) - new Date()).getDate();;
 
-    nbutton.className = "left";
+    nbutton.className = "left expitems";
     nbutton.id = "exptabu";
     nbutton.innerHTML = "x";
+ 
+}
+
+function addItems(){
+    console.log(items);
+    let item = new Object();
+    item.img = "icon3.png";
+    item.name = itemName.value;
+    item.date = expirationDate.value;
+    item.notify = notifyMe.value;
+
+    items.push(item)
+    expitems.innerHTML = "";
+
+    for(let i=0; i<items.length; i++){
+        addItem(items[i].img, items[i].name, items[i].date);
+    }
 
     itemName.value = "";
     expirationDate.value = "";
