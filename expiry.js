@@ -29,7 +29,7 @@ function addItem(i, n, d){ // test run - not final
     np2.innerHTML = d; 
     
     np3.className = "left exptab expitems";
-    np3.innerHTML = new Date(new Date(d) - new Date()).getDate();;
+    np3.innerHTML = (new Date(new Date(d).getFullYear(),new Date(d).getMonth(),new Date(d).getDate()+1) - new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/(1000*60*60*24);
 
     nbutton.className = "left expitems";
     nbutton.id = "exptabu";
@@ -38,7 +38,6 @@ function addItem(i, n, d){ // test run - not final
 }
 
 function addItems(){
-    console.log(items);
     let item = new Object();
     item.img = "icon3.png";
     item.name = itemName.value;
