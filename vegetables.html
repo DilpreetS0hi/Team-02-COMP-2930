@@ -20,14 +20,16 @@
   firebase.initializeApp(config);
 </script>
     <style>
-        #fruits{margin-top: 15px;
+        
+        #vegetables{margin-top: 18px;
             margin-left: 550px;
-            height: 400px;
-                width:400px;
+            height: 300px;
+                width:320px;
     }
     
 .row img {
-  margin: 0 40px;
+    margin-top: 65px;
+    margin-left: 60px;
     padding: 10PX;
     height: 180px;
     width: 180px;
@@ -79,7 +81,7 @@ body {
         #c1,#c2,#c3,#c4,#c5{
             background: rgb(255,255,255,0.0);
             border-color: white;
-            margin-left: 5%;
+            margin-left: 7%;
         }
         
     </style>
@@ -112,48 +114,48 @@ body {
                   </div>
             </nav>
       </div>
-        <img src="fruit.gif" id="fruits" alt="fruits">
+        <img src="vegetables.gif" id="vegetables" alt="vegetables">
         <div class="row">
-            <img id="c1" src="apple.gif" itemprop="apple">
+            <img id="c1" src="Carrot.gif" itemprop="Carrot">
             
-            <img id="c2" src="banana1.gif" itemprop="banana">
+            <img id="c2" src="sweetpotato.gif" itemprop="Sweet Potato">
             
-            <img id="c3" src="berries1.gif" itemprop="berries">
+            <img id="c3" src="kale.gif" itemprop="Kale">
   
-            <img id="c4" src="SardonicExcellentIraniangroundjay-size_restricted.gif" itemprop="grapes">
+            <img id="c4" src="zucchini.gif" itemprop="Zucchini">
             
-            <img id="c5" src="citrus.gif" itemprop="citrus">
+            <img id="c5" src="Tomato.gif" itemprop="Tomato">
 </div>
         
         <div class="typewriter">
-  <h1>&nbsp;&nbsp;Apple  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Banana &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Berries &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grapes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Citrus</h1>
+  <h1>&nbsp;&nbsp;Carrots &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sweet Potatos &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kale &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zucchini &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tomato</h1>
             
 </div>
-        <div id="content"></div>
+       <div id="content"></div>
         
         <script>
         var count = 0;
         document.getElementById("c1").addEventListener("click", function() {
-            ShowlistFruits("Apple");
+            ShowlistFruits("Carrots");
         });
             
         document.getElementById("c2").addEventListener("click", function() {
-            ShowlistFruits("Banana");
+            ShowlistFruits("SweetPotatoes");
         });
         document.getElementById("c3").addEventListener("click", function() {
-            ShowlistFruits("Berries");
+            ShowlistFruits("Kale");
         });
         document.getElementById("c4").addEventListener("click", function() {
-            ShowlistFruits("Grapes");
+            ShowlistFruits("Zucchini");
         });
         document.getElementById("c5").addEventListener("click", function() {
-            ShowlistFruits("Citrus");
+            ShowlistFruits("Tomatoes");
         });
         
             
             
             function ShowlistFruits(catergory) {
-            var dbRef = firebase.database().ref("Team02/Suggestions/Fruits/" + catergory);
+            var dbRef = firebase.database().ref("Team02/Suggestions/Vegetables/" + catergory);
             var promise = dbRef.once("value", function(snap) {
                 list = snap.val();
                 count++;
@@ -192,8 +194,7 @@ body {
         }
             
         </script>
-        
-        
+         
         
         
         
