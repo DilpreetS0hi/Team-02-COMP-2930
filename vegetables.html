@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>No Food Wastage</title>
+      <link rel="stylesheet" href="suggestion.css">
+    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC3rK5fG2PwqAtjTQ2FhOCyzb4dIcXN2_0",
+    authDomain: "project-2930.firebaseapp.com",
+    databaseURL: "https://project-2930.firebaseio.com",
+    projectId: "project-2930",
+    storageBucket: "project-2930.appspot.com",
+    messagingSenderId: "16612303844"
+  };
+  firebase.initializeApp(config);
+</script>
+    <style>
+        
+        #vegetables{margin-top: 18px;
+            margin-left: 550px;
+            height: 300px;
+                width:320px;
+    }
+    
+.row img {
+    margin-top: 65px;
+    margin-left: 60px;
+    padding: 10PX;
+    height: 180px;
+    width: 180px;
+    
+}
+        
+        /* GLOBAL STYLES */
+body {
+  
+  justify-content: center;
+    margin: 0px;
+}
+        
+        p{
+                font-size: x-large;
+    margin-left: 8.4%;
+    margin-right: 8%;
+    margin-top: -2%;
+    font-family: serif;
+        }
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: #000;
+    margin-left: 100px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+    margin-top: -10px;
+    margin-bottom: 80px;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: white}
+}
+        #c1,#c2,#c3,#c4,#c5{
+            background: rgb(255,255,255,0.0);
+            border-color: white;
+            margin-left: 7%;
+        }
+        
+    </style>
+
+    
+</head>
+    <body>
+        <div id="container">
+            <nav>
+                  <input type="checkbox" id="nav" class="hidden">
+                  <label for="nav" class="nav-btn">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                  </label>
+                  <div class="logo">
+                        <a href="#">
+                            <img src="icon3.png" alt="logo" height="60px" bottom="10px"/>
+                            <div id="logotext"></div>
+                      </a>
+                  </div>
+                  <div class="nav-wrapper">
+                        <ul>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="#">Expiry</a></li>
+                              <li><a href="#">Donate</a></li>
+                              <li><a href="#">Info</a></li>
+                            <div id="marge"></div>
+                        </ul>
+                  </div>
+            </nav>
+      </div>
+        <img src="vegetables.gif" id="vegetables" alt="vegetables">
+        <div class="row">
+            <img id="c1" src="Carrot.gif" itemprop="Carrot">
+            
+            <img id="c2" src="sweetpotato.gif" itemprop="Sweet Potato">
+            
+            <img id="c3" src="kale.gif" itemprop="Kale">
+  
+            <img id="c4" src="zucchini.gif" itemprop="Zucchini">
+            
+            <img id="c5" src="Tomato.gif" itemprop="Tomato">
+</div>
+        
+        <div class="typewriter">
+  <h1>&nbsp;&nbsp;Carrots &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sweet Potatos &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kale &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Zucchini &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tomato</h1>
+            
+</div>
+       <div id="content"></div>
+        
+        <script>
+        var count = 0;
+        document.getElementById("c1").addEventListener("click", function() {
+            ShowlistFruits("Carrots");
+        });
+            
+        document.getElementById("c2").addEventListener("click", function() {
+            ShowlistFruits("SweetPotatoes");
+        });
+        document.getElementById("c3").addEventListener("click", function() {
+            ShowlistFruits("Kale");
+        });
+        document.getElementById("c4").addEventListener("click", function() {
+            ShowlistFruits("Zucchini");
+        });
+        document.getElementById("c5").addEventListener("click", function() {
+            ShowlistFruits("Tomatoes");
+        });
+        
+            
+            
+            function ShowlistFruits(catergory) {
+            var dbRef = firebase.database().ref("Team02/Suggestions/Vegetables/" + catergory);
+            var promise = dbRef.once("value", function(snap) {
+                list = snap.val();
+                count++;
+                if(count>1){
+                    var elem = document.getElementById('listofplant');
+                    elem.parentNode.removeChild(elem);
+                }
+            });
+
+            promise.then(function() {
+                DisplayList(list); //JSON object
+            });
+        }
+        
+            
+            function DisplayList(list) {
+            console.log(list);
+                var para = document.createElement("div");
+                
+                console.log(count);
+                var bottonClick = document.createElement("div");
+                var inside = document.createElement("p");
+                
+                var doc = document.getElementById("content");
+                doc.appendChild(para);
+                
+                para.appendChild(bottonClick);
+                bottonClick.appendChild(inside);
+                
+                var node = document.createTextNode(list);
+                
+                inside.appendChild(node);
+                para.setAttribute("id", "listofplant");
+                bottonClick.setAttribute("Class", "bottonClick");
+
+        }
+            
+        </script>
+         
+        
+        
+        
+        
+         <footer class="footer-distributed" id="contact">
+    	<div class="footer-left">
+            <h1><span>No</span> FOOD <span>Wastage</span></h1>
+				<p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
+			</div>
+			<div class="footer-center">
+				<div>
+                    <p>Address: 3700 Willingdon Ave Burnaby, Bc</p>
+				</div>
+                <br>
+				<div>
+					<p>Phone: 604-727-3019</p>
+				</div>
+                <br>
+				<div>
+					<p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About Us</span>
+					Need an Notification Alerts for Expiry foods? Have Queries? Call us!
+                    We help people to reduce Food Wastage by generating emergency alerts  
+                    and provide them with suitable information for overripe eatables and help them Donate food to needy people.
+				</p>
+			</div>
+
+		</footer>
+    </body></html>
