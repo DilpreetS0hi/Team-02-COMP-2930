@@ -31,17 +31,20 @@ body {
 
 
 .slideshow-container {
+      top:0px;
     z-index: -1;
     margin-top: 80px;
       padding: 0;
       width: 100%;
-      height: 100vh;
+      height: 100%;
     background-position: center;
       background-size: cover;
   position: absolute;
   margin: auto;
 }
-.mySlides {display: none;}
+.mySlides {display: none;
+height: 100%;
+overflow: hidden;}
 .fade {
   -webkit-animation-name: fade;
   -webkit-animation-duration: 1.5s;
@@ -92,7 +95,6 @@ nav {
 
 .logo {
       float: left;
-      padding: 8px;
       margin-left: 0px;
       margin-top: 0px;
 }
@@ -131,7 +133,8 @@ nav ul li a {
       text-decoration: none;
       font-size: 24px;
       letter-spacing: 1.2px;
-      font-weight: 600;
+      font-weight: bold;
+      font: 16px Roboto,arial,sans-serif;
 }
 
 #marge{
@@ -276,6 +279,7 @@ nav ul li a {
       display: none;
 }
  .footer-distributed{
+       height: 150px;
      bottom: 0px;
      position: fixed;
 	background: rgb(107,142,35); /* Fallback color */
@@ -355,10 +359,14 @@ nav ul li a {
 }
 /* Footer Right */
 .footer-distributed .footer-right{
-	width: 20%;
+      width: 20%;
+      text-overflow: ellipsis;
 }
 .footer-distributed .footer-company-about{
-	line-height: 20px;
+      line-height: 20px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
 	color:  ##567d46;
 	font-size: 15px;
 	font-weight: normal;
@@ -369,7 +377,7 @@ nav ul li a {
 	color:  #000;
 	font-size: 17px;
 	font-weight: bold;
-	margin-bottom: 20px;
+      margin-bottom: 20px;
 }
 .footer-distributed .footer-icons{
 	margin-top: 25px;
@@ -389,7 +397,10 @@ nav ul li a {
 	margin-bottom: 5px;
 }
 #firebaseui-auth-container{
-    margin-left: 50% !important;
+      position: fixed;
+      top: 85px;
+      right: 0px;
+      margin-right: 15% !important;
     margin-top: 2% !important;
     
 }
