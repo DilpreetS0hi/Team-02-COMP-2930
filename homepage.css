@@ -397,6 +397,7 @@ nav ul li a {
 	margin-bottom: 5px;
 }
 #firebaseui-auth-container{
+      min-width: 450px;
       position: fixed;
       top: 0px;
       right: 0px;
