@@ -26,14 +26,14 @@ input{
 #expage{
     margin-top: 80px;
     height: 100vh;
-    background-color: red; /* for testing purposes */
+    /*background-color: red;  for testing purposes */
 }
 /* Expiry Info */
 #expcon{
     margin-top: 10px;
-    /* display: none; */
-    background-color: white;
-    height: 400px;
+    border-style: outset;
+    display: none;
+    /* background-color: white; */
 }
 .bord{
     border-style: outset;
@@ -58,30 +58,26 @@ input{
     margin: 0px;
 }
 /* Expiry Input */
-#img{
-    background: url(icon3.png);
-    background-position: center;
-    background-size: cover;
+#imgcon{
     width: 120px;
-    border: 50px;
-    border-color: white;
-    float:left;
-    
+    height: 120px;
+    overflow: hidden;
+}
+#img{
+    width: 100%;
+    position: relative;
+    top: -59px;
 }
 #imgbtn{
+    position: relative;
     width: 100%;
-    margin-top: 60px;
     background-color: white;
-    background-position: bottom;
-    background-size: cover;
-    padding: 2px 2px;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    top: 62px;
+    z-index: 1;
 }
-/* #input_date_container{
-    margin-top: 2px;
-} */
 /* Expiry Recomended */
 #Recent_title{
     display: none;
