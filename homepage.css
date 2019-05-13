@@ -81,6 +81,7 @@ form{
     top: 0px;
     left: 0px;
     position: fixed;
+    z-index: 999;
 }
 #logotext{
     position: fixed;
@@ -279,6 +280,7 @@ nav ul li a {
       display: none;
 }
  .footer-distributed{
+       z-index: 999;
        height: 150px;
      bottom: 0px;
      position: fixed;
