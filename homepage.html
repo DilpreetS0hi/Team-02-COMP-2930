@@ -14,11 +14,34 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
     <script src="setup_firebase_yourname.js"></script>
+    
+    <script type="text/javascript">
+var firstTime = true;
+var message = "try again!";
+var later = "easter egg surprise"
+function MouseoverMessageInAlertBox()
+{
+  if(firstTime) { alert(message); }
+  else { alert(later); }
+  firstTime = false;
+}
+</script>
+   
+    
+  
 </head>
 
 <body class="slideshow-container">
+    <div style="position:absolute;
+           top:10px;
+           left: 10px;
+           z-index:99;
+           background-color:transparent;
+           width:80px;
+           height:80px;"
+    onmouseover="MouseoverMessageInAlertBox()"></div>
     
-
+  
         <div class="mySlides fade">
           <img src="food1.jpg" style="height:100%;min-width: 100%;">
         </div>
