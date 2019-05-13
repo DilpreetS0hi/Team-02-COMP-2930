@@ -8,23 +8,23 @@
 	<link rel="stylesheet" href="homepage.css">
 	<link rel="stylesheet" href="expiry.css">
 </head>
-<body>
+<body onload="startupGeneration();">
 	<!-- Background image -->
     <div id="expage">
-		<div class="qmarg left" style="width: 560px">
+		<div class="qmarg left" style="width: 565px;">
 			<!-- Expiry Info -->
 			<div id="expcon">
 				<div class="left bord" id="exptab">
-					<button class="exptabtxt">Item Image</button>
+					<button class="exptabtxt" onclick="reput(1)">Item Image</button>
 				</div>
 				<div class="left bord exptab">
-					<button class="exptabtxt">Item Name</button>
+					<button class="exptabtxt" onclick="reput(1)">Item Name</button>
 				</div>
 				<div class="left bord exptab">	
-					<button class="exptabtxt">Expiry Date</button>
+					<button class="exptabtxt" onclick="reput(0)">Expiry Date</button>
 				</div>
 				<div class="left bord exptab">
-					<button class="exptabtxt">Days Till Expiry</button>
+					<button class="exptabtxt" onclick="reput(0)">Days Till Expiry</button>
 				</div>
 				<div class="left bord" id="exptabu">
 					<button class="exptabtxt">Remove</button>
@@ -34,11 +34,12 @@
 			<!-- End Expiry Info -->
 
 			<!-- Expiry Input -->
-			<div class="left qmarg" id="img">
-					<input id="file" name="file" type="file" accept="image/*" style="position:absolute;left:-10000px;top:-10000px;"/>
-					<button id="imgbtn" onclick="$('#file').click();">Choose Image</button>
+			<div class="left qmarg" id="imgcon">
+				<input id="file" name="file" type="file" accept="image/*" />
+				<button id="imgbtn" onclick="$('#file').click();">Choose Image</button>
+				<img id="img" src="icon3.png" onclick="$('#file').click();" />
 				</div>
-			<form action="#" onsubmit="addItems();return false">
+			<form action="#" onsubmit="newItem();return false" style="height:124px;">
 				<div class="left">
 					<div class="left qmarg inform">
 						<p class="qmarg">Item Name</p>
@@ -48,27 +49,30 @@
 						<p class="qmarg">Expiration Date</p>
 						<input class="inheight" id="expirationDate" type="date" required />
 					</div>
-					<div id="input_notify_container">
+					<div style="margin-left: 6px;">
 						<p class="left qmarg">Notify me</p>
 						<input class="left qmarg" id="notifyMe" type="number" min=1 max=3 value="3" />
 						<p class="left qmarg">Days Before Item Expires</p>
 					</div>
 				</div>
-				<input type="submit" value="Add Item" />
+				<input class="inheight" id="sub" type="submit" value="Add Item" />
 			</form>
 			<!-- End Expiry Input -->
-		</div>
-		<!-- Expiry Recomended -->
-		<div class="qmarg left">
-			<div id="search">
-				<p class="left">Search Item:</p>
-				<input class="inheight" type="text" placeholder="Search item here..." />
-			</div>
+
+			<!-- Expiry Recent -->
 			<p id="Recent_title">Recent:</p>
 			<div id="Recent"></div>
-			<p>Recomended:</p>
-			<div id="Recomended"></div>
+			<!-- End Expiry Recent -->
 		</div>
+		<!-- Expiry Recomended -->
+		<div id="recmcontainer">
+		<div class="qmarg left" style="min-width:260px;">
+			<div id="search">
+				<p class="left">Search Item:</p>
+				<input class="inheight" id="Input_search" type="text" placeholder="Search item here..." />
+			</div>
+			<p>Recomended:</p><div id="rec"></div>
+		</div></div>
 		<!-- End Expiry Recomended -->
 	</div>
 	<!-- End Background image -->
@@ -84,15 +88,15 @@
             </label>
             <div class="logo">
                 <a href="#">
-                	<img src="icon3.png" alt="logo" height="60px" bottom="10px"/>
-                	<div id="logotext">NoFoodWastage</div>
+                    <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
+                    <div id="logotext"></div>
                 </a>
             </div>
             <div class="nav-wrapper">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Expiry</a></li>
-                    <li><a href="#">Donation</a></li>
+                    <li><a href="#">Donate</a></li>
                     <li><a href="#">Info</a></li>
                     <div id="marge"></div>
                 </ul>
@@ -102,32 +106,25 @@
     <!-- End Header -->
 	
 	<!-- Footer -->
-	<div class="ui  vertical footer segment">
-		<div class="ui container foot">
-			<div class="ui stackable  divided equal height stackable grid">
-				<div class="three wide column">
-        			<h4 class="ui  header">About</h4>
-        			<div class="ui  link list">
-          				<a href="#" class="item">Contact us</a>
-          				<a href="#" class="item">Mission</a>
-        				<a href="#" class="item">History</a>
-        			</div>
-      			</div>
-      			<div class="three wide column">
-        			<h4 class="ui  header">Services</h4>
-        			<div class="ui  link list">
-						<a href="#" class="item">Placeholder</a>
-						<a href="#" class="item">Placeholder</a>
-						<a href="#" class="item">Placeholder</a>
-        			</div>
-      			</div>
-    			<div class="seven wide column">
-        			<h4 class="ui  header">Trademark</h4>
-        			<p>BCIT COMP 2930 Project Team.</p>
-      			</div>
-    		</div>
-  		</div>
-	</div>
+	<footer class="footer-distributed" id="contact">
+		<div class="footer-left">
+			<h1><span>No</span> FOOD <span>Wastage</span></h1>
+			<p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
+		</div>
+		<div class="footer-center">
+			<div><p>Address: 3700 Willingdon Ave Burnaby, Bc</p></div><br>
+			<div><p>Phone: 604-727-3019</p></div><br>
+			<div><p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p></div>
+		</div>
+		<div class="footer-right">
+			<p class="footer-company-about">
+				<span>About Us</span>
+				Need an Notification Alerts for Expiry foods? Have Queries? Call us!
+				We help people to reduce Food Wastage by generating emergency alerts  
+				and provide them with suitable information for overripe eatables and help them Donate food to needy people.
+			</p>
+		</div>
+	</footer>
     <!-- End Footer -->
 </body>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

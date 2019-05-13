@@ -26,14 +26,14 @@ input{
 #expage{
     margin-top: 80px;
     height: 100vh;
-    background-color: red; /* for testing purposes */
+    /*background-color: red;  for testing purposes */
 }
 /* Expiry Info */
 #expcon{
     margin-top: 10px;
-    /* display: none; */
-    background-color: white;
-    height: 400px;
+    border-style: outset;
+    display: none;
+    /* background-color: white; */
 }
 .bord{
     border-style: outset;
@@ -58,31 +58,68 @@ input{
     margin: 0px;
 }
 /* Expiry Input */
-#img{
-    background: url(icon3.png);
-    background-position: center;
-    background-size: cover;
+#imgcon{
     width: 120px;
-    border: 50px;
-    border-color: white;
-    float:left;
-    
+    height: 120px;
+    overflow: hidden;
+}
+#file{
+    position:absolute;
+    left:-10000px;
+    top:-10000px;
+}
+#img{
+    width: 100%;
+    position: relative;
+    top: -59px;
 }
 #imgbtn{
+    position: relative;
     width: 100%;
-    margin-top: 60px;
     background-color: white;
-    background-position: bottom;
-    background-size: cover;
-    padding: 2px 2px;
     text-align: center;
-    font-size: 25px;
-    font-weight: bold;
+    top: 62px;
+    z-index: 1;
+    font: 25px Roboto,arial,sans-serif;
 }
-/* #input_date_container{
-    margin-top: 2px;
-} */
-/* Expiry Recomended */
+#sub{
+    margin-top: 43px;
+    background-color: rgba(000, 000, 000, 0);
+    padding: 2px;
+    border: 1px solid;
+    border-color: initial;
+}
+/* Expiry Recent */
 #Recent_title{
     display: none;
+}
+/* Expiry Recomended */
+#recmcontainer{
+    height: 100%;
+    position: absolute;
+    margin-left: 585px;
+    min-width: 260px;
+}
+#Input_search{
+    margin-left: 1em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+.recmod{
+    padding: 2px;
+    top: 100px !important;
+    margin: 0px;
+    text-align: initial !important;
+    font-size: 14px !important;
+}
+.recmodi{
+    top: -23px !important;
+}
+#recmod{
+    position: relative;
+    top: -56px;
+    right: -67px;
+    z-index: 3;
+    font: 14px Roboto,arial,sans-serif;
+    border: 1px solid;
 }
