@@ -85,7 +85,8 @@ function MouseoverMessageInAlertBox()
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
 
-                firebase.auth.EmailAuthProvider.PROVIDER_ID,
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
             ],
             // Terms of service url.
             tosUrl: 'AfterSignIn.html',
@@ -112,7 +113,7 @@ function MouseoverMessageInAlertBox()
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
 
-    </script></div>
+    </script>
       <div id="container">
             <nav>
                   <input type="checkbox" id="nav" class="hidden">
@@ -168,6 +169,5 @@ function MouseoverMessageInAlertBox()
 			</div>
 
 		</footer>
-    
 </body>
 </html>
