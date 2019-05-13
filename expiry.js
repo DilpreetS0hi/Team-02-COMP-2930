@@ -186,7 +186,7 @@ function startupGeneration(){ // TEST - not final
     rec.name = "fruit";
     rec.img = "icon3.png";
 
-    for(let i=0; i<20; i++){
+    for(let i=0; i<4; i++){
         makeRec(rec);
     }
 }

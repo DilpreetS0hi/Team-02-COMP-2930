@@ -39,7 +39,7 @@
 				<button id="imgbtn" onclick="$('#file').click();">Choose Image</button>
 				<img id="img" src="icon3.png" onclick="$('#file').click();" />
 				</div>
-			<form action="#" onsubmit="newItem();return false">
+			<form action="#" onsubmit="newItem();return false" style="height:124px;">
 				<div class="left">
 					<div class="left qmarg inform">
 						<p class="qmarg">Item Name</p>
@@ -65,13 +65,14 @@
 			<!-- End Expiry Recent -->
 		</div>
 		<!-- Expiry Recomended -->
+		<div id="recmcontainer">
 		<div class="qmarg left" style="min-width:260px;">
 			<div id="search">
 				<p class="left">Search Item:</p>
 				<input class="inheight" id="Input_search" type="text" placeholder="Search item here..." />
 			</div>
 			<p>Recomended:</p><div id="rec"></div>
-		</div>
+		</div></div>
 		<!-- End Expiry Recomended -->
 	</div>
 	<!-- End Background image -->
