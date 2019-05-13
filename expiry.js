@@ -1,11 +1,17 @@
-let items = [],
-    img = document.getElementById("img"),
+// ----- constants -----
+// elements
+let img = document.getElementById("img"),
     itemName = document.getElementById("itemName"),
     expirationDate = document.getElementById("expirationDate"),
     notifyMe = document.getElementById("notifyMe"),
     expitems = document.getElementById("expitems"),
-    sorter = sortSelection(0);
+    recmcontainer = document.getElementById("rec");
+// variables
+let items = [],
+    sorter,
+    recms = [];
 
+// ----- general expiry -----
 function sortSelection(num){
     switch (num) {
     case 0:
@@ -29,7 +35,7 @@ function daysTillExpiry(item){
     return (new Date(new Date(item.date).getFullYear(),new Date(item.date).getMonth(),new Date(item.date).getDate()+1) - new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/(1000*60*60*24);
 }
 
-function addItem(item){ // test run - not final
+function addItem(item){
     let nimg = document.createElement("img"),
         np = document.createElement("p"),
         np2 = document.createElement("p"),
@@ -70,31 +76,9 @@ function addItem(item){ // test run - not final
             np3.innerHTML = "Today";
     }
     
-
     nbutton.id = "exptabu";
     nbutton.innerHTML = "x";
     nbutton.onclick = function() {removeItem(item.unique)};
-}
-
-function newItem(){
-    let item = new Object();
-    item.img = img.src;
-    item.name = itemName.value;
-    item.date = expirationDate.value;
-    item.notify = notifyMe.value;
-
-    items.push(item);
-    putItems();
-
-    img.src = "icon3.png";
-    itemName.value = "";
-    expirationDate.value = "";
-    notifyMe.value = 3;
-}
-
-function reput(num) {
-    sorter = sortSelection(num);
-    putItems();
 }
 
 function putItems(){
@@ -116,9 +100,33 @@ function putItems(){
     con.style.height = h+"px";
 }
 
+// ----- in expiry container -----
+function reput(num) {
+    sorter = sortSelection(num);
+    putItems();
+}
+
 function removeItem(num){
     items.splice(num,1);
     putItems();
+}
+
+
+// ----- in expiry input -----
+function newItem(){
+    let item = new Object();
+    item.img = img.src;
+    item.name = itemName.value;
+    item.date = expirationDate.value;
+    item.notify = notifyMe.value;
+
+    items.push(item);
+    putItems();
+
+    img.src = "icon3.png";
+    itemName.value = "";
+    expirationDate.value = "";
+    notifyMe.value = 3;
 }
 
 function readURL(input) {
@@ -137,3 +145,48 @@ function readURL(input) {
   $("#file").change(function() {
     readURL(this);
   });
+
+// ----- recomended expiry -----
+
+function makeRec(rec) {
+    let ndiv = document.createElement("div"),
+        ndiv2 = document.createElement("div"),
+        nimg = document.createElement("img"),
+        np = document.createElement("p"),
+        nbutton = document.createElement("button");
+
+    recmcontainer.appendChild(ndiv); //change this
+    ndiv.appendChild(ndiv2);
+    ndiv.appendChild(nbutton);
+    ndiv2.appendChild(np);
+    ndiv2.appendChild(nimg);
+
+    ndiv.className = "left qmarg";
+    ndiv.id = "imgcon";
+    ndiv.style.marginRight = "15px";
+
+    // onclick of ndiv2
+
+    np.className = "left recmod";
+    np.id = "imgbtn";
+    np.innerHTML = rec.name;
+
+    nimg.className = "recmodi";
+    nimg.id = "img";
+    nimg.src = rec.img;
+
+    nbutton.id = "recmod";
+    // onclick of nbutton
+    nbutton.innerHTML = "info>>";
+}
+function startupGeneration(){ // TEST - not final
+    sorter = sortSelection(0);
+
+    let rec = new Object();
+    rec.name = "fruit";
+    rec.img = "icon3.png";
+
+    for(let i=0; i<20; i++){
+        makeRec(rec);
+    }
+}
