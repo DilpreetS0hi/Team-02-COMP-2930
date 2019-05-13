@@ -94,6 +94,12 @@ input{
     display: none;
 }
 /* Expiry Recomended */
+#recmcontainer{
+    height: 100%;
+    position: absolute;
+    margin-left: 585px;
+    min-width: 260px;
+}
 #Input_search{
     margin-left: 1em;
     margin-block-start: 1em;
