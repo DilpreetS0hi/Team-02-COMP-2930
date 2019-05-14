@@ -93,6 +93,9 @@ input{
 #recn{
     display: none;
 }
+#re{
+    margin-bottom: 170px;
+}
 /* Expiry Recomended */
 #recmcontainer{
     height: 100%;
