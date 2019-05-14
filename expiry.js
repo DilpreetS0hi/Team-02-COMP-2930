@@ -8,7 +8,59 @@ let img = document.getElementById("img"),
 // variables
 let items = [],
     sorter,
-    recms = [];
+    recms = [],
+    recns = [];
+
+// ----- on start -----
+function startupGeneration(){
+    // DO NO CHANGE
+    sorter = sortSelection(0);
+    // DO NO CHANGE END
+    // apple
+    let apple = new Object();
+    apple.name = "Apple";
+    apple.img = "apple.gif";
+    apple.days = [2];
+    apple.info = function (){location.href ="fruits(1).html";ShowlistFruits("Apple");};
+    apple.hit = 0;
+    recms.push(apple);
+    // banana
+    let banana = new Object();
+    banana.name = "Banana";
+    banana.img = "banana1.gif";
+    banana.days = [2];
+    banana.info = function (){location.href ="fruits(1).html";ShowlistFruits("Banana");};
+    banana.hit = 0;
+    recms.push(banana);
+    // berries
+    let berries = new Object();
+    berries.name = "Berries";
+    berries.img = "berries1.gif";
+    berries.days = [2];
+    berries.info = function (){location.href ="fruits(1).html";ShowlistFruits("Berries");};
+    berries.hit = 0;
+    recms.push(berries);
+    // grapes
+    let grapes = new Object();
+    grapes.name = "Grapes";
+    grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
+    grapes.days = [2];
+    grapes.info = function (){location.href ="fruits(1).html";ShowlistFruits("Grapes");};
+    grapes.hit = 0;
+    recms.push(grapes);
+    // citrus
+    let citrus = new Object();
+    citrus.name = "Citrus";
+    citrus.img = "citrus.gif";
+    citrus.days = [2];
+    citrus.info = function (){location.href ="fruits(1).html";ShowlistFruits("Citrus");};
+    citrus.hit = 0;
+    recms.push(citrus);
+    // generate
+    putItems();
+    putRecm();
+    putRecn();
+}
 
 // ----- general expiry -----
 function sortSelection(num){
@@ -18,6 +70,7 @@ function sortSelection(num){
             let r = daysTillExpiry(a) - daysTillExpiry(b);
             if (r==0)
                 r = a.name.localeCompare(b.name);
+            console.log(a.name, b.name, r);
             return r;
         }
     default:
@@ -34,15 +87,14 @@ function daysTillExpiry(item){
     return (new Date(new Date(item.date).getFullYear(),new Date(item.date).getMonth(),new Date(item.date).getDate()+1) - new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/(1000*60*60*24);
 }
 
-function expiryTillDays(num){
-    let a = c = 0;
-    for (let i = 0; i < num.length; i++) {
-        a += num[i];
-        c++;
+function expiryTillDays(rec){
+    let a = 0;
+    for (let i = 0; i < rec.days.length; i++) {
+        a += rec.days[i];
     }
     let y = new Date().getFullYear(),
         m = new Date().getMonth()+1,
-        d = new Date().getDate()+Math.round(a/c),
+        d = new Date().getDate()+Math.round(a/rec.days.length),
         t;
     do{
         t = false;
@@ -157,7 +209,7 @@ function newItem(){
     item.img = img.src;
     item.name = itemName.value;
     item.date = expirationDate.value;
-    item.notify = notifyMe.value;
+    item.noty = notifyMe.value;
 
     items.push(item);
     putItems();
@@ -171,11 +223,9 @@ function newItem(){
 function readURL(input){
     if (input.files && input.files[0]) {
         var reader = new FileReader();
-  
         reader.onload = function(e) {
             $('#img').attr('src', e.target.result);
         }
-  
         reader.readAsDataURL(input.files[0]);
     }
 }
@@ -184,12 +234,13 @@ $("#file").change(function() {
     readURL(this);
 });
 
-// ----- recomended expiry -----
 function reclick(rec){
     img.src = rec.img;
     itemName.value = rec.name;
-    expirationDate.value = expiryTillDays(rec.days);
+    expirationDate.value = expiryTillDays(rec);
 }
+
+// ----- in recomended expiry -----
 function addRec(rec) {
     let ndiv = document.createElement("div"),
         ndiv2 = document.createElement("div"),
@@ -197,8 +248,14 @@ function addRec(rec) {
         np = document.createElement("p");
         
     rec.con.appendChild(ndiv);
+    if (!(typeof rec.info === "undefined")){
+        let nbutton = document.createElement("button");
+        ndiv.appendChild(nbutton);
+        nbutton.id = "recmod";
+        nbutton.onclick = rec.info;
+        nbutton.innerHTML = "info>>";
+    }
     ndiv.appendChild(ndiv2);
-    
     ndiv2.appendChild(np);
     ndiv2.appendChild(nimg);
 
@@ -215,64 +272,55 @@ function addRec(rec) {
     nimg.className = "recmodi";
     nimg.id = "img";
     nimg.src = rec.img;
-
-    if (!(typeof rec.info === "undefined")){ // problems with positionning
-        let nbutton = document.createElement("button");
-        ndiv.appendChild(nbutton);
-        nbutton.id = "recmod";
-        nbutton.onclick = rec.info;
-        nbutton.innerHTML = "info>>";
-    }
-}
-function startupGeneration(){
-    sorter = sortSelection(0);
-    // apple
-    let apple = new Object();
-    apple.name = "Apple";
-    apple.img = "apple.gif";
-    apple.days = [2];
-    apple.info = function (){location.href ="fruits(1).html";ShowlistFruits("Apple");};
-    recms.push(apple);
-    // banana
-    let banana = new Object();
-    banana.name = "Banana";
-    banana.img = "banana1.gif";
-    banana.days = [2];
-    banana.info = function (){location.href ="fruits(1).html";ShowlistFruits("Banana");};
-    recms.push(banana);
-    // berries
-    let berries = new Object();
-    berries.name = "Berries";
-    berries.img = "berries1.gif";
-    berries.days = [2];
-    berries.info = function (){location.href ="fruits(1).html";ShowlistFruits("Berries");};
-    recms.push(berries);
-    // grapes
-    let grapes = new Object();
-    grapes.name = "Grapes";
-    grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
-    grapes.days = [2];
-    grapes.info = function (){location.href ="fruits(1).html";ShowlistFruits("Grapes");};
-    recms.push(grapes);
-    // citrus
-    let citrus = new Object();
-    citrus.name = "Citrus";
-    citrus.img = "citrus.gif";
-    citrus.days = [2];
-    citrus.info = function (){location.href ="fruits(1).html";ShowlistFruits("Citrus");};
-    recms.push(citrus);
-    // generate
-    putRecm();
 }
 
 function putRecm(){
     let con = document.getElementById("rec");
 
-    // recms.sort();
+    recms.sort(function (a,b){
+        let r = a.hit - b.hit;
+        if(r==0){
+            let avg = [0,0];
+            for (let i = 0; i < a.days.length; i++)
+                avg[0] += a.days[i];
+            for (let i = 0; i < b.days.length; i++)
+                avg[1] += b.days[i];
+            r = avg[0]/a.days.length - avg[1]/b.days.length;
+        }if (r==0)
+            r = a.name.localeCompare(b.name);
+        return r;
+    });
     con.innerHTML = "";
 
     for(let i=0; i<recms.length; i++){
         recms[i].con = con;
         addRec(recms[i]);
+    }
+}
+
+// ----- in recent expiry -----
+function putRecn(){
+    let con = document.getElementById("re"),
+        tit = document.getElementById("recn");
+    if (recns.length==0)
+        tit.style.display = "none";
+    else 
+        tit.style.display = "block";
+
+    // recns.sort();
+    con.innerHTML = "";
+
+    for(let i=0; i<recns.length; i++){
+        recns[i].con = con;
+        addRec(recns[i]);
+    }
+}
+
+function evalRecn(rec){
+    for (let i; i < recms.length; i++) {
+        if(rec.img == recms[i].img && rec.name == recms[i].name){
+
+        }
+        
     }
 }
