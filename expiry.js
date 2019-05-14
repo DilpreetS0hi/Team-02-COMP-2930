@@ -16,6 +16,7 @@ function startupGeneration(){
     // DO NO CHANGE
     sorter = sortSelection(0);
     // DO NO CHANGE END
+
     // apple
     let apple = new Object();
     apple.name = "Apple";
@@ -70,7 +71,6 @@ function sortSelection(num){
             let r = daysTillExpiry(a) - daysTillExpiry(b);
             if (r==0)
                 r = a.name.localeCompare(b.name);
-            console.log(a.name, b.name, r);
             return r;
         }
     default:
@@ -121,7 +121,9 @@ function expiryTillDays(rec){
             t = true;
         }
     }while(t);
-    if(m<10)
+    if(m<10 && d<10)
+        return y+"-0"+m+"-0"+d;
+    else if(m<10)
         return y+"-0"+m+"-"+d;
     return y+"-"+m+"-"+d;
 }
@@ -202,6 +204,14 @@ function removeItem(num){
     putItems();
 }
 
+function removExItem(){
+    for (let i = 0; i < items.length; i++){
+        if(daysTillExpiry(items[i])<0){
+            items.splice(i,1);
+        }
+    }
+    putItems();
+}
 
 // ----- in expiry input -----
 function newItem(){
@@ -213,6 +223,7 @@ function newItem(){
 
     items.push(item);
     putItems();
+    evalRecn(item);
 
     img.src = "icon3.png";
     itemName.value = "";
@@ -278,7 +289,7 @@ function putRecm(){
     let con = document.getElementById("rec");
 
     recms.sort(function (a,b){
-        let r = a.hit - b.hit;
+        let r = b.hit - a.hit;
         if(r==0){
             let avg = [0,0];
             for (let i = 0; i < a.days.length; i++)
@@ -307,20 +318,52 @@ function putRecn(){
     else 
         tit.style.display = "block";
 
-    // recns.sort();
     con.innerHTML = "";
 
     for(let i=0; i<recns.length; i++){
         recns[i].con = con;
+        recns[i].unique=i;
         addRec(recns[i]);
     }
+
+    if(recns.length<=4)
+        con.style.height = "120px"
+    else
+        con.style.height = "240px"
 }
 
 function evalRecn(rec){
-    for (let i; i < recms.length; i++) {
-        if(rec.img == recms[i].img && rec.name == recms[i].name){
+    let trec = new Object();
+    trec.name = rec.name;
+    trec.img = rec.img;
+    trec.date = rec.date;
 
+    for(let i=0; i<recms.length; i++){
+        if(trec.img.lastIndexOf(recms[i].img) != -1 && trec.name == recms[i].name){
+            trec.days = recms[i].days;
+            if (daysTillExpiry(trec)>=0){
+                recms[i].days.push(daysTillExpiry(trec))
+            }
+            recms[i].hit++;
+            trec.info = recms[i].info;
+            putRecm()
         }
-        
     }
+    for (let i = 0; i<recns.length; i++){
+        if(trec.img.lastIndexOf(recns[i].img) != -1 && trec.name == recns[i].name){
+            trec.days = recns[i].days;
+            recns.splice(recns[i].unique,1);
+        }
+    }
+    if (typeof trec.days === "undefined")
+        if(daysTillExpiry(trec)>=0)
+            trec.days = [daysTillExpiry(trec)];
+        else{
+            trec.days = [0];
+        }
+    else
+        trec.days.push(daysTillExpiry(trec));
+
+    recns.unshift(trec);
+    putRecn();
 }
