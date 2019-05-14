@@ -90,7 +90,7 @@ input{
     border-color: initial;
 }
 /* Expiry Recent */
-#Recent_title{
+#recn{
     display: none;
 }
 /* Expiry Recomended */
@@ -107,17 +107,17 @@ input{
 }
 .recmod{
     padding: 2px;
-    top: 100px !important;
+    top: 79px !important;
     margin: 0px;
     text-align: initial !important;
     font-size: 14px !important;
 }
 .recmodi{
-    top: -23px !important;
+    top: -46px !important;
 }
 #recmod{
     position: relative;
-    top: -56px;
+    top: 99px;
     right: -67px;
     z-index: 3;
     font: 14px Roboto,arial,sans-serif;
