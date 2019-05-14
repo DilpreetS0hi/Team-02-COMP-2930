@@ -205,7 +205,7 @@ function removeItem(num){
 }
 
 function removExItem(){
-    for (let i = 0; i < items.length; i++){
+    for (let i = items.length-1; i >= 0; i--){
         if(daysTillExpiry(items[i])<0){
             items.splice(i,1);
         }
