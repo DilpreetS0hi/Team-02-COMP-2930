@@ -103,7 +103,7 @@ input{
     margin-left: 585px;
     min-width: 260px;
 }
-#Input_search{
+#search{
     margin-left: 1em;
     margin-block-start: 1em;
     margin-block-end: 1em;
@@ -116,7 +116,7 @@ input{
     font-size: 14px !important;
 }
 .recmodi{
-    top: -46px !important;
+    top: -44px !important;
 }
 #recmod{
     position: relative;
