@@ -4,12 +4,64 @@ let img = document.getElementById("img"),
     itemName = document.getElementById("itemName"),
     expirationDate = document.getElementById("expirationDate"),
     notifyMe = document.getElementById("notifyMe"),
-    expitems = document.getElementById("expitems"),
-    recmcontainer = document.getElementById("rec");
+    expitems = document.getElementById("expitems");
 // variables
 let items = [],
     sorter,
-    recms = [];
+    recms = [],
+    recns = [];
+
+// ----- on start -----
+function startupGeneration(){
+    // DO NO CHANGE
+    sorter = sortSelection(0);
+    // DO NO CHANGE END
+
+    // apple
+    let apple = new Object();
+    apple.name = "Apple";
+    apple.img = "apple.gif";
+    apple.days = [2];
+    apple.info = function (){location.href ="fruits(1).html";ShowlistFruits("Apple");};
+    apple.hit = 0;
+    recms.push(apple);
+    // banana
+    let banana = new Object();
+    banana.name = "Banana";
+    banana.img = "banana1.gif";
+    banana.days = [2];
+    banana.info = function (){location.href ="fruits(1).html";ShowlistFruits("Banana");};
+    banana.hit = 0;
+    recms.push(banana);
+    // berries
+    let berries = new Object();
+    berries.name = "Berries";
+    berries.img = "berries1.gif";
+    berries.days = [2];
+    berries.info = function (){location.href ="fruits(1).html";ShowlistFruits("Berries");};
+    berries.hit = 0;
+    recms.push(berries);
+    // grapes
+    let grapes = new Object();
+    grapes.name = "Grapes";
+    grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
+    grapes.days = [2];
+    grapes.info = function (){location.href ="fruits(1).html";ShowlistFruits("Grapes");};
+    grapes.hit = 0;
+    recms.push(grapes);
+    // citrus
+    let citrus = new Object();
+    citrus.name = "Citrus";
+    citrus.img = "citrus.gif";
+    citrus.days = [2];
+    citrus.info = function (){location.href ="fruits(1).html";ShowlistFruits("Citrus");};
+    citrus.hit = 0;
+    recms.push(citrus);
+    // generate
+    putItems();
+    putRecm();
+    putRecn();
+}
 
 // ----- general expiry -----
 function sortSelection(num){
@@ -33,6 +85,47 @@ function sortSelection(num){
 
 function daysTillExpiry(item){
     return (new Date(new Date(item.date).getFullYear(),new Date(item.date).getMonth(),new Date(item.date).getDate()+1) - new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/(1000*60*60*24);
+}
+
+function expiryTillDays(rec){
+    let a = 0;
+    for (let i = 0; i < rec.days.length; i++) {
+        a += rec.days[i];
+    }
+    let y = new Date().getFullYear(),
+        m = new Date().getMonth()+1,
+        d = new Date().getDate()+Math.round(a/rec.days.length),
+        t;
+    do{
+        t = false;
+        if((m==0||m==2||m==4||m==6||m==7||m==9||m==11) && d>31){
+            m++;
+            d -= 31;
+            t = true;
+        }else if((m==3||m==5||m==8||m==10) && d>30){
+            m++;
+            d -= 30;
+            t = true;
+        }else if(m==1 && (((y % 4 == 0) && (y % 100 != 0)) || (y % 400 == 0)) && d>29){
+            m++;
+            d -= 29;
+            t = true;
+        }else if(m==1 && d>28){
+            m++;
+            d -= 28;
+            t = true;
+        }
+        if(m>11){
+            y++;
+            m -= 12;
+            t = true;
+        }
+    }while(t);
+    if(m<10 && d<10)
+        return y+"-0"+m+"-0"+d;
+    else if(m<10)
+        return y+"-0"+m+"-"+d;
+    return y+"-"+m+"-"+d;
 }
 
 function addItem(item){
@@ -82,7 +175,7 @@ function addItem(item){
 }
 
 function putItems(){
-    let con = document.getElementById("expcon")
+    let con = document.getElementById("expcon");
     if (items.length==0)
         con.style.display = "none";
     else 
@@ -111,6 +204,14 @@ function removeItem(num){
     putItems();
 }
 
+function removExItem(){
+    for (let i = items.length-1; i >= 0; i--){
+        if(daysTillExpiry(items[i])<0){
+            items.splice(i,1);
+        }
+    }
+    putItems();
+}
 
 // ----- in expiry input -----
 function newItem(){
@@ -118,10 +219,11 @@ function newItem(){
     item.img = img.src;
     item.name = itemName.value;
     item.date = expirationDate.value;
-    item.notify = notifyMe.value;
+    item.noty = notifyMe.value;
 
     items.push(item);
     putItems();
+    evalRecn(item);
 
     img.src = "icon3.png";
     itemName.value = "";
@@ -129,35 +231,42 @@ function newItem(){
     notifyMe.value = 3;
 }
 
-function readURL(input) {
-
+function readURL(input){
     if (input.files && input.files[0]) {
-      var reader = new FileReader();
-  
-      reader.onload = function(e) {
-        $('#img').attr('src', e.target.result);
-      }
-  
-      reader.readAsDataURL(input.files[0]);
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#img').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
     }
-  }
+}
   
-  $("#file").change(function() {
+$("#file").change(function() {
     readURL(this);
-  });
+});
 
-// ----- recomended expiry -----
+function reclick(rec){
+    img.src = rec.img;
+    itemName.value = rec.name;
+    expirationDate.value = expiryTillDays(rec);
+}
 
-function makeRec(rec) {
+// ----- in recomended expiry -----
+function addRec(rec) {
     let ndiv = document.createElement("div"),
         ndiv2 = document.createElement("div"),
         nimg = document.createElement("img"),
-        np = document.createElement("p"),
-        nbutton = document.createElement("button");
-
-    recmcontainer.appendChild(ndiv); //change this
+        np = document.createElement("p");
+        
+    rec.con.appendChild(ndiv);
+    if (!(typeof rec.info === "undefined")){
+        let nbutton = document.createElement("button");
+        ndiv.appendChild(nbutton);
+        nbutton.id = "recmod";
+        nbutton.onclick = rec.info;
+        nbutton.innerHTML = "info>>";
+    }
     ndiv.appendChild(ndiv2);
-    ndiv.appendChild(nbutton);
     ndiv2.appendChild(np);
     ndiv2.appendChild(nimg);
 
@@ -165,7 +274,7 @@ function makeRec(rec) {
     ndiv.id = "imgcon";
     ndiv.style.marginRight = "15px";
 
-    // onclick of ndiv2
+    ndiv2.onclick = function(){reclick(rec);};
 
     np.className = "left recmod";
     np.id = "imgbtn";
@@ -174,19 +283,87 @@ function makeRec(rec) {
     nimg.className = "recmodi";
     nimg.id = "img";
     nimg.src = rec.img;
-
-    nbutton.id = "recmod";
-    // onclick of nbutton
-    nbutton.innerHTML = "info>>";
 }
-function startupGeneration(){ // TEST - not final
-    sorter = sortSelection(0);
 
-    let rec = new Object();
-    rec.name = "fruit";
-    rec.img = "icon3.png";
+function putRecm(){
+    let con = document.getElementById("rec");
 
-    for(let i=0; i<4; i++){
-        makeRec(rec);
+    recms.sort(function (a,b){
+        let r = b.hit - a.hit;
+        if(r==0){
+            let avg = [0,0];
+            for (let i = 0; i < a.days.length; i++)
+                avg[0] += a.days[i];
+            for (let i = 0; i < b.days.length; i++)
+                avg[1] += b.days[i];
+            r = avg[0]/a.days.length - avg[1]/b.days.length;
+        }if (r==0)
+            r = a.name.localeCompare(b.name);
+        return r;
+    });
+    con.innerHTML = "";
+
+    for(let i=0; i<recms.length; i++){
+        recms[i].con = con;
+        addRec(recms[i]);
     }
+}
+
+// ----- in recent expiry -----
+function putRecn(){
+    let con = document.getElementById("re"),
+        tit = document.getElementById("recn");
+    if (recns.length==0)
+        tit.style.display = "none";
+    else 
+        tit.style.display = "block";
+
+    con.innerHTML = "";
+
+    for(let i=0; i<recns.length; i++){
+        recns[i].con = con;
+        recns[i].unique=i;
+        addRec(recns[i]);
+    }
+
+    if(recns.length<=4)
+        con.style.height = "120px"
+    else
+        con.style.height = "240px"
+}
+
+function evalRecn(rec){
+    let trec = new Object();
+    trec.name = rec.name;
+    trec.img = rec.img;
+    trec.date = rec.date;
+
+    for(let i=0; i<recms.length; i++){
+        if(trec.img.lastIndexOf(recms[i].img) != -1 && trec.name == recms[i].name){
+            trec.days = recms[i].days;
+            if (daysTillExpiry(trec)>=0){
+                recms[i].days.push(daysTillExpiry(trec))
+            }
+            recms[i].hit++;
+            trec.info = recms[i].info;
+            putRecm()
+        }
+    }
+    for (let i = 0; i<recns.length; i++){
+        if(trec.img.lastIndexOf(recns[i].img) != -1 && trec.name == recns[i].name){
+            trec.days = recns[i].days;
+            recns.splice(recns[i].unique,1);
+        }
+    }
+    if (typeof trec.days === "undefined")
+        if(daysTillExpiry(trec)>=0)
+            trec.days = [daysTillExpiry(trec)];
+        else{
+            trec.days = [0];
+        }
+    else
+        trec.days.push(daysTillExpiry(trec));
+
+    recns.unshift(trec);
+    putRecn();
 }

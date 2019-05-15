@@ -67,12 +67,12 @@ overflow: hidden;}
 }
 #filler-para{
     height: 10%;
-}
+}/*
 form{
-    background: rgb(255,255,255,0.65);
-}
+    background: rgb(200,255,200,0.65);
+}*/
 .firebaseui-container{
-    background: rgb(50, 205, 50, 0.65) !important;
+    background: rgb(200, 255, 200, 0.65) !important;
 }
 #container{
     background-color: rgb(107,142,35,0.8);
@@ -416,8 +416,17 @@ nav ul li a {
 .firebaseui-tos{
     color: #000000 !important;
 }
-
-
+.firebaseui-card-content{
+    padding: 0px !important;
+}
+.firebaseui-card-footer firebaseui-provider-sign-in-footer{
+}
+.firebaseui-card-footer{
+    padding: 0 !important;
+}
+.firebaseui-idp-button{
+    margin-top: 10% !important;
+}
 
 @-webkit-keyframes roll {
 from { -webkit-transform: rotate(0deg) }

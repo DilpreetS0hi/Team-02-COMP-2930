@@ -11,6 +11,7 @@ html {
 body {
     margin: 0;
 }
+/*
 #body {
     left: 0px;
       margin: 0;
@@ -18,6 +19,7 @@ body {
       padding: 0;
       width: 100%;
       height: 100vh;
+    z-index: -1;
       font-family: Poppins;
       font-weight: 400;
       background: url(background-img.jpg);
@@ -25,14 +27,61 @@ body {
       background-position: center;
       background-size: cover;
 }
+*/
 
+
+.slideshow-container {
+      top:0px;
+    z-index: -1;
+    margin-top: 80px;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    background-position: center;
+      background-size: cover;
+  position: absolute;
+  margin: auto;
+}
+.mySlides {display: none;
+height: 100%;
+overflow: hidden;}
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+#filler{
+    height: 200vf;
+}
+#filler-para{
+    height: 10%;
+}
+form{
+    background: rgb(255,255,255,0.65);
+}
+.firebaseui-container{
+    background: rgb(50, 205, 50, 0.65) !important;
+}
 #container{
-    background: rgb(107,142,35,0.73);
+    background-color: rgb(107,142,35,0.8);
     width: 100%;
     height: 80px;
     top: 0px;
     left: 0px;
     position: fixed;
+    z-index: 999;
 }
 #logotext{
     position: fixed;
@@ -47,7 +96,6 @@ nav {
 
 .logo {
       float: left;
-      padding: 8px;
       margin-left: 0px;
       margin-top: 0px;
 }
@@ -86,7 +134,8 @@ nav ul li a {
       text-decoration: none;
       font-size: 24px;
       letter-spacing: 1.2px;
-      font-weight: 600;
+      font-weight: bold;
+      font: 16px Roboto,arial,sans-serif;
 }
 
 #marge{
@@ -231,8 +280,13 @@ nav ul li a {
       display: none;
 }
  .footer-distributed{
-	
-         background: rgba(107,142,35, 0.73);
+       z-index: 999;
+       height: 150px;
+     bottom: 0px;
+     position: fixed;
+	background: rgb(107,142,35); /* Fallback color */
+/*         background: rgba(107,142,35, 0.8);*/
+	box-shadow: 0 1px 1px 0 rgba(107,142,35, 0.8);
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
@@ -300,17 +354,21 @@ nav ul li a {
 	line-height:2;
 }
 .footer-distributed .footer-center p a{
-	color:  	#008000;
+	color: black;
 	text-decoration: none;
-    margin-left: -30px;
+    /* margin-left: -30px; */
     margin-top: 2px;;
 }
 /* Footer Right */
 .footer-distributed .footer-right{
-	width: 20%;
+      width: 20%;
+      text-overflow: ellipsis;
 }
 .footer-distributed .footer-company-about{
-	line-height: 20px;
+      line-height: 20px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
 	color:  ##567d46;
 	font-size: 15px;
 	font-weight: normal;
@@ -321,7 +379,7 @@ nav ul li a {
 	color:  #000;
 	font-size: 17px;
 	font-weight: bold;
-	margin-bottom: 20px;
+      margin-bottom: 20px;
 }
 .footer-distributed .footer-icons{
 	margin-top: 25px;
@@ -339,4 +397,18 @@ nav ul li a {
 	line-height: 35px;
 	margin-right: 3px;
 	margin-bottom: 5px;
+}
+#firebaseui-auth-container{
+      min-width: 450px;
+      position: fixed;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      bottom: 0px;
+      /* margin-right: 15% !important;
+    margin-top: 2% !important; */
+    
+}
+.firebaseui-tos{
+    color: #000000 !important;
 }
