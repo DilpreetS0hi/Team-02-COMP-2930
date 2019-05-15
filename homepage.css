@@ -291,7 +291,7 @@ nav ul li a {
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-	padding: 55px 50px;
+	padding: 22px 50px;
 	
 }
 .footer-distributed .footer-left,
@@ -305,12 +305,12 @@ nav ul li a {
 	width: 40%;
 }
 /* The company logo */
-.footer-distributed h1{
+.footer-distributed h2{
 	color:  		#006400;
-	font: normal 36px 'Cookie', cursive;
+	font: normal 27px 'Cookie', cursive;
 	margin: 0;
 }
-.footer-distributed h1 span{
+.footer-distributed h2 span{
 	color:  #000000;
     font-kerning: 12px;
 }
@@ -342,6 +342,10 @@ nav ul li a {
 	line-height: 38px;
 }
 .footer-distributed .footer-center p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 	display: inline-block;
 	color: #000;
 	vertical-align: middle;
@@ -399,7 +403,7 @@ nav ul li a {
 	margin-bottom: 5px;
 }
 #firebaseui-auth-container{
-      min-width: 450px;
+      
       position: fixed;
       top: 0px;
       right: 0px;
