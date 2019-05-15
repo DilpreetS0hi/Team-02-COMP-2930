@@ -4,18 +4,21 @@ let img = document.getElementById("img"),
     itemName = document.getElementById("itemName"),
     expirationDate = document.getElementById("expirationDate"),
     notifyMe = document.getElementById("notifyMe"),
-    expitems = document.getElementById("expitems");
+    expitems = document.getElementById("expitems"),
+    search = document.getElementById("search");
 // variables
 let items = [],
     sorter,
     recms = [],
+    sortm,
     recns = [];
 
 // ----- on start -----
 function startupGeneration(){
-    // DO NO CHANGE
+    // DO NO CHANGE - TOP
     sorter = sortSelection(0);
-    // DO NO CHANGE END
+    sortm = sortmSelection();
+    // DO NO CHANGE END - TOP
 
     // apple
     let apple = new Object();
@@ -24,6 +27,7 @@ function startupGeneration(){
     apple.days = [2];
     apple.info = function (){location.href ="fruits(1).html";ShowlistFruits("Apple");};
     apple.hit = 0;
+    apple.hide = false;
     recms.push(apple);
     // banana
     let banana = new Object();
@@ -32,6 +36,7 @@ function startupGeneration(){
     banana.days = [2];
     banana.info = function (){location.href ="fruits(1).html";ShowlistFruits("Banana");};
     banana.hit = 0;
+    banana.hide = false;
     recms.push(banana);
     // berries
     let berries = new Object();
@@ -40,6 +45,7 @@ function startupGeneration(){
     berries.days = [2];
     berries.info = function (){location.href ="fruits(1).html";ShowlistFruits("Berries");};
     berries.hit = 0;
+    berries.hide = false;
     recms.push(berries);
     // grapes
     let grapes = new Object();
@@ -48,6 +54,7 @@ function startupGeneration(){
     grapes.days = [2];
     grapes.info = function (){location.href ="fruits(1).html";ShowlistFruits("Grapes");};
     grapes.hit = 0;
+    grapes.hide = false;
     recms.push(grapes);
     // citrus
     let citrus = new Object();
@@ -56,11 +63,15 @@ function startupGeneration(){
     citrus.days = [2];
     citrus.info = function (){location.href ="fruits(1).html";ShowlistFruits("Citrus");};
     citrus.hit = 0;
+    citrus.hide = false;
     recms.push(citrus);
+
     // generate
+    // DO NO CHANGE - BOTTOM
     putItems();
     putRecm();
     putRecn();
+    // DO NO CHANGE END - BOTTOM
 }
 
 // ----- general expiry -----
@@ -80,6 +91,22 @@ function sortSelection(num){
                 r = daysTillExpiry(a) - daysTillExpiry(b);
             return r;
         }
+    }
+}
+
+function sortmSelection(){
+    return function (a,b){
+        let r = b.hit - a.hit;
+        if(r==0){
+            let avg = [0,0];
+            for (let i = 0; i < a.days.length; i++)
+                avg[0] += a.days[i];
+            for (let i = 0; i < b.days.length; i++)
+                avg[1] += b.days[i];
+            r = avg[0]/a.days.length - avg[1]/b.days.length;
+        }if (r==0)
+            r = a.name.localeCompare(b.name);
+        return r;
     }
 }
 
@@ -162,7 +189,7 @@ function addItem(item){
         else
             np3.innerHTML = -days + " Days Ago";
     }else{
-        np3.style.color = "yellow";
+        np3.style.color = "gold";
         if (days==1)
             np3.innerHTML = "Tomorrow";
         else if (days==0)
@@ -251,21 +278,49 @@ function reclick(rec){
     expirationDate.value = expiryTillDays(rec);
 }
 
-// ----- in recomended expiry -----
+// ----- search recomended expiry -----
+search.addEventListener("keyup", function () {
+    for(let i=0; i<recms.length; i++){
+        if((recms[i].name.toLowerCase()).indexOf(search.value.toLowerCase())==-1)
+            recms[i].hide = true;
+        else
+            recms[i].hide = false;
+    }
+    if(search.value == "")
+        sortm = sortmSelection();
+    else
+        sortm = function (a,b) {
+            let r = (a.name.toLowerCase()).indexOf(search.value.toLowerCase()) - (b.name.toLowerCase()).indexOf(search.value.toLowerCase());
+            if (r==0)
+                r = b.hit - a.hit;
+            if(r==0){
+                let avg = [0,0];
+                for (let i = 0; i < a.days.length; i++)
+                    avg[0] += a.days[i];
+                for (let i = 0; i < b.days.length; i++)
+                    avg[1] += b.days[i];
+                r = avg[0]/a.days.length - avg[1]/b.days.length;
+            }if (r==0)
+                r = a.name.localeCompare(b.name);
+            return r;
+        }
+    putRecm()
+});
+
+// ----- shared recomended & recent expiry -----
 function addRec(rec) {
+    if (rec.hide)
+        return;
+
     let ndiv = document.createElement("div"),
+        nbutton = document.createElement("button");
         ndiv2 = document.createElement("div"),
         nimg = document.createElement("img"),
         np = document.createElement("p");
-        
+
     rec.con.appendChild(ndiv);
-    if (!(typeof rec.info === "undefined")){
-        let nbutton = document.createElement("button");
-        ndiv.appendChild(nbutton);
-        nbutton.id = "recmod";
-        nbutton.onclick = rec.info;
-        nbutton.innerHTML = "info>>";
-    }
+    ndiv.appendChild(nbutton);
+    
     ndiv.appendChild(ndiv2);
     ndiv2.appendChild(np);
     ndiv2.appendChild(nimg);
@@ -273,6 +328,15 @@ function addRec(rec) {
     ndiv.className = "left qmarg";
     ndiv.id = "imgcon";
     ndiv.style.marginRight = "15px";
+
+    nbutton.id = "recmod";
+    nbutton.innerHTML = "info>>";
+    if (!(typeof rec.info === "undefined")){
+        nbutton.onclick = rec.info;
+    }
+    else{
+        nbutton.style.visibility = "hidden";
+    }
 
     ndiv2.onclick = function(){reclick(rec);};
 
@@ -285,22 +349,11 @@ function addRec(rec) {
     nimg.src = rec.img;
 }
 
+// ----- in recomended expiry -----
 function putRecm(){
     let con = document.getElementById("rec");
 
-    recms.sort(function (a,b){
-        let r = b.hit - a.hit;
-        if(r==0){
-            let avg = [0,0];
-            for (let i = 0; i < a.days.length; i++)
-                avg[0] += a.days[i];
-            for (let i = 0; i < b.days.length; i++)
-                avg[1] += b.days[i];
-            r = avg[0]/a.days.length - avg[1]/b.days.length;
-        }if (r==0)
-            r = a.name.localeCompare(b.name);
-        return r;
-    });
+    recms.sort(sortm);
     con.innerHTML = "";
 
     for(let i=0; i<recms.length; i++){
@@ -320,6 +373,8 @@ function putRecn(){
 
     con.innerHTML = "";
 
+    if(recns.length>8)
+        recns.length = 8;
     for(let i=0; i<recns.length; i++){
         recns[i].con = con;
         recns[i].unique=i;
