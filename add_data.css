@@ -414,3 +414,16 @@ nav ul li a {
 .firebaseui-tos{
     color: #000000 !important;
 }
+#nameid{
+    margin-left: 5%;
+}
+#emailid{
+    color: lightgray;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+#contactid{
+    color: lightgray;
+    float: right;
+}
