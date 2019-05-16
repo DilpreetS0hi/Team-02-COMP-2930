@@ -19,51 +19,46 @@ function startupGeneration(){
     sorter = sortSelection(0);
     sortm = sortmSelection();
     // DO NO CHANGE END - TOP
-
+console.log(new Date("2019-02-03"));
     // apple
     let apple = new Object();
     apple.name = "Apple";
     apple.img = "apple.gif";
-    apple.days = [2];
-    apple.info = function (){location.href ="fruits(1).html";ShowlistFruits("Apple");};
+    apple.days = [14];
+    apple.info = function (){location.href ="fruits(1).html";};
     apple.hit = 0;
-    apple.hide = false;
     recms.push(apple);
     // banana
     let banana = new Object();
     banana.name = "Banana";
     banana.img = "banana1.gif";
     banana.days = [2];
-    banana.info = function (){location.href ="fruits(1).html";ShowlistFruits("Banana");};
+    banana.info = function (){location.href ="fruits(1).html";};
     banana.hit = 0;
-    banana.hide = false;
     recms.push(banana);
     // berries
     let berries = new Object();
     berries.name = "Berries";
     berries.img = "berries1.gif";
     berries.days = [2];
-    berries.info = function (){location.href ="fruits(1).html";ShowlistFruits("Berries");};
+    berries.info = function (){location.href ="fruits(1).html";};
     berries.hit = 0;
-    berries.hide = false;
     recms.push(berries);
     // grapes
     let grapes = new Object();
     grapes.name = "Grapes";
     grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
-    grapes.days = [2];
-    grapes.info = function (){location.href ="fruits(1).html";ShowlistFruits("Grapes");};
+    grapes.days = [3];
+    grapes.info = function (){location.href ="fruits(1).html";};
     grapes.hit = 0;
-    grapes.hide = false;
     recms.push(grapes);
     // citrus
     let citrus = new Object();
     citrus.name = "Citrus";
     citrus.img = "citrus.gif";
     citrus.days = [2];
-    citrus.info = function (){location.href ="fruits(1).html";ShowlistFruits("Citrus");};
+    citrus.info = function (){location.href ="fruits(1).html";};
     citrus.hit = 0;
-    citrus.hide = false;
     recms.push(citrus);
 
     // generate
@@ -111,7 +106,7 @@ function sortmSelection(){
 }
 
 function daysTillExpiry(item){
-    return (new Date(new Date(item.date).getFullYear(),new Date(item.date).getMonth(),new Date(item.date).getDate()+1) - new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/(1000*60*60*24);
+    return Math.round((new Date(new Date(item.date).getFullYear(),new Date(item.date).getMonth(),new Date(item.date).getDate()+1) - new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/(1000*60*60*24));
 }
 
 function expiryTillDays(rec){
@@ -401,7 +396,6 @@ function evalRecn(rec){
             }
             recms[i].hit++;
             trec.info = recms[i].info;
-            putRecm()
         }
     }
     for (let i = 0; i<recns.length; i++){
@@ -410,15 +404,18 @@ function evalRecn(rec){
             recns.splice(recns[i].unique,1);
         }
     }
-    if (typeof trec.days === "undefined")
+    if (typeof trec.days === "undefined"){
         if(daysTillExpiry(trec)>=0)
             trec.days = [daysTillExpiry(trec)];
         else{
             trec.days = [0];
         }
-    else
+        trec.hit = 1;
+        recms.push(trec);
+    }else
         trec.days.push(daysTillExpiry(trec));
 
+    putRecm();
     recns.unshift(trec);
     putRecn();
 }
