@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>No Food Wastage</title>
-      <link rel="stylesheet" href="suggestion.css">
+      <link rel="stylesheet" href="fruits.css">
     <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -50,9 +50,9 @@ body {
         }
 
 /* DEMO-SPECIFIC STYLES */
-.typewriter h1 {
-  color: #000;
+        #apple{color: #000;
     margin-left: 100px;
+            margin-bottom: -25px;
   font-family: monospace;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: .15em solid orange; /* The typwriter cursor */
@@ -61,14 +61,68 @@ body {
   animation: 
     typing 1.5s steps(30, end),
     blink-caret .5s step-end infinite;
-    margin-top: -10px;
-    margin-bottom: 80px;
+     font-size: 2em;}
+        
+        #banana{color: #000;
+    margin-left: 400px;
+     margin-bottom: -35px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+     font-size: 2em;}
+        
+        #berries{color: #000;
+    margin-left: 700px;
+    margin-bottom: -35px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+     font-size: 2em;}
+        
+        #grapes{color: #000;
+    margin-left: 1030px;
+/*  margin-bottom: 0px;*/
+            margin-top: 5px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+     font-size: 2em;}
+        
+        #citrus {
+  color: #000;
+    margin-left: 1320px;
+            margin-top: -30px;
+            margin-bottom: 50px;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+     font-size: 2em;
 }
 
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 20% }
 }
 
 /* The typewriter cursor effect */
@@ -81,6 +135,207 @@ body {
             border-color: white;
             margin-left: 5%;
         }
+        
+        @media only screen and (max-width: 840px){
+            #container{
+                width: 840px;
+            }
+            .footer-distributed{
+                width: 839px;
+            }
+            #content{
+                
+            }
+            .nav-wrapper{
+                
+            }
+            .nav-btn{
+                position: absolute;
+            }
+            #fruits{
+                    margin-left: 300px;
+    height: 253px;
+    width: 253px;
+                margin-top: 44px;
+            }
+            
+            
+            #apple{
+                font-size: 18px;
+    margin-left: 78px;
+            }
+            #banana{
+                font-size: 18px;
+                margin-left: 221px;
+    margin-top: 6px;
+            }
+            #berries{
+                    font-size: 18px;
+    margin-left: 387px;
+    margin-top: 12.5px;
+            }
+            #grapes{
+                    margin-left: 566px;
+    font-size: 18px;
+    
+    margin-top: 15px;
+            }
+            #citrus{
+                margin-left: 732px;
+    font-size: 18px;
+    margin-top: -22px;
+                }
+            #c1{
+                
+            }
+            .row img{
+                    height: 120px;
+    width: 120px;
+                    margin: 0px;
+            }
+        }
+        
+        @media only screen and (max-width: 600px){
+            .row img{
+                height: 100px;
+                width: 100px;
+            }
+          
+            #container{
+                   width: 600px;
+            }
+            
+            .footer-distributed{
+                width: 600px;
+            }
+            
+            
+            #fruits{
+                  height: 225px;
+    width: 225px;
+    margin-left: 191px;
+                margin-top: 72px;
+
+            }
+            
+            
+            #apple{
+                 font-size: 16px;
+                 margin-left: 76px;
+            }
+            #banana{
+                font-size: 16px;
+                 margin-left: 177px;
+    margin-top: 6px; 
+            }
+            
+            #berries{
+                font-size: 16px;
+                      margin-left: 279px;
+                margin-top: 16px;
+            }
+            
+            #grapes{
+                font-size: 16px;
+                 margin-left: 388px;
+    margin-top: 17px;
+            }
+            
+            #citrus{
+                font-size: 16px;
+                  margin-left: 491px;
+    margin-top: -19px;
+                }
+            
+            #c1{
+                    margin-left: 51px;
+    margin-top: 17px;
+            }
+            #c5{
+                margin: 0px;
+            }
+            #c2{
+           margin: 0px;
+            }
+            #c3{
+                
+        margin: 0px;
+            }
+            #c4{
+                    margin: 0px;
+                }   
+        }
+        
+         @media only screen and (max-width: 480px){
+            .row img{
+                height: 100px;
+                width: 100px;
+            }
+          
+            #container{
+                   width: 480px;
+            }
+            
+            .footer-distributed{
+                width: 480px;
+                height: 170px;
+            }
+            
+            
+            #fruits{
+                  height: 210px;
+    width: 210px;
+    margin-left: 129px;
+    margin-top: 93px;
+
+            }
+            
+            
+            #apple{
+                 font-size: 14px;
+    margin-left: 32px;
+            }
+            #banana{
+                font-size: 14px;
+    margin-left: 117px;
+    margin-top: 9px; 
+            }
+            
+            #berries{
+                font-size: 14px;
+    margin-left: 204px;
+    margin-top: 19px;
+            }
+            
+            #grapes{
+                font-size: 14px;
+    margin-left: 302px;
+    margin-top: 19px;
+            }
+            
+            #citrus{
+                    font-size: 14px;
+    margin-left: 385px;
+    margin-top: -16px;
+                }
+            
+            #c1{
+                        margin-left: 1px;
+    margin-top: 10px;
+    margin-right: -10px;
+            }
+            #c5{
+                margin-left: -18px;
+            }
+            #c2{
+           margin-right: 8px;
+            }
+            #c3{
+                    margin-left: -25px;
+            }
+            #c4{
+                        margin-left: -13px;
+                }
         
     </style>
 
@@ -95,9 +350,9 @@ body {
                         <i></i>
                         <i></i>
                   </label>
-                  <div class="logo">
+                   <div class="logo">
                         <a href="#">
-                            <img src="icon3.png" alt="logo" height="60px" bottom="10px"/>
+                            <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
                             <div id="logotext"></div>
                       </a>
                   </div>
@@ -117,19 +372,21 @@ body {
             <img id="c1" src="apple.gif" itemprop="apple">
             
             <img id="c2" src="banana1.gif" itemprop="banana">
-            
+             
             <img id="c3" src="berries1.gif" itemprop="berries">
   
             <img id="c4" src="SardonicExcellentIraniangroundjay-size_restricted.gif" itemprop="grapes">
             
             <img id="c5" src="citrus.gif" itemprop="citrus">
 </div>
-        
-        <div class="typewriter">
-  <h1>&nbsp;&nbsp;Apple  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Banana &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Berries &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grapes &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Citrus</h1>
-            
-</div>
+      
+        <div id="apple">Apple</div>
+        <div id="banana">Banana</div>
+        <div id="berries">Berries</div>
+        <div id="grapes">Grapes</div>
+        <div id="citrus">Citrus</div>        
         <div id="content"></div>
+          
         
         <script>
         var count = 0;
