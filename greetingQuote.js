@@ -1,7 +1,5 @@
 (function(){
 
-    var firebase = app_firebase;
-    
     var banner = document.getElementById("banner");
     var quote = document.getElementById("quote");
     var userName = " ";
