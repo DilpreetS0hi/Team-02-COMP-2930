@@ -43,16 +43,27 @@ input[type=text], select, textarea{
 }
         
         div#ex1 {
-  margin-top: -345px;
+  margin-top: -383px;
     float: right;
     background-color: rgb(221, 222, 218);
-    width: 646px;
+    width: 850px;
     height: 92%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
+            word-wrap: break-word;
     margin-right: 13px;
 
 }
-
+        #submit{
+        margin-left: 30%;
+        margin-top: 0.7%;
+        }
+        #citySubmitButton{
+            
+            height: 50px;
+            width: 90px;
+            font-size: 20px;
+        }
 /* Style the label to display next to the inputs */
 label {
   padding: 12px 12px 12px 0;
@@ -180,7 +191,7 @@ input[type=submit] {
         <textarea id="Post" name="Post" required="required" placeholder="Write something.." style="height:200px"></textarea>
       </div>
     </div>
-    <div class="row">
+    <div class="row" id="submit">
         <button onclick="submitCityClick(); return false;" id="citySubmitButton">Submit</button>
     </div>
       <div id="ex1"></div>
@@ -222,6 +233,10 @@ var names;
 var citySubmitButton = document.getElementById('citySubmitButton');
         function submitCityClick(){
   var firebaseRef = firebase.database().ref();  
+    var d = new Date();
+    var months = ["January","February","March","April","May","June","July","August",
+                  "September","October","November","December"];
+    var date = d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear();
     firebase.auth().onAuthStateChanged(function(user){
     	if (user){
     var user1 =  user.email;
@@ -232,7 +247,8 @@ var citySubmitButton = document.getElementById('citySubmitButton');
        email: user1,
         contact: user2,
         post: user3,
-        name: names
+        name: names,
+        dates: date
     })
         }})
     document.getElementById('Contact').innerHTML="";
@@ -243,33 +259,47 @@ var citySubmitButton = document.getElementById('citySubmitButton');
 ref.on("child_added", function(snapshot) {
     var contact = snapshot.val().contact;
     var email = snapshot.val().email;
-    var post = snapshot.val().post;
+    var posts = snapshot.val().post;
     var name = snapshot.val().name;
     var namediv = document.createElement('div');
     namediv.innerHTML=name;
     namediv.style.fontSize = "35px";
+    namediv.style.marginLeft = '2%';
     namediv.style.color = getRandomColor();
     var contactdiv = document.createElement('div');
     contactdiv.innerHTML=contact;
     contactdiv.style.color="grey";
-    contactdiv.style.marginTop= "-7%";
+    contactdiv.style.marginTop= "-4%";
     contactdiv.style.marginRight= "2%";
     contactdiv.style.float="right";
     var emaildiv = document.createElement('div');
     emaildiv.style.color="grey";
     emaildiv.style.float="right";
-    emaildiv.style.marginTop= "-4.5%";
+    emaildiv.style.marginTop= "-1.5%";
     emaildiv.style.marginRight= "2%";
     emaildiv.innerHTML=email;
     var postdiv = document.createElement('div');
-    postdiv.innerHTML=post;
+    postdiv.innerHTML=posts;
+    postdiv.style.margin = "2.5%";
     var post = document.createElement('div');
     post.setAttribute('class','posts');
     post.style.background = 'white';
-    post.style.margin = '1.5%';
+    post.style.marginTop = '2%';
+    post.style.marginLeft = '2%';
+    post.style.marginRight = "2%";
     post.style.borderRadius = '10px';
+    var datediv = document.createElement('div');
+    datediv.innerHTML = snapshot.val().dates;
+    datediv.style.color = "grey";
+    datediv.style.marginTop = "-3%";
+    datediv.style.marginRight = "2.5%";
+    datediv.style.float = "right";
+    var linebreak = document.createElement("br");
+    var separatediv = document.createElement('div');
+    separatediv.append(postdiv, linebreak, datediv);
+    separatediv.setAttribute('class','separate');
     document.getElementById('ex1').prepend(post);
-    post.append(namediv,contactdiv, emaildiv, postdiv);
+    post.append(namediv,contactdiv, emaildiv, separatediv);
     
 }, function (error) {
    console.log("Error: " + error.code);
