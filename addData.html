@@ -45,7 +45,7 @@ input[type=text], select, textarea{
         div#ex1 {
   margin-top: -345px;
     float: right;
-    background-color: lightblue;
+    background-color: rgb(221, 222, 218);
     width: 646px;
     height: 92%;
     overflow: scroll;
@@ -169,7 +169,7 @@ input[type=submit] {
         <label for="Contact">Contact</label>
       </div>
       <div class="col-75">
-        <input type="number" id="Contact" name="Contact" placeholder="Your number...">
+        <input type="number" id="Contact" name="Contact" required="required" placeholder="Your number...">
       </div>
     </div>
     <div class="row">
@@ -177,7 +177,7 @@ input[type=submit] {
         <label for="Post">Post</label>
       </div>
       <div class="col-75">
-        <textarea id="Post" name="Post" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="Post" name="Post" required="required" placeholder="Write something.." style="height:200px"></textarea>
       </div>
     </div>
     <div class="row">
@@ -220,7 +220,7 @@ var contact = document.getElementById('Contact');
 var post = document.getElementById('Post');
 var names;
 var citySubmitButton = document.getElementById('citySubmitButton');
-function submitCityClick() {
+        function submitCityClick(){
   var firebaseRef = firebase.database().ref();  
     firebase.auth().onAuthStateChanged(function(user){
     	if (user){
@@ -235,6 +235,7 @@ function submitCityClick() {
         name: names
     })
         }})
+    document.getElementById('Contact').innerHTML="";
         };
         
     var ref = firebase.database().ref('Post');
@@ -246,35 +247,44 @@ ref.on("child_added", function(snapshot) {
     var name = snapshot.val().name;
     var namediv = document.createElement('div');
     namediv.innerHTML=name;
+    namediv.style.fontSize = "35px";
+    namediv.style.color = getRandomColor();
     var contactdiv = document.createElement('div');
     contactdiv.innerHTML=contact;
+    contactdiv.style.color="grey";
+    contactdiv.style.marginTop= "-7%";
+    contactdiv.style.marginRight= "2%";
+    contactdiv.style.float="right";
     var emaildiv = document.createElement('div');
+    emaildiv.style.color="grey";
+    emaildiv.style.float="right";
+    emaildiv.style.marginTop= "-4.5%";
+    emaildiv.style.marginRight= "2%";
     emaildiv.innerHTML=email;
     var postdiv = document.createElement('div');
     postdiv.innerHTML=post;
-    document.getElementById('ex1').append(namediv,contactdiv, emaildiv, postdiv);
+    var post = document.createElement('div');
+    post.setAttribute('class','posts');
+    post.style.background = 'white';
+    post.style.margin = '1.5%';
+    post.style.borderRadius = '10px';
+    document.getElementById('ex1').prepend(post);
+    post.append(namediv,contactdiv, emaildiv, postdiv);
     
 }, function (error) {
    console.log("Error: " + error.code);
 });
+        function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+            console.log(color);
+}
         
-    </script>
-    
-    
-    
-        // Initialize the FirebaseUI Widget using Firebase.
-/*        var ui = new firebaseui.auth.AuthUI(firebase.auth());*/
-
-
-
-
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
-     Your app may use that space for branding, controls and other customizations.-->
-
-
-
-
-    <script>
+        
         var uiConfig = {
             callbacks: {
                 signInSuccessWithAuthResult: function(authResult, redirectUrl) {
@@ -305,8 +315,6 @@ ref.on("child_added", function(snapshot) {
         };
 
     </script>
-        // The start method will wait until the DOM is loaded.
-        //ui.start('#firebaseui-auth-container', uiConfig);
 
         
     
