@@ -13,13 +13,74 @@ let items = [],
     sortm,
     recns = [];
 
+// ----- database -----
+// initialize firebase
+let config = {
+    apiKey: "AIzaSyC3rK5fG2PwqAtjTQ2FhOCyzb4dIcXN2_0",
+    authDomain: "project-2930.firebaseapp.com",
+    databaseURL: "https://project-2930.firebaseio.com",
+    projectId: "project-2930",
+    storageBucket: "project-2930.appspot.com",
+    messagingSenderId: "16612303844"
+  };
+firebase.initializeApp(config);
+
+function insertDBrec(rec, t){
+    let firebaseRef = firebase.database().ref();  
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user){
+            console.log("hello"); //////////////
+            firebaseRef.child("users/rec").push().set({
+                time: t,
+                name:  rec.name,
+                img: rec.img,
+                days: rec.days,
+                info: rec.info,
+                hit: rec.hit
+            });
+        }
+    });
+}
+
+var refrec = firebase.database().ref("users/rec");
+refrec.on("child_added", function(snapshot) {
+    console.log(snapshot.val());
+
+}, function (error) {
+    console.log("Error: " + error.code);
+});
+
+function insertDBitem(rec){
+    let firebaseRef = firebase.database().ref();  
+    firebase.auth().onAuthStateChanged(function(user){
+        if (user){
+            console.log("hello"); //////////////
+            firebaseRef.child("users/expiry").push().set({
+                name: rec.name,
+                img: rec.img,
+                days: rec.date,
+                noty: rec.noty
+            });
+        }
+    });
+}
+
+var refitem = firebase.database().ref("users/expiry");
+refitem.on("child_added", function(snapshot) {
+    console.log(snapshot.val());
+
+}, function (error) {
+    console.log("Error: " + error.code);
+});
+
 // ----- on start -----
 function startupGeneration(){
     // DO NO CHANGE - TOP
     sorter = sortSelection(0);
     sortm = sortmSelection();
     // DO NO CHANGE END - TOP
-console.log(new Date("2019-02-03"));
+
+    // TEST CODE
     // apple
     let apple = new Object();
     apple.name = "Apple";
@@ -60,6 +121,85 @@ console.log(new Date("2019-02-03"));
     citrus.info = function (){location.href ="fruits(1).html";};
     citrus.hit = 0;
     recms.push(citrus);
+    // TEST CODE END
+
+    // TO BE IMPLEMENTED
+    /* PUT CODE TO VERIFY USER HAS ELEMENTS IN DB
+    
+    
+    
+    */
+    if(!true){
+        // apple
+        let apple = new Object();
+        apple.name = "Apple";
+        apple.img = "apple.gif";
+        apple.days = [14];
+        apple.info = "fruits(1).html";
+        apple.hit = 0;
+        insertDBrec(apple, -1);
+
+        // banana
+        let banana = new Object();
+        banana.name = "Banana";
+        banana.img = "banana1.gif";
+        banana.days = [2];
+        banana.info = "fruits(1).html";
+        banana.hit = 0;
+        insertDBrec(banana, -1);
+
+        // berries
+        let berries = new Object();
+        berries.name = "Berries";
+        berries.img = "berries1.gif";
+        berries.days = [2];
+        berries.info = "fruits(1).html";
+        berries.hit = 0;
+        insertDBrec(berries, -1);
+
+        // grapes
+        let grapes = new Object();
+        grapes.name = "Grapes";
+        grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
+        grapes.days = [3];
+        grapes.info = "fruits(1).html";
+        grapes.hit = 0;
+        insertDBrec(grapes, -1);
+
+        // citrus
+        let citrus = new Object();
+        citrus.name = "Citrus";
+        citrus.img = "citrus.gif";
+        citrus.days = [2];
+        citrus.info = "fruits(1).html";
+        citrus.hit = 0;
+        insertDBrec(citrus, -1);
+    }
+    if(!true){ /////// temporary
+    /* PUT CODE TO GET ARRAY OF RESULTS
+    
+    
+    
+    */
+    for (let i = 0; i < result.length; i++){
+        let rec = new Object();
+        
+        rec.name = result[i].val().name;
+        rec.img = result[i].val().img;
+        rec.days = result[i].val().days;
+        rec.info = function (){location.href = result[i].val().info;};
+        rec.hit = result[i].val().hit;
+        recms.push(rec);
+        if(result[i].val().time != -1){
+            rec.time = result[i].val().time;
+            recns.push(rec);
+        }
+    }
+    recns.sort(function (a,b) {
+        return b.time - a.time;
+    });
+    }
+    // TO BE IMPLEMENTED END
 
     // generate
     // DO NO CHANGE - BOTTOM
@@ -376,10 +516,12 @@ function putRecn(){
         addRec(recns[i]);
     }
 
-    if(recns.length<=4)
-        con.style.height = "120px"
+    if (recns.length==0)
+        con.style.height = "0px";
+    else if(recns.length<=4)
+        con.style.height = "120px";
     else
-        con.style.height = "240px"
+        con.style.height = "240px";
 }
 
 function evalRecn(rec){
