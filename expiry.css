@@ -104,9 +104,10 @@ input{
     min-width: 260px;
 }
 #search{
-    margin-left: 1em;
-    margin-block-start: 1em;
+    margin-left: .5em;
+    margin-block-start: 1.2em;
     margin-block-end: 1em;
+    width: 168px;
 }
 .recmod{
     padding: 2px;
@@ -126,3 +127,27 @@ input{
     font: 14px Roboto,arial,sans-serif;
     border: 1px solid;
 }
+@media only screen and (max-width: 888px) {
+    #need{
+        position: relative;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        float: none;
+    }
+    #expage{
+        left: 0px;
+        right: 0px;
+    }
+    #re{
+        margin-bottom: 4px;
+    }
+    #recmcontainer{
+        width: 565px;
+        position: relative;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+  }

@@ -516,10 +516,12 @@ function putRecn(){
         addRec(recns[i]);
     }
 
-    if(recns.length<=4)
-        con.style.height = "120px"
+    if (recns.length==0)
+        con.style.height = "0px";
+    else if(recns.length<=4)
+        con.style.height = "120px";
     else
-        con.style.height = "240px"
+        con.style.height = "240px";
 }
 
 function evalRecn(rec){
