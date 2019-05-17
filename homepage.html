@@ -14,7 +14,7 @@
 
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
     <script src="setup_firebase_yourname.js"></script>
-    
+    <script src="homepage.js"></script>
     <script type="text/javascript">
 var firstTime = true;
 var message = "try again!";
@@ -107,7 +107,6 @@ function MouseoverMessageInAlertBox()
       slides[slideIndex-1].style.display = "block";
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
-
     </script>
     <script>
         // The start method will wait until the DOM is loaded.
@@ -117,7 +116,7 @@ function MouseoverMessageInAlertBox()
       <div id="container">
             <nav>
                   <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn">
+                  <label for="nav" class="nav-btn" onclick="dis()">
                         <i></i>
                         <i></i>
                         <i></i>
@@ -128,7 +127,7 @@ function MouseoverMessageInAlertBox()
                             <div id="logotext"></div>
                       </a>
                   </div>
-                  <div class="nav-wrapper">
+                  <div class="nav-wrapper" id="i-need-you">
                         <ul>
                               <li><a href="#">Home</a></li>
                               <li><a href="#">Expiry</a></li>
