@@ -14,23 +14,20 @@ let items = [],
     recns = [];
 
 // ----- database -----
-// initialize firebase
-let config = {
-    apiKey: "AIzaSyC3rK5fG2PwqAtjTQ2FhOCyzb4dIcXN2_0",
-    authDomain: "project-2930.firebaseapp.com",
-    databaseURL: "https://project-2930.firebaseio.com",
-    projectId: "project-2930",
-    storageBucket: "project-2930.appspot.com",
-    messagingSenderId: "16612303844"
-  };
-firebase.initializeApp(config);
+function find() {
+    firebase.auth().onAuthStateChanged(function(user){
+    if (user){
+          var userName=user.displayName;
+        console.log("Hello "+ userName);
+    }
+});
+}
 
 function insertDBrec(rec, t){
     let firebaseRef = firebase.database().ref();  
     firebase.auth().onAuthStateChanged(function(user){
         if (user){
-            console.log("hello"); //////////////
-            firebaseRef.child("users/rec").push().set({
+            firebaseRef.child("rec/"+ user.email.split(".")[0]).push().set({
                 time: t,
                 name:  rec.name,
                 img: rec.img,
@@ -42,94 +39,70 @@ function insertDBrec(rec, t){
     });
 }
 
-var refrec = firebase.database().ref("users/rec");
-refrec.on("child_added", function(snapshot) {
-    console.log(snapshot.val());
-
-}, function (error) {
-    console.log("Error: " + error.code);
-});
-
-function insertDBitem(rec){
+function insertDBitem(item){
     let firebaseRef = firebase.database().ref();  
     firebase.auth().onAuthStateChanged(function(user){
         if (user){
-            console.log("hello"); //////////////
-            firebaseRef.child("users/expiry").push().set({
-                name: rec.name,
-                img: rec.img,
-                days: rec.date,
-                noty: rec.noty
+            firebaseRef.child("item/"+ user.email.split(".")[0]).push().set({
+                time: item.time,
+                name: item.name,
+                img: item.img,
+                date: item.date,
+                noty: item.noty
             });
         }
     });
 }
 
-var refitem = firebase.database().ref("users/expiry");
-refitem.on("child_added", function(snapshot) {
-    console.log(snapshot.val());
-
-}, function (error) {
-    console.log("Error: " + error.code);
-});
-
 // ----- on start -----
-function startupGeneration(){
+firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+        let r3c = firebase.database().ref("rec/"+ user.email.split(".")[0]),
+            it3m = firebase.database().ref("item/"+ user.email.split(".")[0]);
+        
+        r3c.on("child_added", function(snapshot){
+            let rec = new Object();
+            rec.name = snapshot.val().name;
+            rec.img = snapshot.val().img;
+            rec.days = snapshot.val().days;
+            rec.info = snapshot.val().info;
+            rec.hit = snapshot.val().hit;
+            recms.push(rec);
+            if(snapshot.val().time != -1){
+                rec.time = snapshot.val().time;
+                recns.push(rec);
+            }
+        });
+        it3m.on("child_added", function(snapshot){
+            let item = new Object();
+            item.name = snapshot.val().name;
+            item.img = snapshot.val().img;
+            item.date = snapshot.val().date;
+            item.time = snapshot.val().time;
+            items.push(rec);
+        });
+
+    }else
+        window.location.href = 'homepage.html';
+    });
+
+
+async function startupGeneration(){
     // DO NO CHANGE - TOP
     sorter = sortSelection(0);
     sortm = sortmSelection();
     // DO NO CHANGE END - TOP
 
-    // TEST CODE
-    // apple
-    let apple = new Object();
-    apple.name = "Apple";
-    apple.img = "apple.gif";
-    apple.days = [14];
-    apple.info = function (){location.href ="fruits(1).html";};
-    apple.hit = 0;
-    recms.push(apple);
-    // banana
-    let banana = new Object();
-    banana.name = "Banana";
-    banana.img = "banana1.gif";
-    banana.days = [2];
-    banana.info = function (){location.href ="fruits(1).html";};
-    banana.hit = 0;
-    recms.push(banana);
-    // berries
-    let berries = new Object();
-    berries.name = "Berries";
-    berries.img = "berries1.gif";
-    berries.days = [2];
-    berries.info = function (){location.href ="fruits(1).html";};
-    berries.hit = 0;
-    recms.push(berries);
-    // grapes
-    let grapes = new Object();
-    grapes.name = "Grapes";
-    grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
-    grapes.days = [3];
-    grapes.info = function (){location.href ="fruits(1).html";};
-    grapes.hit = 0;
-    recms.push(grapes);
-    // citrus
-    let citrus = new Object();
-    citrus.name = "Citrus";
-    citrus.img = "citrus.gif";
-    citrus.days = [2];
-    citrus.info = function (){location.href ="fruits(1).html";};
-    citrus.hit = 0;
-    recms.push(citrus);
-    // TEST CODE END
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    await sleep(4100);
 
-    // TO BE IMPLEMENTED
-    /* PUT CODE TO VERIFY USER HAS ELEMENTS IN DB
-    
-    
-    
-    */
-    if(!true){
+    recns.sort(function (a,b) {
+        return b.time - a.time;
+    });
+
+    if(recms.length==0){
         // apple
         let apple = new Object();
         apple.name = "Apple";
@@ -138,7 +111,8 @@ function startupGeneration(){
         apple.info = "fruits(1).html";
         apple.hit = 0;
         insertDBrec(apple, -1);
-
+        recms.push(apple);
+            
         // banana
         let banana = new Object();
         banana.name = "Banana";
@@ -147,7 +121,8 @@ function startupGeneration(){
         banana.info = "fruits(1).html";
         banana.hit = 0;
         insertDBrec(banana, -1);
-
+        recms.push(banana);
+            
         // berries
         let berries = new Object();
         berries.name = "Berries";
@@ -156,7 +131,8 @@ function startupGeneration(){
         berries.info = "fruits(1).html";
         berries.hit = 0;
         insertDBrec(berries, -1);
-
+        recms.push(berries);
+            
         // grapes
         let grapes = new Object();
         grapes.name = "Grapes";
@@ -165,7 +141,8 @@ function startupGeneration(){
         grapes.info = "fruits(1).html";
         grapes.hit = 0;
         insertDBrec(grapes, -1);
-
+        recms.push(grapes);
+            
         // citrus
         let citrus = new Object();
         citrus.name = "Citrus";
@@ -174,33 +151,9 @@ function startupGeneration(){
         citrus.info = "fruits(1).html";
         citrus.hit = 0;
         insertDBrec(citrus, -1);
+        recms.push(citrus);
     }
-    if(!true){ /////// temporary
-    /* PUT CODE TO GET ARRAY OF RESULTS
-    
-    
-    
-    */
-    for (let i = 0; i < result.length; i++){
-        let rec = new Object();
-        
-        rec.name = result[i].val().name;
-        rec.img = result[i].val().img;
-        rec.days = result[i].val().days;
-        rec.info = function (){location.href = result[i].val().info;};
-        rec.hit = result[i].val().hit;
-        recms.push(rec);
-        if(result[i].val().time != -1){
-            rec.time = result[i].val().time;
-            recns.push(rec);
-        }
-    }
-    recns.sort(function (a,b) {
-        return b.time - a.time;
-    });
-    }
-    // TO BE IMPLEMENTED END
-
+            
     // generate
     // DO NO CHANGE - BOTTOM
     putItems();
@@ -382,7 +335,9 @@ function newItem(){
     item.name = itemName.value;
     item.date = expirationDate.value;
     item.noty = notifyMe.value;
-
+    item.time = (new Date()).getTime();
+    
+    insertDBitem(item)
     items.push(item);
     putItems();
     evalRecn(item);
@@ -466,12 +421,10 @@ function addRec(rec) {
 
     nbutton.id = "recmod";
     nbutton.innerHTML = "info>>";
-    if (!(typeof rec.info === "undefined")){
-        nbutton.onclick = rec.info;
-    }
-    else{
+    if (rec.info == "")
         nbutton.style.visibility = "hidden";
-    }
+    else
+        nbutton.onclick = function(){location.href = rec.info;};
 
     ndiv2.onclick = function(){reclick(rec);};
 
@@ -553,6 +506,8 @@ function evalRecn(rec){
             trec.days = [0];
         }
         trec.hit = 1;
+        trec.info = "";
+        insertDBrec(trec, (new Date()).getTime());
         recms.push(trec);
     }else
         trec.days.push(daysTillExpiry(trec));
