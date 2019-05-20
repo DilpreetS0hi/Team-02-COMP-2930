@@ -1,3 +1,4 @@
+
 * {
       box-sizing: border-box;
 }
@@ -72,10 +73,10 @@ form{
     background: rgb(200,255,200,0.65);
 }*/
 .firebaseui-container{
-    background: rgb(200, 255, 200, 0.65) !important;
+    background: rgba(56, 240, 56, 0.74) !important;
 }
 #container{
-    background-color: rgb(107,142,35,0.8);
+    background-color: rgba(159, 239, 56, 0.90);
     width: 100%;
     height: 80px;
     top: 0px;
@@ -130,12 +131,12 @@ nav ul li a {
       display: inline-block;
       outline: none;
       color: #000;
-      text-transform: uppercase;
+     
       text-decoration: none;
       font-size: 24px;
       letter-spacing: 1.2px;
       font-weight: bold;
-      font: 16px Roboto,arial,sans-serif;
+      font: 24px Roboto,arial,sans-serif;
 }
 
 #marge{
@@ -154,8 +155,6 @@ nav ul li a {
 
       .nav-wrapper {
             position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
@@ -284,11 +283,10 @@ nav ul li a {
        height: 150px;
      bottom: 0px;
 /*     position: fixed;*/
-	background: rgb(107,142,35); /* Fallback color */
-/*         background: rgba(107,142,35, 0.8);*/
-	box-shadow: 0 1px 1px 0 rgba(107,142,35, 0.8);
+	background: rgba(159, 239, 56, 0.84); 
+	width: 1520px;
 	box-sizing: border-box;
-	width: 1519px;
+	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
 	padding: 22px 50px;
@@ -381,7 +379,7 @@ nav ul li a {
 .footer-distributed .footer-company-about span{
 	display: block;
 	color:  #000;
-	font-size: 17px;
+	font-size: 19px;
 	font-weight: bold;
       margin-bottom: 20px;
 }
@@ -428,3 +426,320 @@ nav ul li a {
     margin-top: 10% !important;
 }
 
+
+#fruits{margin-top: 15px;
+    margin-left: 550px;
+    height: 400px;
+    width:400px;
+}
+
+.row img {
+    margin: 0 40px;
+    padding: 10PX;
+    height: 180px;
+    width: 180px;
+
+}
+
+/* GLOBAL STYLES */
+body {
+
+    justify-content: center;
+    margin: 0px;
+}
+
+p{
+    font-size: x-large;
+    margin-left: 8.4%;
+    margin-right: 8%;
+    margin-top: -2%;
+    font-family: serif;
+}
+
+/* DEMO-SPECIFIC STYLES */
+#apple{color: #000;
+    margin-left: 100px;
+    margin-bottom: -25px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+#banana{color: #000;
+    margin-left: 400px;
+    margin-bottom: -35px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+#berries{color: #000;
+    margin-left: 700px;
+    margin-bottom: -35px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+#grapes{color: #000;
+    margin-left: 1030px;
+    /*  margin-bottom: 0px;*/
+    margin-top: 5px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+#citrus {
+    color: #000;
+    margin-left: 1320px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 20% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white}
+}
+#c1,#c2,#c3,#c4,#c5{
+    background: rgb(255,255,255,0.0);
+    border-color: white;
+    margin-left: 5%;
+}
+
+@media only screen and (max-width: 840px){
+    #container{
+        width: 840px;
+    }
+    .footer-distributed{
+        width: 839px;
+    }
+    #content{
+
+    }
+    .nav-wrapper{
+
+    }
+    .nav-btn{
+        position: absolute;
+    }
+    #fruits{
+        margin-left: 300px;
+        height: 253px;
+        width: 253px;
+        margin-top: 44px;
+    }
+
+
+    #apple{
+        font-size: 18px;
+        margin-left: 78px;
+    }
+    #banana{
+        font-size: 18px;
+        margin-left: 221px;
+        margin-top: 6px;
+    }
+    #berries{
+        font-size: 18px;
+        margin-left: 387px;
+        margin-top: 12.5px;
+    }
+    #grapes{
+        margin-left: 566px;
+        font-size: 18px;
+
+        margin-top: 15px;
+    }
+    #citrus{
+        margin-left: 732px;
+        font-size: 18px;
+        margin-top: -22px;
+    }
+    #c1{
+
+    }
+    .row img{
+        height: 120px;
+        width: 120px;
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .row img{
+        height: 100px;
+        width: 100px;
+    }
+
+    #container{
+        width: 600px;
+    }
+
+    .footer-distributed{
+        width: 600px;
+    }
+
+
+    #fruits{
+        height: 225px;
+        width: 225px;
+        margin-left: 191px;
+        margin-top: 72px;
+
+    }
+
+
+    #apple{
+        font-size: 16px;
+        margin-left: 76px;
+    }
+    #banana{
+        font-size: 16px;
+        margin-left: 177px;
+        margin-top: 6px; 
+    }
+
+    #berries{
+        font-size: 16px;
+        margin-left: 279px;
+        margin-top: 16px;
+    }
+
+    #grapes{
+        font-size: 16px;
+        margin-left: 388px;
+        margin-top: 17px;
+    }
+
+    #citrus{
+        font-size: 16px;
+        margin-left: 491px;
+        margin-top: -19px;
+    }
+
+    #c1{
+        margin-left: 51px;
+        margin-top: 17px;
+    }
+    #c5{
+        margin: 0px;
+    }
+    #c2{
+        margin: 0px;
+    }
+    #c3{
+
+        margin: 0px;
+    }
+    #c4{
+        margin: 0px;
+    }   
+}
+
+@media only screen and (max-width: 480px){
+    .row img{
+        height: 100px;
+        width: 100px;
+    }
+
+    #container{
+        width: 480px;
+    }
+
+    .footer-distributed{
+        width: 480px;
+        height: 170px;
+    }
+
+
+    #fruits{
+        height: 210px;
+        width: 210px;
+        margin-left: 129px;
+        margin-top: 93px;
+
+    }
+
+
+    #apple{
+        font-size: 14px;
+        margin-left: 32px;
+    }
+    #banana{
+        font-size: 14px;
+        margin-left: 117px;
+        margin-top: 9px; 
+    }
+
+    #berries{
+        font-size: 14px;
+        margin-left: 204px;
+        margin-top: 19px;
+    }
+
+    #grapes{
+        font-size: 14px;
+        margin-left: 302px;
+        margin-top: 19px;
+    }
+
+    #citrus{
+        font-size: 14px;
+        margin-left: 385px;
+        margin-top: -16px;
+    }
+
+    #c1{
+        margin-left: 1px;
+        margin-top: 10px;
+        margin-right: -10px;
+    }
+    #c5{
+        margin-left: -18px;
+    }
+    #c2{
+        margin-right: 8px;
+    }
+    #c3{
+        margin-left: -25px;
+    }
+    #c4{
+        margin-left: -13px;
+    }
