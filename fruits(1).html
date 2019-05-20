@@ -1,486 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>No Food Wastage</title>
-      <link rel="stylesheet" href="fruits.css">
-    <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyC3rK5fG2PwqAtjTQ2FhOCyzb4dIcXN2_0",
-    authDomain: "project-2930.firebaseapp.com",
-    databaseURL: "https://project-2930.firebaseio.com",
-    projectId: "project-2930",
-    storageBucket: "project-2930.appspot.com",
-    messagingSenderId: "16612303844"
-  };
-  firebase.initializeApp(config);
-</script>
-    <style>
-        #fruits{margin-top: 15px;
-            margin-left: 550px;
-            height: 400px;
-                width:400px;
-    }
-    
-.row img {
-  margin: 0 40px;
-    padding: 10PX;
-    height: 180px;
-    width: 180px;
-    
-}
-        
-        /* GLOBAL STYLES */
-body {
-  
-  justify-content: center;
-    margin: 0px;
-}
-        
-        p{
-                font-size: x-large;
-    margin-left: 8.4%;
-    margin-right: 8%;
-    margin-top: -2%;
-    font-family: serif;
-        }
+    <head>
 
-/* DEMO-SPECIFIC STYLES */
-        #apple{color: #000;
-    margin-left: 100px;
-            margin-bottom: -25px;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 1.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-     font-size: 2em;}
-        
-        #banana{color: #000;
-    margin-left: 400px;
-     margin-bottom: -35px;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 1.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-     font-size: 2em;}
-        
-        #berries{color: #000;
-    margin-left: 700px;
-    margin-bottom: -35px;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 1.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-     font-size: 2em;}
-        
-        #grapes{color: #000;
-    margin-left: 1030px;
-/*  margin-bottom: 0px;*/
-            margin-top: 5px;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 1.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-     font-size: 2em;}
-        
-        #citrus {
-  color: #000;
-    margin-left: 1320px;
-            margin-top: -30px;
-            margin-bottom: 50px;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 1.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-     font-size: 2em;
-}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>No Food Wastage</title>
+        <link rel="stylesheet" href="fruits.css">
+        <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 20% }
-}
+    </head>
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white}
-}
-        #c1,#c2,#c3,#c4,#c5{
-            background: rgb(255,255,255,0.0);
-            border-color: white;
-            margin-left: 5%;
-        }
-        
-        @media only screen and (max-width: 840px){
-            #container{
-                width: 840px;
-            }
-            .footer-distributed{
-                width: 839px;
-            }
-            #content{
-                
-            }
-            .nav-wrapper{
-                
-            }
-            .nav-btn{
-                position: absolute;
-            }
-            #fruits{
-                    margin-left: 300px;
-    height: 253px;
-    width: 253px;
-                margin-top: 44px;
-            }
-            
-            
-            #apple{
-                font-size: 18px;
-    margin-left: 78px;
-            }
-            #banana{
-                font-size: 18px;
-                margin-left: 221px;
-    margin-top: 6px;
-            }
-            #berries{
-                    font-size: 18px;
-    margin-left: 387px;
-    margin-top: 12.5px;
-            }
-            #grapes{
-                    margin-left: 566px;
-    font-size: 18px;
-    
-    margin-top: 15px;
-            }
-            #citrus{
-                margin-left: 732px;
-    font-size: 18px;
-    margin-top: -22px;
-                }
-            #c1{
-                
-            }
-            .row img{
-                    height: 120px;
-    width: 120px;
-                    margin: 0px;
-            }
-        }
-        
-        @media only screen and (max-width: 600px){
-            .row img{
-                height: 100px;
-                width: 100px;
-            }
-          
-            #container{
-                   width: 600px;
-            }
-            
-            .footer-distributed{
-                width: 600px;
-            }
-            
-            
-            #fruits{
-                  height: 225px;
-    width: 225px;
-    margin-left: 191px;
-                margin-top: 72px;
-
-            }
-            
-            
-            #apple{
-                 font-size: 16px;
-                 margin-left: 76px;
-            }
-            #banana{
-                font-size: 16px;
-                 margin-left: 177px;
-    margin-top: 6px; 
-            }
-            
-            #berries{
-                font-size: 16px;
-                      margin-left: 279px;
-                margin-top: 16px;
-            }
-            
-            #grapes{
-                font-size: 16px;
-                 margin-left: 388px;
-    margin-top: 17px;
-            }
-            
-            #citrus{
-                font-size: 16px;
-                  margin-left: 491px;
-    margin-top: -19px;
-                }
-            
-            #c1{
-                    margin-left: 51px;
-    margin-top: 17px;
-            }
-            #c5{
-                margin: 0px;
-            }
-            #c2{
-           margin: 0px;
-            }
-            #c3{
-                
-        margin: 0px;
-            }
-            #c4{
-                    margin: 0px;
-                }   
-        }
-        
-         @media only screen and (max-width: 480px){
-            .row img{
-                height: 100px;
-                width: 100px;
-            }
-          
-            #container{
-                   width: 480px;
-            }
-            
-            .footer-distributed{
-                width: 480px;
-                height: 170px;
-            }
-            
-            
-            #fruits{
-                  height: 210px;
-    width: 210px;
-    margin-left: 129px;
-    margin-top: 93px;
-
-            }
-            
-            
-            #apple{
-                 font-size: 14px;
-    margin-left: 32px;
-            }
-            #banana{
-                font-size: 14px;
-    margin-left: 117px;
-    margin-top: 9px; 
-            }
-            
-            #berries{
-                font-size: 14px;
-    margin-left: 204px;
-    margin-top: 19px;
-            }
-            
-            #grapes{
-                font-size: 14px;
-    margin-left: 302px;
-    margin-top: 19px;
-            }
-            
-            #citrus{
-                    font-size: 14px;
-    margin-left: 385px;
-    margin-top: -16px;
-                }
-            
-            #c1{
-                        margin-left: 1px;
-    margin-top: 10px;
-    margin-right: -10px;
-            }
-            #c5{
-                margin-left: -18px;
-            }
-            #c2{
-           margin-right: 8px;
-            }
-            #c3{
-                    margin-left: -25px;
-            }
-            #c4{
-                        margin-left: -13px;
-                }
-        
-    </style>
-
-    
-</head>
     <body>
         <div id="container">
             <nav>
-                  <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                  </label>
-                   <div class="logo">
-                        <a href="#">
-                            <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
-                            <div id="logotext"></div>
-                      </a>
-                  </div>
-                  <div class="nav-wrapper">
-                        <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">Expiry</a></li>
-                              <li><a href="#">Donate</a></li>
-                              <li><a href="#">Info</a></li>
-                            <div id="marge"></div>
-                        </ul>
-                  </div>
+                <input type="checkbox" id="nav" class="hidden">
+                <label for="nav" class="nav-btn" onclick="dis()">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </label>
+                <div class="logo">
+                    <a href="#">
+                        <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
+                        <div id="logotext"></div>
+                    </a>
+                </div>
+                <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Expiry</a></li>
+                        <li><a href="#">Donate</a></li>
+                        <li><a href="#">Info</a></li>
+                        <div id="marge"></div>
+                    </ul>
+                </div>
             </nav>
-      </div>
+        </div>
         <img src="fruit.gif" id="fruits" alt="fruits">
         <div class="row">
             <img id="c1" src="apple.gif" itemprop="apple">
-            
+
             <img id="c2" src="banana1.gif" itemprop="banana">
-             
+
             <img id="c3" src="berries1.gif" itemprop="berries">
-  
+
             <img id="c4" src="SardonicExcellentIraniangroundjay-size_restricted.gif" itemprop="grapes">
-            
+
             <img id="c5" src="citrus.gif" itemprop="citrus">
-</div>
-      
+        </div>
+
         <div id="apple">Apple</div>
         <div id="banana">Banana</div>
         <div id="berries">Berries</div>
         <div id="grapes">Grapes</div>
         <div id="citrus">Citrus</div>        
         <div id="content"></div>
-          
-        
-        <script>
-        var count = 0;
-        document.getElementById("c1").addEventListener("click", function() {
-            ShowlistFruits("Apple");
-        });
-            
-        document.getElementById("c2").addEventListener("click", function() {
-            ShowlistFruits("Banana");
-        });
-        document.getElementById("c3").addEventListener("click", function() {
-            ShowlistFruits("Berries");
-        });
-        document.getElementById("c4").addEventListener("click", function() {
-            ShowlistFruits("Grapes");
-        });
-        document.getElementById("c5").addEventListener("click", function() {
-            ShowlistFruits("Citrus");
-        });
-        
-            
-            
-            function ShowlistFruits(catergory) {
-            var dbRef = firebase.database().ref("Team02/Suggestions/Fruits/" + catergory);
-            var promise = dbRef.once("value", function(snap) {
-                list = snap.val();
-                count++;
-                if(count>1){
-                    var elem = document.getElementById('listofplant');
-                    elem.parentNode.removeChild(elem);
-                }
-            });
 
-            promise.then(function() {
-                DisplayList(list); //JSON object
-            });
-        }
-        
-            
-            function DisplayList(list) {
-            console.log(list);
-                var para = document.createElement("div");
-                
-                console.log(count);
-                var bottonClick = document.createElement("div");
-                var inside = document.createElement("p");
-                
-                var doc = document.getElementById("content");
-                doc.appendChild(para);
-                
-                para.appendChild(bottonClick);
-                bottonClick.appendChild(inside);
-                
-                var node = document.createTextNode(list);
-                
-                inside.appendChild(node);
-                para.setAttribute("id", "listofplant");
-                bottonClick.setAttribute("Class", "bottonClick");
-
-        }
-            
-        </script>
-        
-        
-        
-        
-        
-        
-         <footer class="footer-distributed" id="contact">
-    	<div class="footer-left">
-            <h1><span>No</span> FOOD <span>Wastage</span></h1>
-				<p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
-			</div>
-			<div class="footer-center">
-				<div>
+        <footer class="footer-distributed" id="contact">
+            <div class="footer-left">
+                <h1><span>No</span> FOOD <span>Wastage</span></h1>
+                <p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
+            </div>
+            <div class="footer-center">
+                <div>
                     <p>Address: 3700 Willingdon Ave Burnaby, Bc</p>
-				</div>
+                </div>
                 <br>
-				<div>
-					<p>Phone: 604-727-3019</p>
-				</div>
+                <div>
+                    <p>Phone: 604-727-3019</p>
+                </div>
                 <br>
-				<div>
-					<p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
-				</div>
-			</div>
-			<div class="footer-right">
-				<p class="footer-company-about">
-					<span>About Us</span>
-					Need an Notification Alerts for Expiry foods? Have Queries? Call us!
+                <div>
+                    <p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About Us</span>
+                    Need an Notification Alerts for Expiry foods? Have Queries? Call us!
                     We help people to reduce Food Wastage by generating emergency alerts  
                     and provide them with suitable information for overripe eatables and help them Donate food to needy people.
-				</p>
-			</div>
+                </p>
+            </div>
 
-		</footer>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+            <script src="fruits.js"></script>
+
+        </footer>
     </body></html>
