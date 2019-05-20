@@ -1,4 +1,6 @@
 // ----- constants -----
+// db
+let firebaseRef = firebase.database().ref(); 
 // elements
 let img = document.getElementById("img"),
     itemName = document.getElementById("itemName"),
@@ -14,17 +16,30 @@ let items = [],
     recns = [];
 
 // ----- database -----
-function find() {
+// delete
+function deleteDB(node){
     firebase.auth().onAuthStateChanged(function(user){
-    if (user){
-          var userName=user.displayName;
-        console.log("Hello "+ userName);
-    }
-});
+        if (user){
+            firebaseRef.child(node +"/"+ user.email.split(".")[0]).remove();
+        }
+    });
 }
 
+// update
+function updateRec(){
+    deleteDB("rec");
+    for (let i = 0; i < recms.length; i++)
+        insertDBrec(recms[i], recms[i].time);
+}
+
+function updateItem(){
+    deleteDB("item");
+    for (let i = 0; i < items.length; i++)
+        insertDBrec(items[i]);
+}
+
+// push
 function insertDBrec(rec, t){
-    let firebaseRef = firebase.database().ref();  
     firebase.auth().onAuthStateChanged(function(user){
         if (user){
             firebaseRef.child("rec/"+ user.email.split(".")[0]).push().set({
@@ -39,12 +54,10 @@ function insertDBrec(rec, t){
     });
 }
 
-function insertDBitem(item){
-    let firebaseRef = firebase.database().ref();  
+function insertDBitem(item){ 
     firebase.auth().onAuthStateChanged(function(user){
         if (user){
             firebaseRef.child("item/"+ user.email.split(".")[0]).push().set({
-                time: item.time,
                 name: item.name,
                 img: item.img,
                 date: item.date,
@@ -57,10 +70,9 @@ function insertDBitem(item){
 // ----- on start -----
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
-        let r3c = firebase.database().ref("rec/"+ user.email.split(".")[0]),
-            it3m = firebase.database().ref("item/"+ user.email.split(".")[0]);
-        
-        r3c.on("child_added", function(snapshot){
+        let ref1 = firebase.database().ref("rec/"+ user.email.split(".")[0]),
+            ref2 = firebase.database().ref("item/"+ user.email.split(".")[0]);
+        ref1.on("child_added", function(snapshot){
             let rec = new Object();
             rec.name = snapshot.val().name;
             rec.img = snapshot.val().img;
@@ -73,19 +85,16 @@ firebase.auth().onAuthStateChanged(function(user){
                 recns.push(rec);
             }
         });
-        it3m.on("child_added", function(snapshot){
+        ref2.on("child_added", function(snapshot){
             let item = new Object();
             item.name = snapshot.val().name;
             item.img = snapshot.val().img;
             item.date = snapshot.val().date;
-            item.time = snapshot.val().time;
-            items.push(rec);
+            items.push(item);
         });
-
     }else
         window.location.href = 'homepage.html';
-    });
-
+});
 
 async function startupGeneration(){
     // DO NO CHANGE - TOP
@@ -104,54 +113,114 @@ async function startupGeneration(){
 
     if(recms.length==0){
         // apple
-        let apple = new Object();
-        apple.name = "Apple";
-        apple.img = "apple.gif";
-        apple.days = [14];
-        apple.info = "fruits(1).html";
-        apple.hit = 0;
+        let apple = {
+            name : "Apple",
+            img : "apple.gif",
+            days : [14],
+            info : "fruits(1).html",
+            hit : 0
+        };
         insertDBrec(apple, -1);
         recms.push(apple);
             
         // banana
-        let banana = new Object();
-        banana.name = "Banana";
-        banana.img = "banana1.gif";
-        banana.days = [2];
-        banana.info = "fruits(1).html";
-        banana.hit = 0;
+        let banana  = {
+            name : "Banana",
+            img : "banana1.gif",
+            days : [2],
+            info : "fruits(1).html",
+            hit : 0
+        };
         insertDBrec(banana, -1);
         recms.push(banana);
             
         // berries
-        let berries = new Object();
-        berries.name = "Berries";
-        berries.img = "berries1.gif";
-        berries.days = [2];
-        berries.info = "fruits(1).html";
-        berries.hit = 0;
+        let berries = {
+            name : "Berries",
+            img : "berries1.gif",
+            days : [2],
+            info : "fruits(1).html",
+            hit : 0
+        };
         insertDBrec(berries, -1);
         recms.push(berries);
             
         // grapes
-        let grapes = new Object();
-        grapes.name = "Grapes";
-        grapes.img = "SardonicExcellentIraniangroundjay-size_restricted.gif";
-        grapes.days = [3];
-        grapes.info = "fruits(1).html";
-        grapes.hit = 0;
+        let grapes = {
+            name : "Grapes",
+            img : "SardonicExcellentIraniangroundjay-size_restricted.gif",
+            days : [3],
+            info : "fruits(1).html",
+            hit : 0
+        };
         insertDBrec(grapes, -1);
         recms.push(grapes);
             
         // citrus
-        let citrus = new Object();
-        citrus.name = "Citrus";
-        citrus.img = "citrus.gif";
-        citrus.days = [2];
-        citrus.info = "fruits(1).html";
-        citrus.hit = 0;
+        let citrus = {
+            name : "Citrus",
+            img : "citrus.gif",
+            days : [2],
+            info : "fruits(1).html",
+            hit : 0
+        };
         insertDBrec(citrus, -1);
         recms.push(citrus);
+
+        // carrot
+        let carrot = {
+            name : "Carrot",
+            img : "Carrot.gif",
+            days : [2],
+            info : "vegetables.html",
+            hit : 0
+        };
+        insertDBrec(carrot, -1);
+        recms.push(carrot);
+
+        // potato
+        let potato = {
+            name : "Potato",
+            img : "sweetpotato.gif",
+            days : [2],
+            info : "vegetables.html",
+            hit : 0
+        };
+        insertDBrec(potato, -1);
+        recms.push(potato);
+
+        // kale
+        let kale = {
+            name : "Kale",
+            img : "kale.gif",
+            days : [2],
+            info : "vegetables.html",
+            hit : 0
+        };
+        insertDBrec(kale, -1);
+        recms.push(kale);
+
+        // zucchini
+        let zucchini = {
+            name : "Zucchini",
+            img : "zucchini.gif",
+            days : [2],
+            info : "vegetables.html",
+            hit : 0
+        };
+        insertDBrec(zucchini, -1);
+        recms.push(zucchini);
+
+        // tomato
+        let tomato = {
+            name : "Tomato",
+            img : "Tomato.gif",
+            days : [2],
+            info : "vegetables.html",
+            hit : 0
+        };
+        insertDBrec(tomato, -1);
+        recms.push(tomato);
     }
             
     // generate
@@ -294,7 +363,7 @@ function putItems(){
     if (items.length==0)
         con.style.display = "none";
     else 
-        con.style.display = "block";
+        con.style.display = "inline-block";
 
     items.sort(sorter);
     expitems.innerHTML = "";
@@ -316,15 +385,17 @@ function reput(num) {
 
 function removeItem(num){
     items.splice(num,1);
+    updateItem();
     putItems();
 }
 
 function removExItem(){
-    for (let i = items.length-1; i >= 0; i--){
+    for(let i = items.length-1; i >= 0; i--){
         if(daysTillExpiry(items[i])<0){
             items.splice(i,1);
         }
     }
+    updateItem();
     putItems();
 }
 
@@ -335,7 +406,6 @@ function newItem(){
     item.name = itemName.value;
     item.date = expirationDate.value;
     item.noty = notifyMe.value;
-    item.time = (new Date()).getTime();
     
     insertDBitem(item)
     items.push(item);
@@ -478,10 +548,11 @@ function putRecn(){
 }
 
 function evalRecn(rec){
-    let trec = new Object();
-    trec.name = rec.name;
-    trec.img = rec.img;
-    trec.date = rec.date;
+    let trec = {
+        name : rec.name,
+        img : rec.img,
+        date : rec.date
+    };
 
     for(let i=0; i<recms.length; i++){
         if(trec.img.lastIndexOf(recms[i].img) != -1 && trec.name == recms[i].name){
@@ -490,16 +561,17 @@ function evalRecn(rec){
                 recms[i].days.push(daysTillExpiry(trec))
             }
             recms[i].hit++;
+            recms[i].time = (new Date()).getTime();
             trec.info = recms[i].info;
         }
     }
-    for (let i = 0; i<recns.length; i++){
+    for(let i = 0; i<recns.length; i++){
         if(trec.img.lastIndexOf(recns[i].img) != -1 && trec.name == recns[i].name){
             trec.days = recns[i].days;
             recns.splice(recns[i].unique,1);
         }
     }
-    if (typeof trec.days === "undefined"){
+    if(typeof trec.days === "undefined"){
         if(daysTillExpiry(trec)>=0)
             trec.days = [daysTillExpiry(trec)];
         else{
@@ -507,11 +579,11 @@ function evalRecn(rec){
         }
         trec.hit = 1;
         trec.info = "";
-        insertDBrec(trec, (new Date()).getTime());
+        trec.time = (new Date()).getTime();
         recms.push(trec);
-    }else
-        trec.days.push(daysTillExpiry(trec));
+    }
 
+    updateRec();
     putRecm();
     recns.unshift(trec);
     putRecn();
