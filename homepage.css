@@ -72,10 +72,10 @@ form{
     background: rgb(200,255,200,0.65);
 }*/
 .firebaseui-container{
-    background: rgb(200, 255, 200, 0.65) !important;
+    background: rgba(56, 240, 56, 0.74) !important;
 }
 #container{
-    background-color: rgb(107,142,35,0.8);
+    background-color: rgba(159, 239, 56, 0.90);
     width: 100%;
     height: 80px;
     top: 0px;
@@ -130,12 +130,12 @@ nav ul li a {
       display: inline-block;
       outline: none;
       color: #000;
-      text-transform: uppercase;
+     
       text-decoration: none;
       font-size: 24px;
       letter-spacing: 1.2px;
       font-weight: bold;
-      font: 16px Roboto,arial,sans-serif;
+      font: 24px Roboto,arial,sans-serif;
 }
 
 #marge{
@@ -282,8 +282,7 @@ nav ul li a {
        height: 150px;
      bottom: 0px;
      position: fixed;
-	background: rgb(107,142,35); /* Fallback color */
-/*         background: rgba(107,142,35, 0.8);*/
+	background: rgba(159, 239, 56, 0.84); 
 	box-shadow: 0 1px 1px 0 rgba(107,142,35, 0.8);
 	box-sizing: border-box;
 	width: 100%;
@@ -379,7 +378,7 @@ nav ul li a {
 .footer-distributed .footer-company-about span{
 	display: block;
 	color:  #000;
-	font-size: 17px;
+	font-size: 19px;
 	font-weight: bold;
       margin-bottom: 20px;
 }
