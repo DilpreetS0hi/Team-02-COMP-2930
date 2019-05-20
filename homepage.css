@@ -283,7 +283,7 @@ nav ul li a {
      bottom: 0px;
      position: fixed;
 	background: rgba(159, 239, 56, 0.84); 
-	box-shadow: 0 1px 1px 0 rgba(107,142,35, 0.8);
+	
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
