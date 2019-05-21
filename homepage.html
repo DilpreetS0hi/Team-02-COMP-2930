@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+     <!--        meta elements-->
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+     <!--        title -->
       <title>No Food Wastage</title>
+    
+    <!--        stylesheets-->
       <link rel="stylesheet" href="homepage.css">
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
 
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" type="text/css" href="signin.css">
+    
+    <!--        javascript-->
 
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    
+    
     <script src="setup_firebase_yourname.js"></script>
+    
+    
     <script src="homepage.js"></script>
-    <script type="text/javascript">
-var firstTime = true;
-var message = "try again!";
-var later = "easter egg surprise"
-function MouseoverMessageInAlertBox()
-{
-  if(firstTime) { alert(message); }
-  else { alert(later); }
-  firstTime = false;
-}
-</script>
-   
+    
+
     
   
 </head>
 
 <body class="slideshow-container">
+    
+    
     <div style="position:absolute;
            top:10px;
            left: 10px;
@@ -108,11 +111,16 @@ function MouseoverMessageInAlertBox()
       setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
     </script>
+    
+    
+    
     <script>
         // The start method will wait until the DOM is loaded.
         ui.start('#firebaseui-auth-container', uiConfig);
 
     </script>
+    
+     <!--        navigation bar-->
       <div id="container">
             <nav>
                   <input type="checkbox" id="nav" class="hidden">
@@ -139,7 +147,7 @@ function MouseoverMessageInAlertBox()
             </nav>
       </div>
     
-  
+   <!--footer -->
      <footer class="footer-distributed" id="contact">
     	<div class="footer-left">
             <h2><span>No</span> FOOD <span>Wastage</span></h2>

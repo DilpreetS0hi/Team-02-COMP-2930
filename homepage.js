@@ -8,3 +8,18 @@ function dis() {
         
     }
   }
+
+
+
+ 
+var firstTime = true;
+var message = "try again!";
+var later = "easter egg surprise"
+function MouseoverMessageInAlertBox()
+{
+  if(firstTime) { alert(message); }
+  else { alert(later); }
+  firstTime = false;
+}
+
+   
