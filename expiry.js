@@ -524,6 +524,13 @@ function putRecn(){
     if(recns.length>8)
         recns.length = 8;
     
+    if (recns.length==0)
+        con.style.height = "0px";
+    else if(recns.length<=4)
+        con.style.height = "120px";
+    else
+        con.style.height = "240px";
+
     for(let i = recns.length-1; i >= 0; i--){
         recns[i].con = con;
         recns[i].unique=i;
@@ -538,13 +545,6 @@ function putRecn(){
             recns.splice(i,1);
         }    
     }
-
-    if (recns.length==0)
-        con.style.height = "0px";
-    else if(recns.length<=4)
-        con.style.height = "120px";
-    else
-        con.style.height = "240px";
 }
 
 function evalRecn(rec){
