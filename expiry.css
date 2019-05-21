@@ -115,6 +115,9 @@ input{
     margin: 0px;
     text-align: initial !important;
     font-size: 14px !important;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .recmodi{
     top: -44px !important;
