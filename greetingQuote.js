@@ -33,7 +33,6 @@
 			dbRef.on('value', function(snap){
                 userQuote = snap.val();
                 quote.innerText = userQuote;		// update with Quote
-                console.log(userQuote);
             });
     	} 
         
