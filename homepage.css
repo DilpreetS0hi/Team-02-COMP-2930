@@ -12,7 +12,6 @@ body {
 }
 
 
- <!--SlideShow css -->
 .slideshow-container {
 	top:0px;
 	z-index: -1;
@@ -58,7 +57,10 @@ body {
 #filler-para{
 	height: 10%;
 }
-
+/*form{
+	background: rgb(200,255,200,0.65);
+}
+*/
 .firebaseui-container{
 	background: rgba(56, 240, 56, 0.74) !important;
 }
@@ -71,16 +73,12 @@ body {
 	position: fixed;
 	z-index: 999;
 }
-
- <!--Logo -->
 #logotext{
 	position: fixed;
 	top: 25px;
 	left: 80px;
 	font-size: 30px;
 }
-
- <!--Navbar -->
 nav {
 	padding: 8px;
 }
@@ -236,9 +234,6 @@ nav ul li a {
 .hidden {
 	display: none;
 }
-
-
- <!--Footer -->
 .footer-distributed{
 	z-index: 999;
 	height: 150px;
@@ -382,9 +377,6 @@ nav ul li a {
 .firebaseui-idp-button{
 	margin-top: 10% !important;
 }
-
-
- <!--Easter egg -->
 @-webkit-keyframes roll {
 	from {
 		-webkit-transform: rotate(0deg) 
