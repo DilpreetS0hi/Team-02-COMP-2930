@@ -231,7 +231,7 @@ function sortSelection(num){
 
 function sortmSelection(){
     return function (a,b){
-        let r = b.hit - a.hit;
+        let r = a.hit - b.hit;
         if(r==0){
             let avg = [0,0];
             for (let i = 0; i < a.days.length; i++)
@@ -433,9 +433,9 @@ search.addEventListener("keyup", function () {
         sortm = sortmSelection();
     else
         sortm = function (a,b) {
-            let r = (a.name.toLowerCase()).indexOf(search.value.toLowerCase()) - (b.name.toLowerCase()).indexOf(search.value.toLowerCase());
+            let r = (b.name.toLowerCase()).indexOf(search.value.toLowerCase()) - (a.name.toLowerCase()).indexOf(search.value.toLowerCase());
             if (r==0)
-                r = b.hit - a.hit;
+                r = a.hit - b.hit;
             if(r==0){
                 let avg = [0,0];
                 for (let i = 0; i < a.days.length; i++)
