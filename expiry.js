@@ -102,8 +102,7 @@ async function startupGeneration(){
     sorter = sortSelection(0);
     sortm = sortmSelection();
     // DO NO CHANGE END - TOP
-    deleteDB("rec"); ////////////////////////////////
-    deleteDB("item"); ///////////////////////////////
+
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
