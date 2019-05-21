@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- head -->
     <head>
-
+        <!-- meta element -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- title -->
         <title>No Food Wastage</title>
+
+        <!-- css -->
         <link rel="stylesheet" href="fruits.css">
+
+        <!-- firebase script -->
         <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
 
     </head>
 
+    <!-- main content -->
     <body>
+
+        <!-- nav bar -->
         <div id="container">
             <nav>
                 <input type="checkbox" id="nav" class="hidden">
@@ -20,12 +30,15 @@
                     <i></i>
                     <i></i>
                 </label>
+
+                <!-- logo -->
                 <div class="logo">
                     <a href="#">
                         <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
                         <div id="logotext"></div>
                     </a>
                 </div>
+
                 <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -37,7 +50,11 @@
                 </div>
             </nav>
         </div>
+
+        <!-- fruit gif -->
         <img src="fruit.gif" id="fruits" alt="fruits">
+
+        <!-- Most Common fruits -->
         <div class="row">
             <img id="c1" src="apple.gif" itemprop="apple">
 
@@ -50,6 +67,7 @@
             <img id="c5" src="citrus.gif" itemprop="citrus">
         </div>
 
+        <!-- Text -->
         <div id="apple">Apple</div>
         <div id="banana">Banana</div>
         <div id="berries">Berries</div>
@@ -57,9 +75,10 @@
         <div id="citrus">Citrus</div>        
         <div id="content"></div>
 
+        <!--footer -->
         <footer class="footer-distributed" id="contact">
             <div class="footer-left">
-                <h1><span>No</span> FOOD <span>Wastage</span></h1>
+                <h2><span>No</span> FOOD <span>Wastage</span></h2>
                 <p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
             </div>
             <div class="footer-center">
@@ -77,15 +96,13 @@
             </div>
             <div class="footer-right">
                 <p class="footer-company-about">
-                    <span>About Us</span>
-                    Need an Notification Alerts for Expiry foods? Have Queries? Call us!
-                    We help people to reduce Food Wastage by generating emergency alerts  
-                    and provide them with suitable information for overripe eatables and help them Donate food to needy people.
-                </p>
+                    <a href="AboutUs_page.html"><span>About Us</span></a>
+                <h5>&#169; 2019 NoFoodWastage</h5>
+                <h5>&#174; Privacy Policy</h5>
             </div>
-
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-            <script src="fruits.js"></script>
-
         </footer>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="fruits.js"></script>
+
     </body></html>

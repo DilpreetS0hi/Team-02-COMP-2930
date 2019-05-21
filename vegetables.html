@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
+    <!--    head -->
     <head>
+        <!--        meta element -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!--        title-->
         <title>No Food Wastage</title>
+
+        <!--        css -->
         <link rel="stylesheet" href="vegetables.css">
+
+        <!--        script-->
         <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
     </head>
+    <!--    main body-->
     <body>
+
+        <!--        navigation bar-->
         <div id="container">
             <nav>
                 <input type="checkbox" id="nav" class="hidden">
@@ -17,12 +29,16 @@
                     <i></i>
                     <i></i>
                 </label>
+
+                <!--                logo -->
                 <div class="logo">
                     <a href="#">
                         <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
                         <div id="logotext"></div>
                     </a>
                 </div>
+
+                <!--                the menus -->
                 <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -34,35 +50,45 @@
                 </div>
             </nav>
         </div>
+
+        <!--        vegetable gif -->
         <img src="vegetables.gif" id="vegetables" alt="vegetables">
+
+        <!--        vegetables-->
         <div class="row">
+            <!--            carrot gif-->
             <img id="c1" src="Carrot.gif" itemprop="Carrot">
-
+            <!--        sweetpotato gif-->
             <img id="c2" src="sweetpotato.gif" itemprop="Sweet Potato">
-
+            <!--        kale gif -->
             <img id="c3" src="kale.gif" itemprop="Kale">
-
+            <!--zucchini gif-->
             <img id="c4" src="zucchini.gif" itemprop="Zucchini">
-
+            <!--    tomato gif-->
             <img id="c5" src="Tomato.gif" itemprop="Tomato">
         </div>
 
+        <!--        names-->
+        <!--        carrot text-->
         <div id="Carrot">Carrot</div>
+        <!--        sweetPotato-->
         <div id="SweetPotatos">Sweet Potatoes</div>
+        <!--        kale text-->
         <div id="Kale">Kale</div>
+        <!--        Zucchini text -->
         <div id="Zucchini">Zucchini</div>
-        <div id="Tomato">Tomato</div>        
+        <!--        tomato text-->
+        <div id="Tomato">Tomato</div> 
+
+        <!--        the information div-->
         <div id="content"></div>
 
 
-        <script>
-
-        </script>
-
+        <!--footer -->
 
         <footer class="footer-distributed" id="contact">
             <div class="footer-left">
-                <h1><span>No</span> FOOD <span>Wastage</span></h1>
+                <h2><span>No</span> FOOD <span>Wastage</span></h2>
                 <p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
             </div>
             <div class="footer-center">
@@ -80,15 +106,14 @@
             </div>
             <div class="footer-right">
                 <p class="footer-company-about">
-                    <span>About Us</span>
-                    Need an Notification Alerts for Expiry foods? Have Queries? Call us!
-                    We help people to reduce Food Wastage by generating emergency alerts  
-                    and provide them with suitable information for overripe eatables and help them Donate food to needy people.
-                </p>
+                    <a href="AboutUs_page.html"><span>About Us</span></a>
+                <h5>&#169; 2019 NoFoodWastage</h5>
+                <h5>&#174; Privacy Policy</h5>
             </div>
-
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-            <script src="vegetables.js"></script>
-
         </footer>
-    </body></html>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="vegetables.js"></script>
+
+    </body>
+</html>
