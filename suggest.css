@@ -1,31 +1,20 @@
+/* whole page */
 * {
 	box-sizing: border-box;
 }
+/* setting up margins of page */
 html {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100vh;
 }
+/* body */
 body {
 	margin: 0;
 }
-/*#body {
-	left: 0px;
-	margin: 0;
-	margin-top: 80px;
-	padding: 0;
-	width: 100%;
-	height: 100vh;
-	z-index: -1;
-	font-family: Poppins;
-	font-weight: 400;
-	background: url(background-img.jpg);
-	opacity: 0.94;
-	background-position: center;
-	background-size: cover;
-}
-*/
+
+/* slideshow */
 .slideshow-container {
 	top:0px;
 	z-index: -1;
@@ -38,17 +27,20 @@ body {
 	position: absolute;
 	margin: auto;
 }
+/*  slides*/
 .mySlides {
 	display: none;
 	height: 100%;
 	overflow: hidden;
 }
+/*  fading effect*/
 .fade {
 	-webkit-animation-name: fade;
 	-webkit-animation-duration: 1.5s;
 	animation-name: fade;
 	animation-duration: 1.5s;
 }
+/*  setting opacity*/
 @-webkit-keyframes fade {
 	from {
 		opacity: .4
@@ -57,6 +49,8 @@ body {
 		opacity: 1
 }
 }
+
+/*  setting opacity*/
 @keyframes fade {
 	from {
 		opacity: .4
@@ -65,19 +59,22 @@ body {
 		opacity: 1
 }
 }
+
+/*  filler*/
 #filler{
 	height: 200vf;
 }
+
+/*  para*/
 #filler-para{
 	height: 10%;
 }
-/*form{
-	background: rgb(200,255,200,0.65);
-}
-*/
+
+/*  container*/
 .firebaseui-container{
 	background: rgba(56, 240, 56, 0.74) !important;
 }
+/*  container*/
 #container{
 	background-color: rgba(159, 239, 56, 0.90);
 	width: 100%;
@@ -87,20 +84,26 @@ body {
 	position: fixed;
 	z-index: 999;
 }
+
+/* text of logo */
 #logotext{
 	position: fixed;
 	top: 25px;
 	left: 80px;
 	font-size: 30px;
 }
+
+/*  navigation bar*/
 nav {
 	padding: 8px;
 }
+/*  logo*/
 .logo {
 	float: left;
 	margin-left: 0px;
 	margin-top: 0px;
 }
+/*  link in logo*/
 .logo a {
 	color: #000;
 	text-transform: uppercase;
@@ -109,13 +112,17 @@ nav {
 	letter-spacing: 0px;
 	text-decoration: none;
 }
+/*  menus*/
 nav ul {
 	float: right;
 }
+
+/*  menus*/
 nav ul li {
 	display: inline-block;
 	float: left;
 }
+
 nav ul li:not(:first-child) {
 	margin-left: 48px;
 }
@@ -132,6 +139,8 @@ nav ul li a {
 	font-weight: bold;
 	font: 24px Roboto,arial,sans-serif;
 }
+
+/*  marge */
 #marge{
 	margin-right: 70px;
 	float: left;
@@ -140,10 +149,16 @@ nav ul li a {
 	top: 0px;
 	right: 10px;
 }
+
+/*  making media responsive for max-width of 864px */
 @media screen and (max-width: 864px) {
+	
+/* 	 logo*/
 	.logo {
 		padding: 0;
 	}
+	
+/* 	 nav- bar*/
 	.nav-wrapper {
 		position: fixed;
 		width: 100%;
@@ -153,6 +168,7 @@ nav ul li a {
 		opacity: 0;
 		transition: all 0.2s ease;
 	}
+/* 	 menus*/
 	.nav-wrapper ul {
 		position: absolute;
 		top: 50%;
@@ -191,6 +207,7 @@ nav ul li a {
 		transform: translateX(-20px);
 		transition: all 0.2s ease;
 	}
+/* 	 menu button*/
 	.nav-btn {
 		position: fixed;
 		right: 10px;
@@ -248,6 +265,8 @@ nav ul li a {
 .hidden {
 	display: none;
 }
+
+/*  footer */
 .footer-distributed{
 	z-index: 999;
 	height: 150px;
@@ -260,6 +279,7 @@ nav ul li a {
 	font: bold 16px sans-serif;
 	padding: 22px 50px;
 }
+/*  footer*/
 .footer-distributed .footer-left,.footer-distributed .footer-center,.footer-distributed .footer-right{
 	display: inline-block;
 	vertical-align: top;
