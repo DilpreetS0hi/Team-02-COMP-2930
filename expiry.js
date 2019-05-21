@@ -27,13 +27,13 @@ function deleteDB(node){
 // update
 function updateRec(){
     deleteDB("rec");
-    for (let i = 0; i < recms.length; i++)
+    for(let i = 0; i < recms.length; i++)
         insertDBrec(recms[i]);
 }
 
 function updateItem(){
     deleteDB("item");
-    for (let i = 0; i < items.length; i++)
+    for(let i = 0; i < items.length; i++)
         insertDBrec(items[i]);
 }
 
@@ -102,8 +102,8 @@ async function startupGeneration(){
     sorter = sortSelection(0);
     sortm = sortmSelection();
     // DO NO CHANGE END - TOP
-    // deleteDB("rec"); ////////////////////////////////
-    // deleteDB("item"); ///////////////////////////////
+    deleteDB("rec"); ////////////////////////////////
+    deleteDB("item"); ///////////////////////////////
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -114,122 +114,25 @@ async function startupGeneration(){
     });
 
     if(recms.length==0){
-        // apple
-        let apple = {
-            name : "Apple",
-            img : "apple.gif",
-            days : [14],
-            info : "fruits(1).html",
-            hit : 0,
-            time : -1
-        };
-        insertDBrec(apple);
-            
-        // // banana
-        // let banana  = {
-        //     name : "Banana",
-        //     img : "banana1.gif",
-        //     days : [2],
-        //     info : "fruits(1).html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(banana);
-            
-        // // berries
-        // let berries = {
-        //     name : "Berries",
-        //     img : "berries1.gif",
-        //     days : [2],
-        //     info : "fruits(1).html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(berries);
-            
-        // // grapes
-        // let grapes = {
-        //     name : "Grapes",
-        //     img : "SardonicExcellentIraniangroundjay-size_restricted.gif",
-        //     days : [3],
-        //     info : "fruits(1).html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(grapes);
-            
-        // // citrus
-        // let citrus = {
-        //     name : "Citrus",
-        //     img : "citrus.gif",
-        //     days : [2],
-        //     info : "fruits(1).html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(citrus);
+        let temp = createTempStart(),
+            con = document.getElementById("rec");
 
-        // // carrot
-        // let carrot = {
-        //     name : "Carrot",
-        //     img : "Carrot.gif",
-        //     days : [2],
-        //     info : "vegetables.html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(carrot);
+        temp.sort(sortm);
+        con.innerHTML = "";
 
-        // // potato
-        // let potato = {
-        //     name : "Potato",
-        //     img : "sweetpotato.gif",
-        //     days : [2],
-        //     info : "vegetables.html",
-        //     hit : 0,
-        //     time : 0
-        // };
-        // insertDBrec(potato);
-
-        // // kale
-        // let kale = {
-        //     name : "Kale",
-        //     img : "kale.gif",
-        //     days : [2],
-        //     info : "vegetables.html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(kale);
-
-        // // zucchini
-        // let zucchini = {
-        //     name : "Zucchini",
-        //     img : "zucchini.gif",
-        //     days : [2],
-        //     info : "vegetables.html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(zucchini);
-
-        // // tomato
-        // let tomato = {
-        //     name : "Tomato",
-        //     img : "Tomato.gif",
-        //     days : [2],
-        //     info : "vegetables.html",
-        //     hit : 0,
-        //     time : -1
-        // };
-        // insertDBrec(tomato);
+        for (let i = 0; i < temp.length; i++){
+            temp[i].con = con;
+            insertDBrec(temp[i]);
+            addRec(temp[i]);
+        }
+    }else{
+        // generate
+        // DO NO CHANGE - BOTTOM
+        putItems();
+        putRecm(false);
+        putRecn();
+        // DO NO CHANGE END - BOTTOM
     }
-    // generate
-    // DO NO CHANGE - BOTTOM
-    putItems();
-    putRecm();
-    putRecn();
-    // DO NO CHANGE END - BOTTOM
 }
 
 // ----- general expiry -----
@@ -238,70 +141,70 @@ function createTempStart(){
         { // apple
             name : "Apple",
             img : "apple.gif",
-            days : [14],
+            days : [14, 28],
             info : "fruits(1).html",
             hit : 0,
             time : -1
         },{ // banana
             name : "Banana",
             img : "banana1.gif",
-            days : [2],
+            days : [2,7],
             info : "fruits(1).html",
             hit : 0,
             time : -1
         },{ // berries
             name : "Berries",
             img : "berries1.gif",
-            days : [2],
+            days : [2,3],
             info : "fruits(1).html",
             hit : 0,
             time : -1
         },{ // grapes
             name : "Grapes",
             img : "SardonicExcellentIraniangroundjay-size_restricted.gif",
-            days : [3],
+            days : [3,5],
             info : "fruits(1).html",
             hit : 0,
             time : -1
         },{ // citrus
             name : "Citrus",
             img : "citrus.gif",
-            days : [2],
+            days : [14,28],
             info : "fruits(1).html",
             hit : 0,
             time : -1
         },{ // carrot
             name : "Carrot",
             img : "Carrot.gif",
-            days : [2],
+            days : [4,5],
             info : "vegetables.html",
             hit : 0,
             time : -1
         },{ // potato
             name : "Potato",
             img : "sweetpotato.gif",
-            days : [2],
+            days : [21, 35],
             info : "vegetables.html",
             hit : 0,
-            time : 0
+            time : -1
         },{ // kale
             name : "Kale",
             img : "kale.gif",
-            days : [2],
+            days : [7,14],
             info : "vegetables.html",
             hit : 0,
             time : -1
         },{ // zucchini
             name : "Zucchini",
             img : "zucchini.gif",
-            days : [2],
+            days : [1,5],
             info : "vegetables.html",
             hit : 0,
             time : -1
         },{ // tomato
             name : "Tomato",
             img : "Tomato.gif",
-            days : [2],
+            days : [7],
             info : "vegetables.html",
             hit : 0,
             time : -1
@@ -449,6 +352,10 @@ function putItems(){
         h+=62
         items[i].unique=i;
         addItem(items[i]);
+        if (items[i].temp == true){
+            items.splice(i,1);
+            i--;
+        }
     }
     con.style.height = h+"px";
 }
@@ -461,8 +368,8 @@ function reput(num) {
 
 function removeItem(num){
     items.splice(num,1);
-    updateItem();
     putItems();
+    updateItem();
 }
 
 function removExItem(){
@@ -471,8 +378,8 @@ function removExItem(){
             items.splice(i,1);
         }
     }
-    updateItem();
     putItems();
+    updateItem();
 }
 
 // ----- in expiry input -----
@@ -482,9 +389,10 @@ function newItem(){
     item.name = itemName.value;
     item.date = expirationDate.value;
     item.noty = Number(notifyMe.value);
+    item.temp = true;
     
     insertDBitem(item);
-    //items.push(item); /////////////////////////////////////
+    items.push(item);
     putItems();
     evalRecn(item);
 
@@ -540,11 +448,11 @@ search.addEventListener("keyup", function () {
                 r = a.name.localeCompare(b.name);
             return r;
         }
-    putRecm();
+    putRecm(false);
 });
 
 // ----- shared recomended & recent expiry -----
-function addRec(rec) {
+function addRec(rec){
     if (rec.hide)
         return;
 
@@ -584,14 +492,22 @@ function addRec(rec) {
 }
 
 // ----- in recomended expiry -----
-function putRecm(){
+function putRecm(check){
     let con = document.getElementById("rec");
     recms.sort(sortm);
     con.innerHTML = "";
 
-    for(let i=0; i<recms.length; i++){
+    for(let i = recms.length-1; i >= 0; i--){
         recms[i].con = con;
         addRec(recms[i]);
+
+        if(recms[i].temp)
+            recms.splice(i,1);
+        else
+            recms.old = true;
+        
+        if(check && recms.old)
+            recms.splice(i,1);
     }
 }
 
@@ -608,10 +524,20 @@ function putRecn(){
 
     if(recns.length>8)
         recns.length = 8;
-    for(let i=0; i<recns.length; i++){
+    
+    for(let i = recns.length-1; i >= 0; i--){
         recns[i].con = con;
         recns[i].unique=i;
         addRec(recns[i]);
+
+         if (recns[i].temp){
+            recns.splice(i,1);
+        }else
+            recns.old = true;
+
+        if(recns.old){
+            recns.splice(i,1);
+        }    
     }
 
     if (recns.length==0)
@@ -629,6 +555,13 @@ function evalRecn(rec){
         date : rec.date,
         days : []
     };
+
+    for(let i = 0; i<recns.length; i++)
+        if(trec.img.lastIndexOf(recns[i].img) != -1 && trec.name == recns[i].name){
+            trec.days = recns[i].days;
+            recns.splice(recns[i].unique,1);
+        }
+    
     for(let i=0; i<recms.length; i++)
         if(trec.img.lastIndexOf(recms[i].img) != -1 && trec.name == recms[i].name){
             // days
@@ -643,12 +576,7 @@ function evalRecn(rec){
             // time
             recms[i].time = (new Date()).getTime();
         }
-    for(let i = 0; i<recns.length; i++){
-        if(trec.img.lastIndexOf(recns[i].img) != -1 && trec.name == recns[i].name){
-            trec.days = recns[i].days;
-            recns.splice(recns[i].unique,1);
-        }
-    }
+    
     if(trec.days.length == 0){
         // days
         if(daysTillExpiry(trec)>=0)
@@ -661,11 +589,12 @@ function evalRecn(rec){
         trec.info = "";
         // time
         trec.time = (new Date()).getTime();
-        //recms.push(trec); //////////////////////////////
+        trec.temp = true;
+        recms.push(trec);
     }
 
     updateRec();
-    putRecm();
-    recns.unshift(trec);
+    putRecm(true);
+    recns.push(trec);
     putRecn();
 }
