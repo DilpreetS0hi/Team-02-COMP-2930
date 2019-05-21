@@ -9,6 +9,8 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
+// Script to display content 
 var count = 0;
 document.getElementById("c1").addEventListener("click", function() {
     ShowlistFruits("Carrots/Info");
@@ -79,6 +81,7 @@ function ShowlistFruits(catergory) {
             elem.parentNode.removeChild(elem);
             var brek = document.getElementById('break');
             brek.parentNode.removeChild(brek);
+<<<<<<< HEAD
         }if(count >= 2){
         var ele = document.getElementById('bo');
             console.log(ele.innerHTML);
@@ -86,6 +89,8 @@ function ShowlistFruits(catergory) {
             console.log(ele);
             console.log(count);
         }
+=======
+>>>>>>> 7d626eca0d91a983f077d8d47e4c46a1e05be057
         }
     });
 
@@ -101,6 +106,12 @@ function DisplayList(list) {
     var linebreak = document.createElement("br");
     linebreak.setAttribute('id','break');
 
+<<<<<<< HEAD
+=======
+    var linebreak = document.createElement("br");
+    linebreak.setAttribute('id','break');
+
+>>>>>>> 7d626eca0d91a983f077d8d47e4c46a1e05be057
     var bottonClick = document.createElement("div");
     var inside = document.createElement("p");
     inside.setAttribute('id', 'bo');

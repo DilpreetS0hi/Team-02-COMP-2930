@@ -20,6 +20,8 @@ function dis() {
     }
 }
 
+//Script to display data
+
 var count = 0;
 document.getElementById("c1").addEventListener("click", function() {
     ShowlistFruits("Apple/Info");
@@ -101,12 +103,21 @@ function ShowlistFruits(catergory) {
 
 function DisplayList(list) {
     var para = document.createElement("div");
+<<<<<<< HEAD
     
     var linebreak = document.createElement("br");
     linebreak.setAttribute('id','break');
     
     var bottonClick = document.createElement("div");
     
+=======
+
+    var linebreak = document.createElement("br");
+    linebreak.setAttribute('id','break');
+
+    var bottonClick = document.createElement("div");
+
+>>>>>>> 7d626eca0d91a983f077d8d47e4c46a1e05be057
     var inside = document.createElement("p");
 
     var doc = document.getElementById("content");
@@ -118,9 +129,15 @@ function DisplayList(list) {
     var node = document.createTextNode(list);
 
     inside.appendChild(node);
+<<<<<<< HEAD
     
     para.setAttribute('id', 'listofplant');
     
+=======
+
+    para.setAttribute('id', 'listofplant');
+
+>>>>>>> 7d626eca0d91a983f077d8d47e4c46a1e05be057
     bottonClick.setAttribute("Class", "bottonClick");
 
     doc.appendChild(linebreak);

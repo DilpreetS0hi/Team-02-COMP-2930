@@ -1,78 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>No Food Wastage</title>
-      <link rel="stylesheet" href="homepage.css">
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="signin.css">
-
-    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
-    <script src="setup_firebase_yourname.js"></script>
-    <script src="homepage.js"></script>
-    <script type="text/javascript">
-var firstTime = true;
-var message = "try again!";
-var later = "easter egg surprise"
-function MouseoverMessageInAlertBox()
-{
-  if(firstTime) { alert(message); }
-  else { alert(later); }
-  firstTime = false;
-}
-</script>
-   
+    <head>
+        <!--        meta elements-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <!--        title -->
+        <title>No Food Wastage</title>
+        
+        <!--        stylesheets-->
+        <link rel="stylesheet" href="homepage.css">
+        
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+        
+        <link rel="stylesheet" type="text/css" href="signin.css">
+        
+        <!--        javascript-->
+        <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+        
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+        
+        <script src="setup_firebase_yourname.js"></script>
+        
+        <script src="homepage.js"></script>
+    </head>
     
-  
-</head>
-
-<body class="slideshow-container">
-    <div style="position:absolute;
-           top:10px;
-           left: 10px;
-           z-index:99;
-           background-color:transparent;
-           width:80px;
-           height:80px;"
-    onmouseover="MouseoverMessageInAlertBox()"></div>
-    
-  
+    <body class="slideshow-container">
+        <div style="position:absolute;
+            top:10px;
+            left: 10px;
+            z-index:99;
+            background-color:transparent;
+            width:80px;
+            height:80px;"
+            onmouseover="MouseoverMessageInAlertBox()"></div>
+        
         <div class="mySlides fade">
-          <img src="food1.jpg" style="height:100%;min-width: 100%;">
+            <img src="food1.jpg" style="height:100%;min-width: 100%;">
         </div>
-
+        
         <div class="mySlides fade">
-          <img src="food4.jpg" style="height:100%;min-width: 100%;">
+            <img src="food4.jpg" style="height:100%;min-width: 100%;">
         </div>
-
+        
         <div class="mySlides fade">
-          <img src="food3.jpg" style="height:100%;min-width: 100%;">
+            <img src="food3.jpg" style="height:100%;min-width: 100%;">
         </div>
-
-        <div id="filler"><p id="filler-para"></p></div>
-    <script>
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-
-    </script>
+        
+        <div id="filler">
+            <p id="filler-para"></p>
+        </div>
+        
+        <script>
+            // Initialize the FirebaseUI Widget using Firebase.
+            var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        </script>
+        
         <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
-
-
-    <script>
-        var uiConfig = {
-            callbacks: {
-                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-                    // User successfully signed in.
-                    // Return type determines whether we continue the redirect automatically
-                    // or whether we leave that to developer to handle.
-                    return true;
+        <div id="loader">Loading...</div>
+        
+        <script>
+            var uiConfig = {
+                callbacks: {
+                    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                        // User successfully signed in.
+                        // Return type determines whether we continue the redirect automatically
+                        // or whether we leave that to developer to handle.
+                        return true;
+                    },
+                    uiShown: function() {
+                        // The widget is rendered.
+                        // Hide the loader.
+                        document.getElementById('loader').style.display = 'none';
+                    }
                 },
+<<<<<<< HEAD
                 uiShown: function() {
                     // The widget is rendered.
                     // Hide the loader.
@@ -114,59 +119,89 @@ function MouseoverMessageInAlertBox()
 
     </script>
       <div id="container">
+=======
+                // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+                signInFlow: 'popup',
+                signInSuccessUrl: 'expiry.html',
+                signInOptions: [
+                    // Leave the lines as is for the providers you want to offer your users.
+            
+                    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                    firebase.auth.EmailAuthProvider.PROVIDER_ID
+                ],
+                // Terms of service url.
+                tosUrl: 'expiry.html',
+                // Privacy policy url.
+                privacyPolicyUrl: 'expiry.html'
+            };
+                
+                
+                
+                
+                showSlides();
+            
+        </script>
+        
+        <script>
+            // The start method will wait until the DOM is loaded.
+            ui.start('#firebaseui-auth-container', uiConfig);
+            
+        </script>
+        
+        
+        <!--        navigation bar-->
+        <div id="container">
+>>>>>>> 7d626eca0d91a983f077d8d47e4c46a1e05be057
             <nav>
-                  <input type="checkbox" id="nav" class="hidden">
-                  <label for="nav" class="nav-btn" onclick="dis()">
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                  </label>
-                  <div class="logo">
-                        <a href="#">
-                            <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
-                            <div id="logotext"></div>
-                      </a>
-                  </div>
-                  <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
-                        <ul>
-                              <li><a href="#">Home</a></li>
-                              <li><a href="#">Expiry</a></li>
-                              <li><a href="#">Donate</a></li>
-                              <li><a href="#">Suggest</a></li>
-                            <div id="marge"></div>
-                        </ul>
-                  </div>
+                <input type="checkbox" id="nav" class="hidden">
+                <label for="nav" class="nav-btn" onclick="dis()">
+                <i></i>
+                <i></i>
+                <i></i>
+                </label>
+                <div class="logo">
+                    <a href="#">
+                        <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
+                        <div id="logotext"></div>
+                    </a>
+                </div>
+                <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="expiry.html">Expiry</a></li>
+                        <li><a href="addData.html">Donate</a></li>
+                        <li><a href="suggest.html">Suggest</a></li>
+                        <div id="marge"></div>
+                    </ul>
+                </div>
             </nav>
-      </div>
-    
-  
-     <footer class="footer-distributed" id="contact">
-    	<div class="footer-left">
-            <h2><span>No</span> FOOD <span>Wastage</span></h2>
-				<p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
-			</div>
-			<div class="footer-center">
-				<div>
+        </div>
+        
+        <!--footer -->
+        <footer class="footer-distributed" id="contact">
+            <div class="footer-left">
+                <h2><span>No</span> FOOD <span>Wastage</span></h2>
+                <p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
+            </div>
+            <div class="footer-center">
+                <div>
                     <p>Address: 3700 Willingdon Ave Burnaby, Bc</p>
-				</div>
+                </div>
                 <br>
-				<div>
-					<p>Phone: 604-727-3019</p>
-				</div>
+                <div>
+                    <p>Phone: 604-727-3019</p>
+                </div>
                 <br>
-				<div>
-					<p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
-				</div>
-			</div>
-			<div class="footer-right">
-				<p class="footer-company-about">
-					<a href="AboutUs_page.html"><span>About Us</span></a>
+                <div>
+                    <p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <a href="AboutUs_page.html"><span>About Us</span></a>
                 <h5>&#169; 2019 NoFoodWastage</h5>
                 <h5>&#174; Privacy Policy</h5>
-					
-				
-			</div>
-
-		</footer>
-</body>
+            </div>
+        </footer>
+    </body>
 </html>
