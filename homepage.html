@@ -77,49 +77,6 @@
                         document.getElementById('loader').style.display = 'none';
                     }
                 },
-<<<<<<< HEAD
-                uiShown: function() {
-                    // The widget is rendered.
-                    // Hide the loader.
-                    document.getElementById('loader').style.display = 'none';
-                }
-            },
-            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-            signInFlow: 'popup',
-            signInSuccessUrl: 'expiry.html',
-            signInOptions: [
-                // Leave the lines as is for the providers you want to offer your users.
-
-                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                firebase.auth.EmailAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: 'expiry.html',
-            // Privacy policy url.
-            privacyPolicyUrl: 'expiry.html'
-        };
-        var slideIndex = 0;
-        showSlides();
-
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1} 
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-    </script>
-    <script>
-        // The start method will wait until the DOM is loaded.
-        ui.start('#firebaseui-auth-container', uiConfig);
-
-    </script>
-      <div id="container">
-=======
                 // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
                 signInFlow: 'popup',
                 signInSuccessUrl: 'expiry.html',
@@ -151,7 +108,6 @@
         
         <!--        navigation bar-->
         <div id="container">
->>>>>>> 7d626eca0d91a983f077d8d47e4c46a1e05be057
             <nav>
                 <input type="checkbox" id="nav" class="hidden">
                 <label for="nav" class="nav-btn" onclick="dis()">
@@ -160,14 +116,14 @@
                 <i></i>
                 </label>
                 <div class="logo">
-                    <a href="#">
+                    <a href="homepage.html">
                         <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
                         <div id="logotext"></div>
                     </a>
                 </div>
                 <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
                     <ul>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="homepage.html">Home</a></li>
                         <li><a href="expiry.html">Expiry</a></li>
                         <li><a href="addData.html">Donate</a></li>
                         <li><a href="suggest.html">Suggest</a></li>
