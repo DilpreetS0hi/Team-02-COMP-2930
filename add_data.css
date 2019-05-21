@@ -147,7 +147,7 @@ nav ul li a {
 /*date*/
 .dateClass{
     color : grey;
-    margin-top: -3%;
+    margin-top: -4%;
     margin-right: : 2.5%;
     float: right;
 }
@@ -167,7 +167,7 @@ nav ul li a {
 /*contact number*/
 .contactClass{
     color: grey;
-    margin-top: -4%;
+    margin-top: -6%;
     margin-right: 2%;
     float: right;
 }
@@ -176,6 +176,7 @@ nav ul li a {
 .nameClass{
     font-size: 35px;
     margin-left: 2%;
+    margin-right: 35%;
 }
 
 /*media query*/
@@ -480,7 +481,7 @@ input[type=number], select, textarea{
 
 /*posts*/
 #ex1 {
- margin-top: -398px;
+ margin-top: -325px;
     float: right;
     background-color: rgb(221, 222, 218);
     width: 700px;
@@ -533,7 +534,7 @@ input[type=submit] {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
-    height: 524px;
+    height: 560px;
         margin-top: 77px;
 }
 
@@ -557,7 +558,9 @@ input[type=submit] {
     display: table;
     clear: both;
 }
-
+#privacy{
+    margin-bottom: 0%;
+}
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 
 
@@ -567,7 +570,7 @@ input[type=submit] {
     #ex1{
                width: 448px;
     height: 340px;
-        margin-top: -367px;
+        margin-top: -291px;
     }
     
 /*    posts*/
@@ -595,6 +598,12 @@ input[type=submit] {
     footer{
         margin-top: -43px;
     }
+    .contactClass{
+        margin-top: -9%;
+    }
+    #privacy{
+        width: 105%;
+    }
 }
 
 /*media queries*/
@@ -604,7 +613,7 @@ input[type=submit] {
     #ex1{
                width: 307px;
     height: 340px;
-        margin-top: -367px;
+        margin-top: -288px;
         margin-right: -10px;
     }
     
@@ -633,7 +642,7 @@ input[type=submit] {
     
 /*    contact number*/
     .contactClass{
-        margin-top: -34px;
+        margin-top: -29px;
     }
     
 /*    date*/
@@ -658,6 +667,9 @@ input[type=submit] {
     footer{
         margin-top: -43px;
     }
+    .nameClass{
+    font-size: 25px;
+    }
 
 }
 
@@ -668,12 +680,12 @@ input[type=submit] {
     #ex1{
                width: 230px;
     height: 340px;
-        margin-top: -367px;
+        margin-top: -287px;
         margin-right: -10px;
     }
 /*    information div*/
     .container{
-     height: 450px;   
+     height: 490px;   
         margin-top: 50px;
     }
     
@@ -696,7 +708,7 @@ input[type=submit] {
     
 /*    contact */
     .contactClass{
-        margin-top: -5px;
+        margin-top: -21px;
     }
     
 /*    email*/
@@ -725,11 +737,14 @@ input[type=submit] {
     
 /*    name*/
     .nameClass{
-        font-size: 24px;
+        font-size: 18px;
     }
 /*    footer*/
     footer{
         margin-top: -43px;
+    }
+    #privacy{
+        width: 150%;
     }
 
 }
