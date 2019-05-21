@@ -81,6 +81,13 @@ function ShowlistFruits(catergory) {
             elem.parentNode.removeChild(elem);
             var brek = document.getElementById('break');
             brek.parentNode.removeChild(brek);
+        }if(count >= 2){
+        var ele = document.getElementById('bo');
+            console.log(ele.innerHTML);
+        if(ele.innerHTML == "INGREDIENTS"){
+            console.log(ele);
+            console.log(count);
+        }
         }
     });
 
@@ -92,12 +99,16 @@ function ShowlistFruits(catergory) {
 
 function DisplayList(list) {
     var para = document.createElement("div");
+    
+    var linebreak = document.createElement("br");
+    linebreak.setAttribute('id','break');
 
     var linebreak = document.createElement("br");
     linebreak.setAttribute('id','break');
 
     var bottonClick = document.createElement("div");
     var inside = document.createElement("p");
+    inside.setAttribute('id', 'bo');
 
     var doc = document.getElementById("content");
     doc.appendChild(para);
