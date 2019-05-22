@@ -741,7 +741,7 @@ p{
     }
 }
 
-@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+@media only screen and (min-device-width : 360px) and (max-device-width : 479px){
     .row img{
         height: 95px;
         width: 95px;
