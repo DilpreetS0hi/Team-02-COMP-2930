@@ -409,3 +409,9 @@ body {
 	-webkit-animation-duration: 4s;
 	-webkit-animation-iteration-count: 1;
 }
+.firebaseui-card-footer.firebaseui-provider-sign-in-footer{
+    display: none;
+}
+.firebaseui-card-content{
+    height: 200px;
+}
