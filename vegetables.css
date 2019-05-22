@@ -963,37 +963,38 @@ p{
 /* Carrot text*/
     #Carrot{
         font-size: 12px;
-        margin-left: 8px;
+        margin-left: 7px;
     }
 
 /*    sweetPotato text*/
     #SweetPotatos{
-        font-size: 12px;
-        margin-left: 66px;
-        margin-top: -94px;
+        font-size: 10px;
+        margin-left: 65px;
+        margin-top: -93px;
         word-wrap: break-word; 
     }
 
 /*    kale text*/
     #Kale{
         font-size: 12px;
-        margin-left: 194px;
+        margin-left: 178px;
         margin-top: -37px;
     }
 
 /*    Zucchini text*/
     #Zucchini{
-        margin-left: 233px;
+        margin-left: 220px;
         font-size: 12px;
 
-        margin-top: -32px;
+        margin-top: -33px;
     }
 
 /*    tomato text*/
     #Tomato{
-        margin-left: 306px;
+        margin-left: 291px;
         font-size: 12px;
-        margin-top: -95px;
+        margin-top: -94px;
+        width: fit-content;
     }
 
 /*    carrot gif */

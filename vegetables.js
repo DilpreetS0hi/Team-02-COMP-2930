@@ -9,6 +9,19 @@ var config = {
 };
 firebase.initializeApp(config);
 
+//Script for nav-bar
+
+function dis() {
+    if(document.getElementById("i-need-you").style.left == "0px"){
+        document.getElementById("i-need-you").style.left = "-10000px";
+        document.getElementById("i-need-you").style.top = "-10000px";
+    }else{
+        document.getElementById("i-need-you").style.left = "0px";
+        document.getElementById("i-need-you").style.top = "0px";
+
+    }
+}
+
 
 // Script to display content 
 var count = 0;
@@ -81,13 +94,6 @@ function ShowlistFruits(catergory) {
             elem.parentNode.removeChild(elem);
             var brek = document.getElementById('break');
             brek.parentNode.removeChild(brek);
-        }if(count >= 2){
-        var ele = document.getElementById('bo');
-            console.log(ele.innerHTML);
-        if(ele.innerHTML == "INGREDIENTS"){
-            console.log(ele);
-            console.log(count);
-        }
         }
     });
 
@@ -99,16 +105,12 @@ function ShowlistFruits(catergory) {
 
 function DisplayList(list) {
     var para = document.createElement("div");
-    
-    var linebreak = document.createElement("br");
-    linebreak.setAttribute('id','break');
 
     var linebreak = document.createElement("br");
     linebreak.setAttribute('id','break');
 
     var bottonClick = document.createElement("div");
     var inside = document.createElement("p");
-    inside.setAttribute('id', 'bo');
 
     var doc = document.getElementById("content");
     doc.appendChild(para);
