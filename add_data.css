@@ -755,7 +755,7 @@ input[type=submit] {
     }
 
 }
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) {
     #ex1 {
     width: 47%;
     height: 50vh;
@@ -796,7 +796,7 @@ input[type=submit] {
         font-size: 22px;
     }
 }
-@media screen and (max-width: 414px){
+@media only screen and (max-width: 414px){
     #ex1{
         width: 46%;
     height: 50vh;
@@ -836,7 +836,7 @@ input[type=submit] {
     }
 }
 
-@media screen and (max-width: 320px){
+@media only screen and (max-width: 320px){
     #Contact{
         margin-left: 5%;
         font-size: 70%;
