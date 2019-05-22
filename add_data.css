@@ -295,13 +295,11 @@ nav ul li a {
 .hidden {
 	display: none;
 }
-
-/*footer*/
 .footer-distributed{
 	z-index: 999;
 	height: 150px;
 	bottom: 0px;
-	
+	position: fixed;
 	background: rgba(159, 239, 56, 0.84);
 	box-sizing: border-box;
 	width: 100%;
@@ -309,7 +307,6 @@ nav ul li a {
 	font: bold 16px sans-serif;
 	padding: 22px 50px;
 }
-/*footer*/
 .footer-distributed .footer-left,.footer-distributed .footer-center,.footer-distributed .footer-right{
 	display: inline-block;
 	vertical-align: top;
@@ -416,6 +413,16 @@ nav ul li a {
 	line-height: 35px;
 	margin-right: 3px;
 	margin-bottom: 5px;
+}
+#firebaseui-auth-container{
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	/* margin-right: 15% !important;
+	margin-top: 2% !important;
+	*/
 }
 #firebaseui-auth-container{
 	position: fixed;
@@ -747,4 +754,88 @@ input[type=submit] {
         width: 150%;
     }
 
+}
+@media screen and (max-width: 375px) {
+    #ex1 {
+    width: 47%;
+    height: 50vh;
+    }
+    .postdivClass{
+        font-size: 70%;
+    }
+    .contactClass{
+        font-size: 70%;
+        margin-top: -10%;
+    }
+    .emailClass{    
+        font-size: 50%;
+        margin-top: -2%;
+    }
+    .nameClass{
+        font-size: 90%;
+    }
+    .dateClass{
+        font-size: 70%;
+    }
+    .col-25{
+        margin-left: -5.5%;
+    }
+    #Contact{
+        width: 85%;
+        margin-left: 10%;
+    }
+    #Post{
+        width: 85%;
+        margin-left: 10%;
+    }
+    .logo>a>img{
+        height: 45px;
+    }
+    #banner{
+        margin-top: 2%;
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 414px){
+    #ex1{
+        width: 46%;
+    height: 50vh;
+    }
+    .postdivClass{
+        font-size: 70%;
+    }
+    .contactClass{
+        font-size: 70%;
+        margin-top: -10%;
+    }
+    .emailClass{    
+        font-size: 50%;
+        margin-top: -2%;
+    }
+    .nameClass{
+        font-size: 90%;
+    }
+    .dateClass{
+        font-size: 70%;
+    }
+    .logo>a>img{
+        height: 45px;
+    }
+    #banner{
+        margin-top: 2%;
+        font-size: 22px;
+    }
+    .nav-btn{
+        margin-top: -4%;
+    }
+    #container{
+        height: 9%;
+    }
+    .col-25>label[for="Contact"]{
+        margin-left: -11.5%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    
 }
