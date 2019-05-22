@@ -26,6 +26,7 @@ function dis() {
 // Script to display content 
 var count = 0;
 document.getElementById("c1").addEventListener("click", function() {
+    ShowlistFruits("Carrots/Name");
     ShowlistFruits("Carrots/Info");
     ShowlistFruits("Carrots/Ingredients");
     ShowlistFruits("Carrots/Ingredients1");
@@ -38,6 +39,7 @@ document.getElementById("c1").addEventListener("click", function() {
 });
 
 document.getElementById("c2").addEventListener("click", function() {
+    ShowlistFruits("SweetPotatoes/Name");
     ShowlistFruits("SweetPotatoes/Info");
     ShowlistFruits("SweetPotatoes/Ingredients");
     ShowlistFruits("SweetPotatoes/Ingredients1");
@@ -49,6 +51,7 @@ document.getElementById("c2").addEventListener("click", function() {
     ShowlistFruits("SweetPotatoes/Method5");
 });
 document.getElementById("c3").addEventListener("click", function() {
+    ShowlistFruits("Kale/Name");
     ShowlistFruits("Kale/Info");
     ShowlistFruits("Kale/Ingredients");
     ShowlistFruits("Kale/Ingredients1");
@@ -60,6 +63,7 @@ document.getElementById("c3").addEventListener("click", function() {
     ShowlistFruits("Kale/Method5");
 });
 document.getElementById("c4").addEventListener("click", function() {
+    ShowlistFruits("Zucchini/Name");
     ShowlistFruits("Zucchini/Info");
     ShowlistFruits("Zucchini/Ingredients");
     ShowlistFruits("Zucchini/Ingredients1");
@@ -71,6 +75,7 @@ document.getElementById("c4").addEventListener("click", function() {
     ShowlistFruits("Zucchini/Method5");
 });
 document.getElementById("c5").addEventListener("click", function() {
+    ShowlistFruits("Tomatoes/Name");
     ShowlistFruits("Tomatoes/Info");
     ShowlistFruits("Tomatoes/Ingredients");
     ShowlistFruits("Tomatoes/Ingredients1");
@@ -89,7 +94,7 @@ function ShowlistFruits(catergory) {
     var promise = dbRef.once("value", function(snap) {
         list = snap.val();
         count++;
-        if(count>9){
+        if(count>10){
             var elem = document.getElementById('listofplant');
             elem.parentNode.removeChild(elem);
             var brek = document.getElementById('break');

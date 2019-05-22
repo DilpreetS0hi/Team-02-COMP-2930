@@ -13,6 +13,7 @@ function dis() {
 
 var count = 0;
 document.getElementById("c1").addEventListener("click", function() {
+    ShowlistFruits("Apple/Name");
     ShowlistFruits("Apple/Info");
     ShowlistFruits("Apple/Ingredients");
     ShowlistFruits("Apple/Ingredients1");
@@ -25,6 +26,7 @@ document.getElementById("c1").addEventListener("click", function() {
 });
 
 document.getElementById("c2").addEventListener("click", function() {
+    ShowlistFruits("Banana/Name");
     ShowlistFruits("Banana/Info");
     ShowlistFruits("Banana/Ingredients");
     ShowlistFruits("Banana/Ingredients1");
@@ -36,6 +38,7 @@ document.getElementById("c2").addEventListener("click", function() {
     ShowlistFruits("Banana/Method5");
 });
 document.getElementById("c3").addEventListener("click", function() {
+    ShowlistFruits("Berries/Name");
     ShowlistFruits("Berries/Info");
     ShowlistFruits("Berries/Ingredients");
     ShowlistFruits("Berries/Ingredients1");
@@ -47,6 +50,7 @@ document.getElementById("c3").addEventListener("click", function() {
     ShowlistFruits("Berries/Method5");
 });
 document.getElementById("c4").addEventListener("click", function() {
+    ShowlistFruits("Grapes/Name");
     ShowlistFruits("Grapes/Info");
     ShowlistFruits("Grapes/Ingredients");
     ShowlistFruits("Grapes/Ingredients1");
@@ -58,6 +62,7 @@ document.getElementById("c4").addEventListener("click", function() {
     ShowlistFruits("Grapes/Method5");
 });
 document.getElementById("c5").addEventListener("click", function() {
+    ShowlistFruits("Citrus/Name");
     ShowlistFruits("Citrus/Info");
     ShowlistFruits("Citrus/Ingredients");
     ShowlistFruits("Citrus/Ingredients1");
@@ -76,7 +81,7 @@ function ShowlistFruits(catergory) {
     var promise = dbRef.once("value", function(snap) {
         list = snap.val();
         count++;
-        if(count>9){
+        if(count>10){
             var elem = document.getElementById('listofplant');
             elem.parentNode.removeChild(elem);
             var brek = document.getElementById('break');
