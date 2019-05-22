@@ -10,7 +10,9 @@ html {
 body {
 	margin: 0;
 }
-
+.nav-btn{
+	display: none;
+}
 
 .slideshow-container {
 	top:0px;
