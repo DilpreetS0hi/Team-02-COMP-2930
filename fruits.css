@@ -739,3 +739,79 @@ p{
     #c4{
         margin-left: -13px;
     }
+}
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 640px){
+    .row img{
+        height: 95px;
+        width: 95px;
+    }
+
+    #container{
+        width: 375px;
+    }
+
+    .footer-distributed{
+        width: 375px;
+        height: 210px;
+        margin-top: 76px;
+    }
+
+
+    #fruits{
+        height: 188px;
+    width: 188px;
+    margin-left: 101px;
+    margin-top: 63px;
+
+    }
+
+
+    #apple{
+        font-size: 13px;
+        margin-left: 13px;
+    }
+    #banana{
+        font-size: 13px;
+        margin-left: 79px;
+        margin-top: 10px; 
+    }
+
+    #berries{
+        font-size: 13px;
+        margin-left: 149px;
+        margin-top: 20px;
+    }
+
+    #grapes{
+        font-size: 13px;
+        margin-left: 224px;
+        margin-top: 21px;
+    }
+
+    #citrus{
+        font-size: 13px;
+        margin-left: 289px;
+        margin-top: -15px;
+    }
+
+    #c1{
+        margin-left: -12px;
+        margin-top: 11px;
+        margin-right: -21px;
+    }
+    #c5{
+        margin-left: -31px;
+    }
+    #c2{
+        margin-right: -5px;
+        margin-left: -3px;
+    }
+    #c3{
+        margin-left: -30px;
+    }
+    #c4{
+        margin-left: -30px;
+    }
+}
+
