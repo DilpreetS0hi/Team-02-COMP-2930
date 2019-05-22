@@ -572,29 +572,29 @@ p{
 
 /*media queries*/
 @media only screen and (max-width: 840px){
-/*  the navigation bar*/
+    /*  the navigation bar*/
     #container{
         width: 840px;
         height:auto;
 
     }
-/*    footer*/
+    /*    footer*/
     .footer-distributed{
         width: 839px;
         margin-top: -5px;
     }
-    
-/* The information div*/
+
+    /* The information div*/
     #content{
         margin-top: -46px;
     }
-    
-/*    nav bar*/
+
+    /*    nav bar*/
     .nav-wrapper{
 
     }
 
-/*    gifs*/
+    /*    gifs*/
     .row{
         margin-top: -42px;
         margin-left: -22px;
@@ -604,10 +604,10 @@ p{
     position: absolute;
 }
     */
-    
-/*    vegetable gif*/
-    
-    
+
+    /*    vegetable gif*/
+
+
     #vegetables{
         margin-left: 323px;
         height: 227px;
@@ -615,27 +615,27 @@ p{
         margin-top: 50px;
     }
 
-/*carrot text*/
+    /*carrot text*/
     #Carrot{
         font-size: 18px;
         margin-left: 58px;
     }
-    
-/*sweetPotato text*/
+
+    /*sweetPotato text*/
     #SweetPotatos{
         font-size: 18px;
         margin-left: 170px;
         margin-top: -102px;
     }
 
-/*    kale text */
+    /*    kale text */
     #Kale{
         font-size: 18px;
         margin-left: 395px;
         margin-top: -44.5px;
     }
 
-/*    Zucchini text*/
+    /*    Zucchini text*/
     #Zucchini{
         margin-left: 517px;
         font-size: 18px;
@@ -643,42 +643,42 @@ p{
         margin-top: -40px;
     }
 
-/*    tomato text */
+    /*    tomato text */
     #Tomato{
         margin-left: 666px;
         font-size: 18px;
         margin-top: -101px;
     }
 
-/*carrot gif*/
+    /*carrot gif*/
     #c1{
         margin-left: 50px;
     }
 
-/*    sweetPotato gif*/
+    /*    sweetPotato gif*/
     #c2{
         margin-left: 33px;
     }
 
-/*        kale gif */
+    /*        kale gif */
     #c3{
         margin-left: 43px;
     }
 
-    
-/*    Zucchini gif*/
+
+    /*    Zucchini gif*/
     #c4{
         margin-left: 22px;
     }
-    
-    
-/*    tomato gif */
+
+
+    /*    tomato gif */
 
     #c5{
         margin-left: 19px;
     }
 
-/*    the gifs*/
+    /*    the gifs*/
     .row img{
         height: 120px;
         width: 120px;
@@ -689,12 +689,12 @@ p{
 
 /*media query */
 @media only screen and (max-width: 600px){
-    
-/*    navigation bar*/
+
+    /*    navigation bar*/
     #container{
         width: 600px;
     }
-/*    footer*/
+    /*    footer*/
     .footer-distributed{
         width: 600px;
         margin-top: -9px;
@@ -713,14 +713,14 @@ p{
 }
     */
 
-    
-/*    the gifs*/
+
+    /*    the gifs*/
     .row{
         margin-top: -29.75px;
         margin-left: 6px;
     }
 
-/*the vegetable gif*/
+    /*the vegetable gif*/
     #vegetables{
         margin-left: 209px;
         height: 205px;
@@ -728,14 +728,14 @@ p{
         margin-top: 61px;
     }
 
-/*    carrot text*/
+    /*    carrot text*/
 
     #Carrot{
         font-size: 16px;
         margin-left: 23px;
     }
 
-/*    sweetpotato text*/
+    /*    sweetpotato text*/
     #SweetPotatos{
         font-size: 16px;
         margin-left: 105px;
@@ -743,55 +743,55 @@ p{
         word-wrap: break-word; 
     }
 
-/*    kale text*/
+    /*    kale text*/
     #Kale{
         font-size: 16px;
         margin-left: 286px;
         margin-top: -43px;
     }
 
-/*    Zucchini text*/
+    /*    Zucchini text*/
     #Zucchini{
         margin-left: 372px;
         font-size: 16px;
 
         margin-top: -36px;
     }
-    
-/*tomato text*/
+
+    /*tomato text*/
     #Tomato{
         margin-left: 485px;
         font-size: 16px;
         margin-top: -100px;
     }
 
-/*    carrot gif*/
+    /*    carrot gif*/
     #c1{
         margin-left: -12px;
     }
 
-/*    sweetpotato gif*/
+    /*    sweetpotato gif*/
     #c2{
         margin-left: -10px;
     }
 
-/*    kale gif*/
+    /*    kale gif*/
     #c3{
         margin-left: 6px;
     }
-    
-    
-/*Zucchini gif*/
+
+
+    /*Zucchini gif*/
     #c4{
         margin-left: -10px;
     }
 
-/*    tomato gif*/
+    /*    tomato gif*/
     #c5{
         margin-left: -20px;
     }
 
-/*    gifs*/
+    /*    gifs*/
     .row img{
         height: 120px;
         width: 120px;
@@ -803,19 +803,19 @@ p{
 /*media query*/
 @media only screen and (max-width: 480px){
 
-/*    the nav bar*/
+    /*    the nav bar*/
     #container{
         width: 480px;
     }
-    
-/*    footer*/
+
+    /*    footer*/
     .footer-distributed{
         width: 480px;
         margin-top: -13px;
         height: 30%;
     }
 
-/* information div*/
+    /* information div*/
     #content{
         margin-top: -46px;
     }
@@ -826,18 +826,18 @@ p{
 }
     */
 
-/*    the menu button */
+    /*    the menu button */
     .nav-btn{
         position: absolute;
     }
 
-/*    gifs*/
+    /*    gifs*/
     .row{
         margin-top: -29.75px;
         margin-left: 6px;
     }
 
-/*    vegetable div */
+    /*    vegetable div */
     #vegetables{
         margin-left: 147px;
         height: 185px;
@@ -845,13 +845,13 @@ p{
         margin-top: 61px;
     }
 
-/* Carrot text*/
+    /* Carrot text*/
     #Carrot{
         font-size: 14px;
         margin-left: 15px;
     }
 
-/*    sweetPotato text*/
+    /*    sweetPotato text*/
     #SweetPotatos{
         font-size: 14px;
         margin-left: 83px;
@@ -859,14 +859,14 @@ p{
         word-wrap: break-word; 
     }
 
-/*    kale text*/
+    /*    kale text*/
     #Kale{
         font-size: 14px;
         margin-left: 232px;
         margin-top: -39px;
     }
 
-/*    Zucchini text*/
+    /*    Zucchini text*/
     #Zucchini{
         margin-left: 296px;
         font-size: 14px;
@@ -874,41 +874,41 @@ p{
         margin-top: -34px;
     }
 
-/*    tomato text*/
+    /*    tomato text*/
     #Tomato{
         margin-left: 384px;
         font-size: 14px;
         margin-top: -96px;
     }
 
-/*    carrot gif */
+    /*    carrot gif */
     #c1{
         margin-left: -10px;
     }
 
-/*    sweetpotato gif*/
+    /*    sweetpotato gif*/
     #c2{
         margin-left: -10px;
     }
 
-/*    kale gif*/
+    /*    kale gif*/
     #c3{
         margin-left: -1px;
         margin-right: 13px;
     }
 
-/*    Zucchini gif */
+    /*    Zucchini gif */
     #c4{
         margin-left: -27px;
         margin-right: -18px;
     }
-/*    tomato gif */
+    /*    tomato gif */
 
     #c5{
         margin-left: -7px;
     }
 
-/*    the gifs */
+    /*    the gifs */
     .row img{
         height: 100px;
         width: 100px;
@@ -918,19 +918,19 @@ p{
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 479px){
 
-/*    the nav bar*/
+    /*    the nav bar*/
     #container{
         width: 375px;
     }
-    
-/*    footer*/
+
+    /*    footer*/
     .footer-distributed{
         width: 375px;
         margin-top: 115px;
         height: 30%;
     }
 
-/* information div*/
+    /* information div*/
     #content{
         margin-top: -46px;
     }
@@ -941,18 +941,18 @@ p{
 }
     */
 
-/*    the menu button */
+    /*    the menu button */
     .nav-btn{
         position: absolute;
     }
 
-/*    gifs*/
+    /*    gifs*/
     .row{
         margin-top: -29.75px;
         margin-left: 6px;
     }
 
-/*    vegetable div */
+    /*    vegetable div */
     #vegetables{
         margin-left: 113px;
         height: 147px;
@@ -960,71 +960,73 @@ p{
         margin-top: 70px;
     }
 
-/* Carrot text*/
+    /* Carrot text*/
     #Carrot{
         font-size: 12px;
         margin-left: 7px;
     }
 
-/*    sweetPotato text*/
+    /*    sweetPotato text*/
     #SweetPotatos{
         font-size: 10px;
-        margin-left: 65px;
+        margin-left: 63px;
         margin-top: -93px;
         word-wrap: break-word; 
+        width: 84px;
     }
 
-/*    kale text*/
+    /*    kale text*/
     #Kale{
         font-size: 12px;
-        margin-left: 178px;
+        margin-left: 160px;
         margin-top: -37px;
     }
 
-/*    Zucchini text*/
+    /*    Zucchini text*/
     #Zucchini{
-        margin-left: 220px;
-        font-size: 12px;
+        margin-left: 198px;
+        font-size: 11px;
 
-        margin-top: -33px;
+        margin-top: -32px;
     }
 
-/*    tomato text*/
+    /*    tomato text*/
     #Tomato{
-        margin-left: 291px;
+        margin-left: 268px;
         font-size: 12px;
         margin-top: -94px;
         width: fit-content;
     }
 
-/*    carrot gif */
+    /*    carrot gif */
     #c1{
         margin-left: -21px;
     }
 
-/*    sweetpotato gif*/
+    /*    sweetpotato gif*/
     #c2{
         margin-left: -24px;
     }
 
-/*    kale gif*/
+    /*    kale gif*/
     #c3{
-        margin-left: -15px;
+        margin-left: -27px;
         margin-right: 13px;
+        width: 80px;
     }
 
-/*    Zucchini gif */
+    /*    Zucchini gif */
     #c4{
-        margin-left: -55px;
+        margin-left: -53px;
         margin-right: -7px;
     }
-/*    tomato gif */
+    /*    tomato gif */
 
     #c5{
-        margin-left: -28px;
+        margin-left: -30px;
     }
 
-/*    the gifs */
+    /*    the gifs */
     .row img{
         height: 95px;
         width: 95px;
