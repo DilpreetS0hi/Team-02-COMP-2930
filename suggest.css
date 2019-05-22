@@ -1177,3 +1177,12 @@ footer{
         width: 100px;
     }
 }
+@media only screen and (min-device-width : 360px) and (max-device-width : 479px){
+    #fruits{
+            margin-left: 66%;
+    }
+    .css-typing{
+            margin-top: -59%;
+    margin-left: 76px;
+    }
+}
