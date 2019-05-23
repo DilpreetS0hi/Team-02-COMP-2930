@@ -280,7 +280,7 @@ function getDB(){
                 items.push(item);
             });
         }else
-            window.location.href = 'homepage.html';
+            window.location.href = '../homepage.html';
     });
 }
 // ----- item -----
@@ -361,7 +361,7 @@ function newItem(){
     items.push(item);
     evalRec(item);
 
-    img.src = "icon3.png";
+    img.src = "../img/icon3.png";
     itemName.value = "";
     expirationDate.value = "";
     notifyMe.value = 3;
