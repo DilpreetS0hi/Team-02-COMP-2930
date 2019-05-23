@@ -1,0 +1,834 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+}
+body {
+    margin: 0;
+}
+/*
+#body {
+left: 0px;
+margin: 0;
+margin-top: 80px;
+padding: 0;
+width: 100%;
+height: 100vh;
+z-index: -1;
+font-family: Poppins;
+font-weight: 400;
+background: url(background-img.jpg);
+opacity: 0.94;
+background-position: center;
+background-size: cover;
+}
+*/
+
+
+#filler{
+    height: 200vf;
+}
+#filler-para{
+    height: 10%;
+}/*
+form{
+background: rgb(200,255,200,0.65);
+}*/
+.firebaseui-container{
+    background: rgba(56, 240, 56, 0.74) !important;
+}
+
+/* nav-bar */
+#bb{
+    height: 55px;
+    width: 55px;
+    margin-bottom: 53px;
+    margin-left: 8px;
+
+}
+#container{
+    background-color: rgba(159, 239, 56, 0.90);
+    width: 100%;
+    height: 80px;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 999;
+}
+#logotext{
+    position: fixed;
+    top: 25px;
+    left: 80px;
+    font-size: 30px;
+
+}
+nav {
+    padding: 8px;
+}
+
+/* logo icon */
+
+.logo {
+    float: left;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.logo a {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    float: left;
+}
+
+nav ul li:not(:first-child) {
+    margin-left: 48px;
+}
+
+nav ul li:last-child {
+    margin-right: 24px;
+}
+
+nav ul li a {
+    display: inline-block;
+    outline: none;
+    color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    letter-spacing: 1.2px;
+    font-weight: bold;
+    font: 24px Roboto,arial,sans-serif;
+}
+
+#marge{
+    margin-right: 70px;
+    float: left;
+    height: 10px;
+    width: 10px;
+    top: 0px;
+    right: 10px;
+}
+
+/* media query for 864px */
+
+@media screen and (max-width: 864px) {
+    .logo {
+        padding: 0;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: #FFF;
+        opacity: 0;
+        transition: all 0.2s ease;
+    }
+
+    .nav-wrapper ul {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+    .nav-wrapper ul li {
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    .nav-wrapper ul li:nth-child(1) a {
+        transition-delay: 0.2s;
+    }
+
+    .nav-wrapper ul li:nth-child(2) a {
+        transition-delay: 0.3s;
+    }
+
+    .nav-wrapper ul li:nth-child(3) a {
+        transition-delay: 0.4s;
+    }
+
+    .nav-wrapper ul li:nth-child(4) a {
+        transition-delay: 0.5s;
+    }
+
+    .nav-wrapper ul li:not(:first-child) {
+        margin-left: 0;
+    }
+
+    .nav-wrapper ul li a {
+        padding: 10px 24px;
+        opacity: 0;
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        transform: translateX(-20px);
+        transition: all 0.2s ease;
+    }
+
+    /*  nav-button  */
+
+    .nav-btn {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+        display: block;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        z-index: 9999;
+        border-radius: 50%;
+    }
+
+    .nav-btn i {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #000;
+        border-radius: 2px;
+        margin-left: 14px;
+    }
+
+    .nav-btn i:nth-child(1) {
+        margin-top: 16px;
+    }
+
+    .nav-btn i:nth-child(2) {
+        margin-top: 4px;
+        opacity: 1;
+    }
+
+    .nav-btn i:nth-child(3) {
+        margin-top: 4px;
+    }
+}
+
+#nav:checked + .nav-btn {
+    transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i {
+    background: #000;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper {
+    z-index: 9990;
+    opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hidden {
+    display: none;
+}
+
+/* footer */
+
+.footer-distributed{
+    z-index: 999;
+    height: 150px;
+    bottom: 0px;
+    /*     position: fixed;*/
+    background: rgba(159, 239, 56, 0.84); 
+    width: 1520px;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 22px 50px;
+
+}
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+/* Footer left */
+.footer-distributed .footer-left{
+    width: 40%;
+}
+/* The company logo */
+.footer-distributed h2{
+    color:  		#006400;
+    font: normal 27px 'Cookie', cursive;
+    margin: 0;
+}
+.footer-distributed h2 span{
+    color:  #000000;
+    font-kerning: 12px;
+}
+
+.footer-distributed .footer-company-name{
+    color:  #008000;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+/* Footer Center */
+.footer-distributed .footer-center{
+    width: 35%;
+}
+.footer-distributed .footer-center i{
+    background-color:  #473d2a;
+    color: #ffffff ;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+.footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+}
+.footer-distributed .footer-center p{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    color: #000;
+    vertical-align: middle;
+    margin:0;
+}
+.footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+}
+.footer-distributed .footer-center p a{
+    color: black;
+    text-decoration: none;
+    /* margin-left: -30px; */
+    margin-top: 2px;;
+}
+/* Footer Right */
+.footer-distributed .footer-right{
+    width: 20%;
+    text-overflow: ellipsis;
+}
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color:  ##567d46;
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0;
+}
+.footer-distributed .footer-company-about span{
+    display: block;
+    color:  #000;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer-distributed .footer-icons{
+    margin-top: 25px;
+}
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+#firebaseui-auth-container{
+
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    /* margin-right: 15% !important;
+    margin-top: 2% !important; */
+
+}
+.firebaseui-tos{
+    color: #000000 !important;
+}
+.firebaseui-card-content{
+    padding: 0px !important;
+}
+.firebaseui-card-footer firebaseui-provider-sign-in-footer{
+}
+.firebaseui-card-footer{
+    padding: 0 !important;
+}
+.firebaseui-idp-button{
+    margin-top: 10% !important;
+}
+
+/* fruits gif */
+
+#fruits{margin-top: 15px;
+    margin-left: 550px;
+    height: 400px;
+    width:400px;
+}
+
+.row img {
+    margin: 0 40px;
+    padding: 10PX;
+    height: 180px;
+    width: 180px;
+
+}
+
+/* GLOBAL STYLES */
+body {
+
+    justify-content: center;
+    margin: 0px;
+}
+
+p{
+    font-size: x-large;
+    margin-left: 8.4%;
+    margin-right: 8%;
+    margin-top: -2%;
+    font-family: serif;
+}
+
+/* DEMO-SPECIFIC STYLES */
+/* apple text */
+
+#apple{color: #000;
+    margin-left: 100px;
+    margin-bottom: -25px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+/* banana text */
+
+#banana{color: #000;
+    margin-left: 400px;
+    margin-bottom: -35px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+/* berries text */
+
+#berries{color: #000;
+    margin-left: 700px;
+    margin-bottom: -35px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+/* grapes text */
+
+#grapes{color: #000;
+    margin-left: 1030px;
+    /*  margin-bottom: 0px;*/
+    margin-top: 5px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;}
+
+/* citrus text */
+
+#citrus {
+    color: #000;
+    margin-left: 1320px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+        typing 1.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-size: 2em;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 20% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white}
+}
+#c1,#c2,#c3,#c4,#c5{
+    background: rgb(255,255,255,0.0);
+    border-color: white;
+    margin-left: 5%;
+}
+
+/*media query for 840px*/
+
+@media only screen and (max-width: 840px){
+    #container{
+        width: 840px;
+    }
+    .footer-distributed{
+        width: 839px;
+    }
+    #content{
+
+    }
+    #bb{
+        height: 35px;
+        width: 35px;
+
+    }
+    .nav-btn{
+        position: absolute;
+    }
+    #fruits{
+        margin-left: 258px;
+        height: 253px;
+        width: 253px;
+        margin-top: 44px;
+    }
+
+
+    #apple{
+        font-size: 18px;
+        margin-left: 78px;
+    }
+    #banana{
+        font-size: 18px;
+        margin-left: 221px;
+        margin-top: 6px;
+    }
+    #berries{
+        font-size: 18px;
+        margin-left: 387px;
+        margin-top: 12.5px;
+    }
+    #grapes{
+        margin-left: 566px;
+        font-size: 18px;
+
+        margin-top: 15px;
+    }
+    #citrus{
+        margin-left: 732px;
+        font-size: 18px;
+        margin-top: -22px;
+    }
+    #c1{
+
+    }
+    .row img{
+        height: 120px;
+        width: 120px;
+        margin: 0px;
+    }
+}
+
+/*media query for 600px*/
+
+@media only screen and (max-width: 600px){
+    .row img{
+        height: 100px;
+        width: 100px;
+    }
+
+    #container{
+        width: 600px;
+    }
+
+    .footer-distributed{
+        width: 600px;
+    }
+    #bb{
+        height: 35px;
+        width: 35px;
+    }
+
+    #fruits{
+        height: 225px;
+        width: 225px;
+        margin-left: 146px;
+        margin-top: 72px;
+
+    }
+
+
+    #apple{
+        font-size: 16px;
+        margin-left: 76px;
+    }
+    #banana{
+        font-size: 16px;
+        margin-left: 177px;
+        margin-top: 6px; 
+    }
+
+    #berries{
+        font-size: 16px;
+        margin-left: 279px;
+        margin-top: 16px;
+    }
+
+    #grapes{
+        font-size: 16px;
+        margin-left: 388px;
+        margin-top: 17px;
+    }
+
+    #citrus{
+        font-size: 16px;
+        margin-left: 491px;
+        margin-top: -19px;
+    }
+
+    #c1{
+        margin-left: 51px;
+        margin-top: 17px;
+    }
+    #c5{
+        margin: 0px;
+    }
+    #c2{
+        margin: 0px;
+    }
+    #c3{
+
+        margin: 0px;
+    }
+    #c4{
+        margin: 0px;
+    }   
+}
+
+/* media query for 480px */
+
+@media only screen and (max-width: 480px){
+    .row img{
+        height: 100px;
+        width: 100px;
+    }
+    #bb{
+        height: 35px;
+        width: 35px;
+    }
+    #container{
+        width: 480px;
+    }
+
+    .footer-distributed{
+        width: 480px;
+        height: 170px;
+    }
+
+
+    #fruits{
+        height: 210px;
+        width: 210px;
+        margin-left: 81px;
+        margin-top: 93px;
+
+    }
+
+
+    #apple{
+        font-size: 14px;
+        margin-left: 32px;
+    }
+    #banana{
+        font-size: 14px;
+        margin-left: 117px;
+        margin-top: 9px; 
+    }
+
+    #berries{
+        font-size: 14px;
+        margin-left: 204px;
+        margin-top: 19px;
+    }
+
+    #grapes{
+        font-size: 14px;
+        margin-left: 302px;
+        margin-top: 19px;
+    }
+
+    #citrus{
+        font-size: 14px;
+        margin-left: 385px;
+        margin-top: -16px;
+    }
+
+    #c1{
+        margin-left: 1px;
+        margin-top: 10px;
+        margin-right: -10px;
+    }
+    #c5{
+        margin-left: -18px;
+    }
+    #c2{
+        margin-right: 8px;
+    }
+    #c3{
+        margin-left: -25px;
+    }
+    #c4{
+        margin-left: -13px;
+    }
+}
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 479px){
+    .row img{
+        height: 95px;
+        width: 95px;
+    }
+
+    #container{
+        width: 375px;
+    }
+    #bb{
+        height: 35px;
+        width: 35px;
+    }
+    .footer-distributed{
+        width: 375px;
+        height: 210px;
+        margin-top: 76px;
+    }
+
+
+    #fruits{
+        height: 188px;
+        width: 188px;
+        margin-left: 40px;
+        margin-top: 63px;
+
+    }
+
+
+    #apple{
+        font-size: 13px;
+        margin-left: 13px;
+    }
+    #banana{
+        font-size: 13px;
+        margin-left: 79px;
+        margin-top: 10px; 
+    }
+
+    #berries{
+        font-size: 13px;
+        margin-left: 149px;
+        margin-top: 20px;
+    }
+
+    #grapes{
+        font-size: 13px;
+        margin-left: 224px;
+        margin-top: 21px;
+    }
+
+    #citrus{
+        font-size: 13px;
+        margin-left: 289px;
+        margin-top: -15px;
+    }
+
+    #c1{
+        margin-left: -12px;
+        margin-top: 11px;
+        margin-right: -21px;
+    }
+    #c5{
+        margin-left: -31px;
+    }
+    #c2{
+        margin-right: -5px;
+        margin-left: -3px;
+    }
+    #c3{
+        margin-left: -30px;
+    }
+    #c4{
+        margin-left: -30px;
+    }
+}
+

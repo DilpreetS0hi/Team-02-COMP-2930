@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Expiry</title>
-	<link rel="stylesheet" href="homepage.css">
-	<link rel="stylesheet" href="expiry.css">
+	<link rel="stylesheet" href="../css/homepage.css">
+	<link rel="stylesheet" href="../css/expiry.css">
 </head>
 <body onload="startupGeneration();">
     
@@ -39,7 +39,7 @@
 			<div class="left qmarg" id="imgcon">
 				<input id="file" name="file" type="file" accept="image/*" />
 				<button id="imgbtn" onclick="$('#file').click();">Choose Image</button>
-				<img id="img" src="icon3.png" onclick="$('#file').click();" />
+				<img id="img" src="../img/icon3.png" onclick="$('#file').click();" />
 				</div>
 			<form action="#" onsubmit="newItem();return false" style="height:124px;">
 				<div class="left">
@@ -88,16 +88,16 @@
             </label>
             <div class="logo">
                 <a href="#">
-                    <img src="Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
+                    <img src="../img/Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
                     <div id="logotext"></div>
                 </a>
             </div>
             <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
                 <ul>
-                    <li><a href="homepage.html">Home</a></li>
-                    <li><a href="expiry.html">Expiry</a></li>
-                    <li><a href="addData.html">Donate</a></li>
-                    <li><a href="suggest.html">Suggest</a></li>
+                    <li><a href="../homepage.html">Home</a></li>
+                    <li><a href="../html/expiry.html">Expiry</a></li>
+                    <li><a href="../html/addData.html">Donate</a></li>
+                    <li><a href="../html/suggest.html">Suggest</a></li>
                     <div id="marge"></div>
                 </ul>
             </div>
@@ -118,7 +118,7 @@
 		</div>
 		<div class="footer-right">
 			<p class="footer-company-about">
-			<a href="AboutUs_page.html"><span>About Us</span></a>
+			<a href="../html/AboutUs_page.html"><span>About Us</span></a>
             <h5>&#169; 2019 NoFoodWastage</h5>
             <h5>&#174; Privacy Policy</h5>	
 		</div>
@@ -127,7 +127,7 @@
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.0.1/firebase.js"></script>
-<script src="setup_firebase_yourname.js"></script>
-<script src="expiry.js"></script>
-<script src="homepage.js"></script>
+<script src="../js/setup_firebase_yourname.js"></script>
+<script src="../js/expiry.js"></script>
+<script src="../js/homepage.js"></script>
 </html>

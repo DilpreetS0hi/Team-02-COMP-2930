@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- head -->
+    <head>
+        <!-- meta element -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <!-- title -->
+        <title>No Food Wastage</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="../css/fruits.css">
+        <link rel="stylesheet" href="../css/signin.css">
+
+        <!-- firebase script -->
+        <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+
+    </head>
+
+    <!-- main content -->
+    <body>
+        <!-- nav bar -->
+        <div id="container">
+            <nav>
+
+                <input type="checkbox" id="nav" class="hidden">
+                <label for="nav" class="nav-btn" onclick="dis()">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </label>
+                <script src="../js/setup_firebase_yourname.js"></script>
+
+                <!-- logo -->
+                <div class="logo">
+                    <a href="../homepage.html">
+                        <img src="../img/Too-Good-to-Waste-Logo.gif" alt="logo" height="70px" bottom="10px" style="margin-left:20px;" />
+                        <div id="logotext"></div>
+                    </a>
+                </div>
+                <h1 id="banner"></h1>
+                <h1 id="quote"></h1>
+                <script src="../js/greetingQuote.js"></script>
+                <div class="nav-wrapper" id="i-need-you" style="top:-10000px;left:-10000px;">
+                    <ul>
+                        <li><a href="../html/AfterSignIn.html">Home</a></li>
+                        <li><a href="../html/expiry.html">Expiry</a></li>
+                        <li><a href="../html/addData.html">Donate</a></li>
+                        <li><a href="../html/suggest.html">Suggest</a></li>
+
+                        <div id="marge"></div>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+        <a href="../html/suggest.html"><img id="bb" src="../img/backbutton.png"></a>
+
+        <!-- fruit gif -->
+        <img src="../img/fruit.gif" id="fruits" alt="fruits">
+
+        <!-- Most Common fruits -->
+        <div class="row">
+            <img id="c1" src="../img/apple.gif" itemprop="apple">
+
+            <img id="c2" src="../img/banana1.gif" itemprop="banana">
+
+            <img id="c3" src="../img/berries1.gif" itemprop="berries">
+
+            <img id="c4" src="../img/SardonicExcellentIraniangroundjay-size_restricted.gif" itemprop="grapes">
+
+            <img id="c5" src="../img/citrus.gif" itemprop="citrus">
+        </div>
+
+        <!-- Text -->
+        <div id="apple">Apple</div>
+        <div id="banana">Banana</div>
+        <div id="berries">Berries</div>
+        <div id="grapes">Grapes</div>
+        <div id="citrus">Citrus</div>        
+        <div id="content"></div>
+
+        <!--footer -->
+        <footer class="footer-distributed" id="contact">
+            <div class="footer-left">
+                <h2><span>No</span> FOOD <span>Wastage</span></h2>
+                <p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <p>Address: 3700 Willingdon Ave Burnaby, Bc</p>
+                </div>
+                <br>
+                <div>
+                    <p>Phone: 604-727-3019</p>
+                </div>
+                <br>
+                <div>
+                    <p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <a href="../html/AboutUs_page.html"><span>About Us</span></a>
+                <h5>&#169; 2019 NoFoodWastage</h5>
+                <h5>&#174; Privacy Policy</h5>
+            </div>
+        </footer>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="../js/fruits.js"></script>
+
+    </body></html>

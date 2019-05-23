@@ -32,72 +32,72 @@ function createTempStart(){
     return [
         { // apple
             name : "Apple",
-            img : "apple.gif",
+            img : "../img/apple.gif",
             days : [14, 28],
-            info : "fruits(1).html",
+            info : "../html/fruits(1).html",
             hit : 0,
             time : -1
         },{ // banana
             name : "Banana",
-            img : "banana1.gif",
+            img : "../img/banana1.gif",
             days : [2,7],
-            info : "fruits(1).html",
+            info : "../html/fruits(1).html",
             hit : 0,
             time : -1
         },{ // berries
             name : "Berries",
-            img : "berries1.gif",
+            img : "../img/berries1.gif",
             days : [2,3],
-            info : "fruits(1).html",
+            info : "../html/fruits(1).html",
             hit : 0,
             time : -1
         },{ // grapes
             name : "Grapes",
-            img : "SardonicExcellentIraniangroundjay-size_restricted.gif",
+            img : "../img/SardonicExcellentIraniangroundjay-size_restricted.gif",
             days : [3,5],
-            info : "fruits(1).html",
+            info : "../html/fruits(1).html",
             hit : 0,
             time : -1
         },{ // citrus
             name : "Citrus",
-            img : "citrus.gif",
+            img : "../img/citrus.gif",
             days : [14,28],
-            info : "fruits(1).html",
+            info : "../html/fruits(1).html",
             hit : 0,
             time : -1
         },{ // carrot
             name : "Carrot",
-            img : "Carrot.gif",
+            img : "../img/Carrot.gif",
             days : [4,5],
-            info : "vegetables.html",
+            info : "../html/vegetables.html",
             hit : 0,
             time : -1
         },{ // potato
             name : "Potato",
-            img : "sweetpotato.gif",
+            img : "../img/sweetpotato.gif",
             days : [21, 35],
-            info : "vegetables.html",
+            info : "../html/vegetables.html",
             hit : 0,
             time : -1
         },{ // kale
             name : "Kale",
-            img : "kale.gif",
+            img : "../img/kale.gif",
             days : [7,14],
-            info : "vegetables.html",
+            info : "../html/vegetables.html",
             hit : 0,
             time : -1
         },{ // zucchini
             name : "Zucchini",
-            img : "zucchini.gif",
+            img : "../img/zucchini.gif",
             days : [1,5],
-            info : "vegetables.html",
+            info : "../html/vegetables.html",
             hit : 0,
             time : -1
         },{ // tomato
             name : "Tomato",
-            img : "Tomato.gif",
+            img : "../img/Tomato.gif",
             days : [7],
-            info : "vegetables.html",
+            info : "../html/vegetables.html",
             hit : 0,
             time : -1
         }
