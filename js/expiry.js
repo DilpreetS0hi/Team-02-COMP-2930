@@ -179,7 +179,6 @@ function sleep(ms){
 }
 // ----- on start -----
 async function startupGeneration(){
-                                                                                                deleteDB("rec");
     getDB();
     // wait for db
     await sleep(4100);
