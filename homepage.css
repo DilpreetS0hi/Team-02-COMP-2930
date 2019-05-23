@@ -377,7 +377,7 @@ nav ul li a {
 .firebaseui-idp-button{
     margin-top: 10% !important;
 }
-.firebaseui-tos firebaseui-tospp-full-message{
+.firebaseui-tos.firebaseui-tospp-full-message{
 display: none;
 }
 @-webkit-keyframes roll {
