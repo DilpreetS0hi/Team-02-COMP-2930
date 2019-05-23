@@ -484,8 +484,9 @@ async function evalRec(rec){
             recns.splice(recns[i].unique,1);
         }
 
-    for(let i=0; i<recms.length; i++)
-        if(trec.img.lastIndexOf(recms[i].img) != -1 && trec.name == recms[i].name){
+    for(let i=0; i<recms.length; i++){
+        let t = trec.img.split("/");
+        if(recms[i].img.lastIndexOf(t[t.length-1]) != -1 && trec.name == recms[i].name){
             // days
             if (daysTillExpiry(trec)>=0){
                 recms[i].days.push(daysTillExpiry(trec))
@@ -498,7 +499,7 @@ async function evalRec(rec){
             // time
             recms[i].time = (new Date()).getTime();
         }
-
+    }
     if(trec.days.length == 0){
         // days
         if(daysTillExpiry(trec)>=0)
