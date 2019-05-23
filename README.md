@@ -1,7 +1,7 @@
 # Team-02-COMP-2930
-# NoFoodWasatge  
+# NoFoodWastage  
 
-NoFoodWasatge is a social web application that deals with the problem of Food Wastage. Our goal is to allow users to reduce food wastage and utilize it to end food hunger with.
+NoFoodWastage is a social web application that deals with the problem of Food Wastage. Our goal is to allow users to reduce food wastage and utilize it to end food hunger with.
 
 **website** https://nofoodwastage.herokuapp.com/
 
@@ -12,7 +12,7 @@ NoFoodWasatge is a social web application that deals with the problem of Food Wa
 
 ## Technical Specifications
 
-NoFoodWasatge allow users to track EXPIRY food, DONATE and SUGGEST something useful.
+NoFoodWastage allow users to track EXPIRY food, DONATE and SUGGEST something useful.
 
 All html, css and javascript files are there in GitHub account.
 
