@@ -16,7 +16,13 @@ html {
 body {
     margin: 0;
 }
+#bb{
+    height: 55px;
+    width: 55px;
+    margin-bottom: 25px;
+    margin-left: 8px;
 
+}
 /*
 #body {
 left: 0px;
@@ -609,7 +615,7 @@ p{
 
 
     #vegetables{
-        margin-left: 323px;
+        margin-left: 232px;
         height: 227px;
         width: 227px;
         margin-top: 50px;
@@ -722,10 +728,15 @@ p{
 
     /*the vegetable gif*/
     #vegetables{
-        margin-left: 209px;
+        margin-left: 158px;
         height: 205px;
         width: 205px;
         margin-top: 61px;
+    }
+
+    #bb{
+        height: 35px;
+        width: 35px;
     }
 
     /*    carrot text*/
@@ -839,7 +850,7 @@ p{
 
     /*    vegetable div */
     #vegetables{
-        margin-left: 147px;
+        margin-left: 115px;
         height: 185px;
         width: 185px;
         margin-top: 61px;
@@ -954,12 +965,15 @@ p{
 
     /*    vegetable div */
     #vegetables{
-        margin-left: 113px;
+        margin-left: 57px;
         height: 147px;
         width: 147px;
         margin-top: 70px;
     }
-
+    #bb{
+        height: 30px;
+        width: 30px;
+    }
     /* Carrot text*/
     #Carrot{
         font-size: 12px;

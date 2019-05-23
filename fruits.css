@@ -45,7 +45,13 @@ background: rgb(200,255,200,0.65);
 }
 
 /* nav-bar */
+#bb{
+    height: 55px;
+    width: 55px;
+    margin-bottom: 53px;
+    margin-left: 8px;
 
+}
 #container{
     background-color: rgba(159, 239, 56, 0.90);
     width: 100%;
@@ -545,14 +551,16 @@ p{
     #content{
 
     }
-    .nav-wrapper{
+    #bb{
+        height: 35px;
+        width: 35px;
 
     }
     .nav-btn{
         position: absolute;
     }
     #fruits{
-        margin-left: 300px;
+        margin-left: 258px;
         height: 253px;
         width: 253px;
         margin-top: 44px;
@@ -609,12 +617,15 @@ p{
     .footer-distributed{
         width: 600px;
     }
-
+    #bb{
+        height: 35px;
+        width: 35px;
+    }
 
     #fruits{
         height: 225px;
         width: 225px;
-        margin-left: 191px;
+        margin-left: 146px;
         margin-top: 72px;
 
     }
@@ -674,7 +685,10 @@ p{
         height: 100px;
         width: 100px;
     }
-
+    #bb{
+        height: 35px;
+        width: 35px;
+    }
     #container{
         width: 480px;
     }
@@ -688,7 +702,7 @@ p{
     #fruits{
         height: 210px;
         width: 210px;
-        margin-left: 129px;
+        margin-left: 81px;
         margin-top: 93px;
 
     }
@@ -750,7 +764,10 @@ p{
     #container{
         width: 375px;
     }
-
+    #bb{
+        height: 35px;
+        width: 35px;
+    }
     .footer-distributed{
         width: 375px;
         height: 210px;
@@ -760,9 +777,9 @@ p{
 
     #fruits{
         height: 188px;
-    width: 188px;
-    margin-left: 101px;
-    margin-top: 63px;
+        width: 188px;
+        margin-left: 40px;
+        margin-top: 63px;
 
     }
 

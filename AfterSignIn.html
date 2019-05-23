@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>No Food Wastage</title>
+      <link rel="stylesheet" href="homepage.css">
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="signin.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+    <script src="setup_firebase_yourname.js"></script>
+</head>
+
+<body>
+    
+    
+    <div id="body"></div>
+    <div id="container">
+            <nav>
+                  <input type="checkbox" id="nav" class="hidden">
+                  <label for="nav" class="nav-btn">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                  </label>
+                  <div class="logo">
+                        <a href="#">
+                            <img src="icon3.png" alt="logo" height="60px" bottom="10px"/>
+                            <div id="logotext"></div>
+                      </a>
+                  </div>
+                
+                
+                
+                <script src="setup_firebase_yourname.js"></script>
+
+                <h1 id="banner"> </h1>
+                <h1 id="quote"> </h1>
+                <script src="greetingQuote.js"></script>
+<!--
+                <button id="btnLogout" class="button"> Log Out </button>
+                <button id="btnUpdateProfile" class="button" onclick="window.location.href='survey.html'"> Update Profile </button>-->
+                <script>
+                    btnLogout.addEventListener("click", function(e) {
+                        var promise = firebase.auth().signOut();
+                        promise.then(function() {
+                            window.location.href = 'out.html';
+                        });
+                    });
+
+                </script>
+
+                <script src="create_user.js"></script>
+                
+                
+                
+                  <div class="nav-wrapper">
+                        <ul>
+                              <li><a href="#">Home</a></li>
+                              <li><a href="expiry.html">Expiry</a></li>
+                              <li><a href="addData.html">Donate</a></li>
+                              <li><a href="suggest.html">Info</a></li>
+                            <div id="marge"></div>
+                        </ul>
+                  </div>
+            </nav>
+      </div>
+    
+  
+     <footer class="footer-distributed" id="contact">
+    	<div class="footer-left">
+            <h1><span>No</span> FOOD <span>Wastage</span></h1>
+				<p class="footer-company-name">Team02-COMP-2930 &copy; 2019</p>
+			</div>
+			<div class="footer-center">
+				<div>
+                    <p>Address: 3700 Willingdon Ave Burnaby, Bc</p>
+				</div>
+                <br>
+				<div>
+					<p>Phone: 604-727-3019</p>
+				</div>
+                <br>
+				<div>
+					<p><a href="mailto:foodlife@company.com">Email: foodlife@company.com</a></p>
+				</div>
+			</div>
+			<div class="footer-right">
+				<p class="footer-company-about">
+					<span>About Us</span>
+					Need an Notification Alerts for Expiry foods? Have Queries? Call us!
+                    We help people to reduce Food Wastage by generating emergency alerts  
+                    and provide them with suitable information for overripe eatables and help them Donate food to needy people.
+				</p>
+			</div>
+
+		</footer>
+    
+    <script>
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+    </script>
+
+
+
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+
+
+
+
+    <script>
+        var uiConfig = {
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            },
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: 'tryMe.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+
+
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: 'tryMe.html',
+            // Privacy policy url.
+            privacyPolicyUrl: 'tryMe.html'
+        };
+
+    </script>
+    <script>
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+
+    </script>
+    
+</body>
+</html>
