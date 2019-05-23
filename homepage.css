@@ -181,7 +181,7 @@ nav ul li a {
         position: fixed;
         right: 10px;
         top: 10px;
-        display: block;
+        display: none;
         width: 48px;
         height: 48px;
         cursor: pointer;
@@ -376,6 +376,9 @@ nav ul li a {
 }
 .firebaseui-idp-button{
     margin-top: 10% !important;
+}
+.firebaseui-tos firebaseui-tospp-full-message{
+display: none;
 }
 @-webkit-keyframes roll {
     from {
